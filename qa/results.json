@@ -1,0 +1,286 @@
+{
+  "network": "testnet",
+  "pass": "third",
+  "cases": [
+    {
+      "id": "V-01",
+      "group": "V",
+      "title": "Photographs in the catalog",
+      "description": "A visitor opens the catalog and sees a photograph on each piece that has one.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "V-02",
+      "group": "V",
+      "title": "Complete piece fiche",
+      "description": "A piece page shows title, artist, certificate state, and the attached photographs or documents.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "V-03",
+      "group": "V",
+      "title": "Valid certificate lists its signers",
+      "description": "Public verification of a finalized certificate lists the signers: one for a living author, two for a deceased author.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "V-04",
+      "group": "V",
+      "title": "Uncertified piece is marked",
+      "description": "A piece that has not been finalized is marked as not certified.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "V-05",
+      "group": "V",
+      "title": "Catalog filters",
+      "description": "Filters for certification, sale modality, and participation type narrow the list and can be cleared.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "V-06",
+      "group": "V",
+      "title": "Visitor has no action buttons",
+      "description": "Without a connected wallet, a visitor can browse and verify, and does not see certify, list, or buy actions.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "V-07",
+      "group": "V",
+      "title": "Terms document downloads",
+      "description": "The participation terms document linked from an offer can be downloaded.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "C-01",
+      "group": "C",
+      "title": "Register a fiche with photographs",
+      "description": "An artist creates a piece fiche and attaches photographs.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "C-02",
+      "group": "C",
+      "title": "Living author, fee in XLM",
+      "description": "The living author signs once and pays the certification fee in XLM (5 XLM). The certificate finalizes.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "C-03",
+      "group": "C",
+      "title": "Museum authorizes a connoisseur",
+      "description": "For a deceased author, a museum authorizes the connoisseur who will sign.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "C-04",
+      "group": "C",
+      "title": "Connoisseur signs, second signature pending",
+      "description": "The connoisseur signs. The certificate stays pending until the second signature.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "C-05",
+      "group": "C",
+      "title": "Museum second signature finalizes",
+      "description": "The museum adds the second signature. The certificate becomes valid.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "C-06",
+      "group": "C",
+      "title": "Second signature on a pending demo piece",
+      "description": "A demo piece left pending receives its second signature and becomes valid.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "C-07",
+      "group": "C",
+      "title": "Digitize a prior certificate",
+      "description": "An existing certificate is digitized. The fiche stores the document hash and the certification flow records it.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "C-08",
+      "group": "C",
+      "title": "Verify C-02, C-05, and C-07",
+      "description": "The public verify page, including the QR link, shows the certificates from C-02, C-05, and C-07 as valid.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-01",
+      "group": "S",
+      "title": "List a whole digital work in XLM",
+      "description": "The owner lists the whole work as a digital sale priced in XLM.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-02",
+      "group": "S",
+      "title": "Buy the whole work",
+      "description": "A second account buys the whole work. Ownership moves to the buyer.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-03",
+      "group": "S",
+      "title": "Resale with three owners",
+      "description": "The work is sold again. The ownership history shows three owners.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-04",
+      "group": "S",
+      "title": "List with physical delivery",
+      "description": "The owner lists a whole work with a physical-delivery clause.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-05",
+      "group": "S",
+      "title": "Buy in USDC and send the delivery form",
+      "description": "A buyer pays in USDC and submits the physical-delivery form. Delivery itself stays off-chain.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-06",
+      "group": "S",
+      "title": "Museum offers each participation type",
+      "description": "A museum publishes one offer of each type — future sale, guaranteed repurchase, financing with return, and exploitation rights — each with a terms document.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-07",
+      "group": "S",
+      "title": "Buy an entire primary offer",
+      "description": "A buyer takes every unit of a primary offer in one payment.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-08",
+      "group": "S",
+      "title": "Buy part of a primary offer",
+      "description": "A buyer takes some of the units. The remainder stays available.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-09",
+      "group": "S",
+      "title": "List on the secondary market",
+      "description": "A holder lists units they already hold.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-10",
+      "group": "S",
+      "title": "Partial secondary purchase",
+      "description": "Another buyer takes part of that secondary listing.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-11",
+      "group": "S",
+      "title": "Cancel the remainder",
+      "description": "The seller cancels what is left of the listing. The remaining units return to the seller.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-12",
+      "group": "S",
+      "title": "Run distribution",
+      "description": "Distribution runs for an offer under its published terms.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "S-13",
+      "group": "S",
+      "title": "Buy the cheap demo offer",
+      "description": "A buyer purchases the low-priced public demo offer used as the Try it path.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "N-01",
+      "group": "N",
+      "title": "Buy without a wallet",
+      "description": "Choosing buy with no wallet does not submit a transaction. The page asks for Freighter.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "N-02",
+      "group": "N",
+      "title": "A collector cannot certify",
+      "description": "A collector session does not offer a certify action.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "N-03",
+      "group": "N",
+      "title": "One signature is not enough",
+      "description": "A deceased-author certificate with only one signature stays incomplete, and the page says so.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "N-04",
+      "group": "N",
+      "title": "More units than available",
+      "description": "Asking for more units than the offer has left is refused, with a clear message, and nothing is transferred.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "N-05",
+      "group": "N",
+      "title": "Insufficient balance",
+      "description": "A buy with too little XLM or USDC is refused, with a clear message.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "N-06",
+      "group": "N",
+      "title": "Unknown certificate",
+      "description": "A verify link for a certificate that does not exist is a not-found page.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    },
+    {
+      "id": "N-07",
+      "group": "N",
+      "title": "Ops routes are closed",
+      "description": "Operational endpoints do not respond to an anonymous caller.",
+      "status": "PENDING",
+      "reason": "third QA pass in progress"
+    }
+  ]
+}

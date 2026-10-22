@@ -1,0 +1,26 @@
+# Public project accounts on Stellar Testnet.
+# The generator checks platform and validator against the active contract registry.
+# Do not put secret keys in this file.
+network: testnet
+accounts:
+  - id: platform
+    registryField: platform
+    role: Platform
+    address: GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357
+    purpose: >
+      Assigns on-chain roles and is the account that receives the
+      certification fee (5 XLM or 1 USDC on Testnet).
+  - id: validator
+    registryField: validator
+    role: Validator
+    address: GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357
+    purpose: >
+      Co-signs certification. On the current Testnet deployment this is the
+      same account as the platform. Roadmap phase 3 separates the two
+      accounts and places each behind a multisig.
+  - id: demo-museum
+    role: Demo museum
+    address: GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV
+    purpose: >
+      Public demo account with the museum role. It is the institution
+      signature on a deceased-author certificate.

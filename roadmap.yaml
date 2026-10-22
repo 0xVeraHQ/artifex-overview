@@ -1,0 +1,46 @@
+# Public roadmap. Status values: DONE, IN PROGRESS, PLANNED.
+phases:
+  - id: hackmeridian
+    name: HackMeridian
+    status: IN PROGRESS
+    summary: >
+      Scale-track work for HackMeridian 2026, on Stellar Testnet.
+    items:
+      - Standard OpenZeppelin contracts
+      - Trustless Work escrow
+      - Payments in any asset through path payments
+  - id: phase-1
+    name: Phase 1
+    status: PLANNED
+    summary: >
+      A smart wallet in the web app, so a visitor can sign without a
+      browser extension.
+    items:
+      - Smart wallet with passkeys on the web
+  - id: phase-2
+    name: Phase 2
+    status: PLANNED
+    summary: >
+      Native applications that sign with the device biometric.
+    items:
+      - iOS app with biometric signing
+      - Android app with biometric signing
+  - id: phase-3
+    name: Phase 3
+    status: PLANNED
+    summary: >
+      Mainnet only after the legal, audit, and custody gates below.
+    items:
+      - Legal review of participations
+      - Contract audit
+      - Institutional custody
+      - Separate platform and validator accounts, each with a multisig
+  - id: phase-4
+    name: Phase 4
+    status: PLANNED
+    summary: >
+      First institutions on mainnet, with fiat ramps and a public index.
+    items:
+      - Pilots with museums and foundations
+      - Ramps through Stellar anchors
+      - Public indexer
