@@ -4,11 +4,16 @@ phases:
     name: HackMeridian
     status: IN PROGRESS
     summary: >
-      Scale-track work for HackMeridian 2026, on Stellar Testnet.
+      Scale-track work for HackMeridian 2026. Application scope named
+      OpenZeppelin, Trustless Work, and path payments; after mentor and
+      judge conversations the event priority is production readiness.
     items:
-      - Standard OpenZeppelin contracts
-      - Trustless Work escrow
-      - Payments in any asset through path payments
+      - Whole-work sale on contract registry v3
+      - USDC purchase fix and locked-unit recovery
+      - Offer and listing indexing; automatic distribution to holders
+      - Role permissions and verification improvements
+      - Fourth external QA pass
+      - Stellar mainnet launch
   - id: phase-1
     name: Phase 1
     status: PLANNED
@@ -29,12 +34,15 @@ phases:
     name: Phase 3
     status: PLANNED
     summary: >
-      Mainnet only after the legal, audit, and custody gates below.
+      Institutional hardening after the HackMeridian mainnet launch.
     items:
       - Legal review of participations
       - Contract audit
       - Institutional custody
       - Separate platform and validator accounts, each with a multisig
+      - OpenZeppelin contracts where they fit the product
+      - Trustless Work escrow for physical-delivery sales
+      - Path payments for any-asset checkout
   - id: phase-4
     name: Phase 4
     status: PLANNED

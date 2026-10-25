@@ -2,15 +2,28 @@
 
 # Wallets
 
+## Testnet
+
 Public accounts for the Testnet deployment.
 
 | Role | Address | Purpose | Explorer |
 | --- | --- | --- | --- |
 | Platform | `GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357` | Assigns on-chain roles and is the account that receives the certification fee (5 XLM or 1 USDC on Testnet). | [Explorer](https://stellar.expert/explorer/testnet/account/GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357) |
 | Validator | `GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357` | Co-signs certification. On the current Testnet deployment this is the same account as the platform. Roadmap phase 3 separates the two accounts and places each behind a multisig. | [Explorer](https://stellar.expert/explorer/testnet/account/GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357) |
-| Demo museum | `GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV` | Public demo account with the museum role. It is the institution signature on a deceased-author certificate. | [Explorer](https://stellar.expert/explorer/testnet/account/GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV) |
+| Demo museum (QA) | `GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV` | Public demo account with the museum role. It is the institution signature on a deceased-author certificate, and the Freighter account used for museum QA steps. | [Explorer](https://stellar.expert/explorer/testnet/account/GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV) |
+| Demo organization (seed) | `GAJT4VFXWBD2QXJNOBQBY6TKTFEPO5YYHQXBCBIOCC7TGW6YAGDSMERC` | Public demo organization wallet that published Seed v6 participation offers and the secondary listing on Silencio blanco. | [Explorer](https://stellar.expert/explorer/testnet/account/GAJT4VFXWBD2QXJNOBQBY6TKTFEPO5YYHQXBCBIOCC7TGW6YAGDSMERC) |
 
 
 The Circle Testnet USDC issuer used for payments is
 `GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5`.
 That account is Circle's, not an Artifex account. See [TRY-IT.md](TRY-IT.md).
+
+## Mainnet
+
+**PENDING** — mainnet launch at HackMeridian.
+Platform, validator, organization, and demo signer addresses will be filled after launch.
+
+| Role | Address | Purpose | Explorer |
+| --- | --- | --- | --- |
+| — | — | mainnet launch at HackMeridian | — |
+

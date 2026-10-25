@@ -1,18 +1,20 @@
 # Artifex
 
-Provenance and funding for art, on Stellar Testnet.
+Provenance, certification, and funding for art — on Stellar.
 
-Live app: [https://artifex.0xvera.com](https://artifex.0xvera.com)
+Live app (Testnet): [https://artifex.0xvera.com](https://artifex.0xvera.com)
 
-Artifex is built for HackMeridian 2026, track Scale. This repository is the presentation. It has no source code. It has the product, the public Testnet identifiers, and the status of QA, releases, contracts, and the roadmap. The tables are generated from the real sources. Do not edit them by hand.
+Artifex is built for **HackMeridian 2026**, track **Scale**. This repository (`0xVeraHQ/artifex-overview`) is the public presentation. It has no source code. It has the product story, public Testnet identifiers, and the status of QA, releases, contracts, wallets, pieces, and the roadmap. Tables are generated from the real sources. Do not edit them by hand.
+
+Judges will not have access to the private implementation repositories. Everything needed to understand and verify Artifex is here, with links to [Stellar Expert](https://stellar.expert/explorer/testnet).
 
 ## What Artifex is
 
 Galleries, museums, and foundations need a record that travels with the work: who made it, who certified it, and, when they choose, a way to fund it without pretending that a token is the legal title.
 
-Two problems sit on top of each other. A certificate that lives only in a folder cannot be checked by the next buyer. A sale that is only a private invoice cannot show, in public, that the payment and the delivery happened together. Artifex puts both on Stellar Testnet, where anyone can open the transaction.
+Two problems sit on top of each other. A certificate that lives only in a folder cannot be checked by the next buyer. A sale that is only a private invoice cannot show, in public, that the payment and the delivery happened together. Artifex puts both on Stellar, where anyone can open the transaction.
 
-A participation is a contractual position in a work (a future sale, a guaranteed repurchase, financing with a return, or exploitation rights). It is not a claim that the holder owns the physical object. That distinction stays visible in the product, and the legal review of participations is [phase 3 of the roadmap](ROADMAP.md).
+A participation is a contractual position in a work (a future sale, a guaranteed repurchase, financing with a return, or exploitation rights). It is not a claim that the holder owns the physical object. That distinction stays visible in the product. Legal review of participations remains on the [roadmap](ROADMAP.md).
 
 ## How it works
 
@@ -24,65 +26,73 @@ A participation is a contractual position in a work (a future sale, a guaranteed
 
 **Participations.** Museums and foundations offer units in a work. There are four types: future sale, guaranteed repurchase, financing with a return, and exploitation rights. Each offer carries a terms document. A buyer can take the whole offer or part of it. The payment and the delivery of units happen in the same contract call.
 
-**Marketplace.** Primary sales and secondary listings are public. A secondary listing can be filled in part, and the seller can cancel what remains. Prices are in XLM or in Testnet USDC.
+**Marketplace.** Primary sales and secondary listings are public. A secondary listing can be filled in part, and the seller can cancel what remains. Prices are in XLM or in USDC.
+
+**Organizations.** Museums and foundations operate with several member wallets under one organization, with roles enforced on-chain and in the product.
 
 ## Architecture
 
-The web app talks to an API. The API keeps the catalog, the fiches, and the documents, and it prepares the transactions. The buyer or the signer approves them in Freighter. Soroban contracts on Stellar Testnet hold roles, certificates, the whole-work NFT, participation offers, the secondary marketplace, distribution, and the certification fee. Stellar Expert is the public receipt.
+The web app talks to an API. The API keeps the catalog, the fiches, and the documents, and it prepares the transactions. The buyer or the signer approves them in Freighter. Soroban contracts on Stellar hold roles, certificates, the whole-work NFT, participation offers, the secondary marketplace, distribution, and the certification fee. Stellar Expert is the public receipt.
 
-The component diagram and the certification and sale flows are in [docs/architecture.md](docs/architecture.md).
+Component diagram and certification / sale flows (Mermaid): [docs/architecture.md](docs/architecture.md).
 
 ## Status
 
 <!-- GENERATED:status -->
 | Area | State | Document |
 | --- | --- | --- |
-| QA | PENDING — third QA pass in progress | [QA.md](QA.md) |
-| Latest release | api 0.16.6, web 0.4.7, cosign verified | [RELEASES.md](RELEASES.md) |
+| QA | PENDING — 4th QA pass in progress | [QA.md](QA.md) |
+| Latest release | api 0.16.16, web 0.4.16, cosign verified | [RELEASES.md](RELEASES.md) |
 | Active contracts | Registry v2 on Testnet, contracts tag v0.1.0 | [CONTRACTS.md](CONTRACTS.md) |
 | Roadmap | HackMeridian in progress | [ROADMAP.md](ROADMAP.md) |
 
 <!-- /GENERATED:status -->
 
-The four rows above are generated together with [QA.md](QA.md), [RELEASES.md](RELEASES.md), [CONTRACTS.md](CONTRACTS.md), [WALLETS.md](WALLETS.md), and [ROADMAP.md](ROADMAP.md).
+Generated together with [QA.md](QA.md), [RELEASES.md](RELEASES.md), [CONTRACTS.md](CONTRACTS.md), [WALLETS.md](WALLETS.md), [PIECES.md](PIECES.md), and [ROADMAP.md](ROADMAP.md).
 
 ## Try it
 
 1. Install [Freighter](https://www.freighter.app/) and switch it to **Testnet**. Fund the account with [Friendbot](https://friendbot.stellar.org/).
-2. Get Testnet USDC, open [the app](https://artifex.0xvera.com), and buy the offer titled **Try it**.
+2. Open [the app](https://artifex.0xvera.com), find **Estudio en azul** (offer titled **Try it**), and buy one unit (priced in XLM).
 3. Open the transaction on [Stellar Expert](https://stellar.expert/explorer/testnet) and confirm that the units arrived in your account.
 
-The clicks, the USDC issuer, and the trustline are in [TRY-IT.md](TRY-IT.md).
+Full steps: [TRY-IT.md](TRY-IT.md). Seed catalog: [PIECES.md](PIECES.md).
 
-## Before / During HackMeridian
+## Before HackMeridian
 
-This section is a marker. Fill it in on Sunday 25 October 2026.
+Already on Stellar Testnet before Sunday 25 October 2026 09:00 Lisbon:
 
-### Before the event
+- Product flows for certification (living / deceased / digitization), public QR verify, whole-work and participation sales, primary and secondary marketplace in XLM and USDC, and multi-wallet organizations.
+- Soroban contract registry **v1** and **v2** deployed; public API serving **v2** (contracts tag **v0.1.0**).
+- Harbor images for API and web UI, signed keyless with cosign.
+- Seed **v6**: 15 fictional works, seven certified under the seed design, ten for sale, recorded on-chain.
+- External black-box QA: pass 1 (21 Oct) 9 validated / 11 blockers → pass 2 (22 Oct) 20 / 4 → pass 3 (23 Oct) 22 / 4.
 
-<!-- SUNDAY-25: before -->
+Details: [CONTRACTS.md](CONTRACTS.md), [RELEASES.md](RELEASES.md), [PIECES.md](PIECES.md), [QA.md](QA.md).
 
-> **Sunday 25.** Replace this block with what already existed before HackMeridian 2026.
+## During HackMeridian
 
-<!-- /SUNDAY-25: before -->
+From Sunday 25 October 2026 09:00 Lisbon, the Scale track work prioritizes production readiness:
 
-### During the event
+- Whole-work sale on contract registry **v3**
+- USDC purchase fix and locked-unit recovery
+- Offer / listing indexing and automatic distribution to holders
+- Role permissions and verification improvements
+- Fourth external QA pass
+- Stellar **mainnet** launch
 
-<!-- SUNDAY-25: during -->
+Dated evidence: [HACKMERIDIAN.md](HACKMERIDIAN.md). Roadmap row: [ROADMAP.md](ROADMAP.md).
 
-> **Sunday 25.** Replace this block with what is built during the event.
-
-<!-- /SUNDAY-25: during -->
+Application intents that remain on the longer roadmap (not the contracts listed as active today): OpenZeppelin contracts, Trustless Work escrow, and path payments — see phase 3 in [ROADMAP.md](ROADMAP.md).
 
 ## Known limitations
 
-- The deployment is Stellar Testnet. Mainnet is [phase 3](ROADMAP.md).
-- The platform account and the validator account are the same address today. Splitting them, and putting each behind a multisig, is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
-- Participations are not a legal opinion on title. Counsel reviews them in [phase 3](ROADMAP.md).
-- Signing is Freighter on Testnet. A passkey smart wallet is [phase 1](ROADMAP.md). iOS and Android are [phase 2](ROADMAP.md).
-- OpenZeppelin contracts, Trustless Work escrow, and payment in any asset through path payments are the HackMeridian scope in [the roadmap](ROADMAP.md). They are not the contracts listed in [CONTRACTS.md](CONTRACTS.md).
-- The third external QA pass is still running. Every case in [QA.md](QA.md) is PENDING until that pass reports.
-- The judge path buys an offer titled **Try it**. That title was not in the public catalog on 22 October 2026. The steps are in [TRY-IT.md](TRY-IT.md).
+- Deployment today is Stellar **Testnet**. Mainnet sections are **PENDING** (`mainnet launch at HackMeridian`) in [CONTRACTS.md](CONTRACTS.md), [WALLETS.md](WALLETS.md), [PIECES.md](PIECES.md), and [QA.md](QA.md).
+- Platform and validator are the same Testnet address today. Splitting them behind multisig is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
+- Participations are not a legal opinion on title. Counsel review is [phase 3](ROADMAP.md).
+- Signing is Freighter. Passkey smart wallet is [phase 1](ROADMAP.md); iOS / Android are [phase 2](ROADMAP.md).
+- Fourth external QA pass is in progress. Cases still open are **PENDING** in [QA.md](QA.md).
+- Registry **v3** cutover and whole-work sale on v3 are in progress during the event — [HACKMERIDIAN.md](HACKMERIDIAN.md).
 
 ## Team
 

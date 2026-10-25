@@ -7,13 +7,13 @@ Statuses are **DONE**, **IN PROGRESS**, or **PLANNED**.
 
 | Phase | Status | Scope |
 | --- | --- | --- |
-| HackMeridian | IN PROGRESS | Standard OpenZeppelin contracts; Trustless Work escrow; Payments in any asset through path payments |
+| HackMeridian | IN PROGRESS | Whole-work sale on contract registry v3; USDC purchase fix and locked-unit recovery; Offer and listing indexing; automatic distribution to holders; Role permissions and verification improvements; Fourth external QA pass; Stellar mainnet launch |
 | Phase 1 | PLANNED | Smart wallet with passkeys on the web |
 | Phase 2 | PLANNED | iOS app with biometric signing; Android app with biometric signing |
-| Phase 3 | PLANNED | Legal review of participations; Contract audit; Institutional custody; Separate platform and validator accounts, each with a multisig |
+| Phase 3 | PLANNED | Legal review of participations; Contract audit; Institutional custody; Separate platform and validator accounts, each with a multisig; OpenZeppelin contracts where they fit the product; Trustless Work escrow for physical-delivery sales; Path payments for any-asset checkout |
 | Phase 4 | PLANNED | Pilots with museums and foundations; Ramps through Stellar anchors; Public indexer |
 
 
 The HackMeridian row is the work of the event.
 What already existed before the event, and what lands during it,
-is recorded in the README on Sunday 25 October 2026.
+is recorded in [HACKMERIDIAN.md](HACKMERIDIAN.md) and in the README.

@@ -2,6 +2,8 @@
 
 # Contracts
 
+## Testnet
+
 Soroban contracts on Stellar Testnet. The active set is the one the public API serves:
 
 https://artifex.0xvera.com/api/contracts/registry
@@ -9,27 +11,48 @@ https://artifex.0xvera.com/api/contracts/registry
 Active registry version: **v2**. Contracts repository tag: **v0.1.0**.
 USDC and XLM rows are Stellar asset contracts used for payment, not Artifex business contracts.
 Inactive versions stay listed so a judge can see what they replaced.
+Registry **v3** is listed when present; cutover during HackMeridian is recorded in [HACKMERIDIAN.md](HACKMERIDIAN.md).
 
-| Contract | Registry version | Contracts tag | ID | Active | Explorer |
-| --- | --- | --- | --- | --- | --- |
-| Roles | v1 | v0.1.0 | `CBMIHTVOH2ULKCEMW3EDYLMB2QP2MBEDPXKZERQGSBKYJOZAYBYP23KV` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBMIHTVOH2ULKCEMW3EDYLMB2QP2MBEDPXKZERQGSBKYJOZAYBYP23KV) |
-| Fee collector | v1 | v0.1.0 | `CBTCDOQRULUXUVOWAWQBRIS656ONTLPYPUUYDSOIDSYHNRBGRY5LYY55` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBTCDOQRULUXUVOWAWQBRIS656ONTLPYPUUYDSOIDSYHNRBGRY5LYY55) |
-| Connoisseur authorization | v1 | v0.1.0 | `CB6NP3EO5DUPRKEOBZRQKCTRIUHK35DPWDODV2RYF24RWMG4Z2Q4G246` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CB6NP3EO5DUPRKEOBZRQKCTRIUHK35DPWDODV2RYF24RWMG4Z2Q4G246) |
-| Certificate registry | v1 | v0.1.0 | `CA22ROSPY5Z5FM3W75WGYKISSW5K2UEVVDLNMW6QWTR2OX3ODAIBUY6O` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CA22ROSPY5Z5FM3W75WGYKISSW5K2UEVVDLNMW6QWTR2OX3ODAIBUY6O) |
-| Whole-work NFT | v1 | v0.1.0 | `CABDLZI442DZQJFOJIEOS6IMWW5FDSLPZC3HHPZWJT5RPL346I6WQIH3` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CABDLZI442DZQJFOJIEOS6IMWW5FDSLPZC3HHPZWJT5RPL346I6WQIH3) |
-| Participation | v1 | v0.1.0 | `CA3BKT4AGBCBUD4PT7333AMA6TQXQ6KIJ4ZA5BNR4UDZ2JPF4CTXWTHN` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CA3BKT4AGBCBUD4PT7333AMA6TQXQ6KIJ4ZA5BNR4UDZ2JPF4CTXWTHN) |
-| Marketplace | v1 | v0.1.0 | `CBX2NAMHFYTMUZID2ORWFGL2PK3AVU6VBXFGTHLDDJQ2DECD2WKLCW6R` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBX2NAMHFYTMUZID2ORWFGL2PK3AVU6VBXFGTHLDDJQ2DECD2WKLCW6R) |
-| Distribution | v1 | v0.1.0 | `CD5YZLUL4HQI4ISXANXDO6XNU2CGLKEWGKNUMDTLT674L5ZXPRFMHQMM` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CD5YZLUL4HQI4ISXANXDO6XNU2CGLKEWGKNUMDTLT674L5ZXPRFMHQMM) |
-| USDC asset contract | v1 | v0.1.0 | `CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA) |
-| XLM asset contract | v1 | v0.1.0 | `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC) |
-| Roles | v2 | v0.1.0 | `CBMIHTVOH2ULKCEMW3EDYLMB2QP2MBEDPXKZERQGSBKYJOZAYBYP23KV` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CBMIHTVOH2ULKCEMW3EDYLMB2QP2MBEDPXKZERQGSBKYJOZAYBYP23KV) |
-| Fee collector | v2 | v0.1.0 | `CA5EA5DZHDTR26B67WGMW7BKCDZGW4YY6HNH37MR5CLUHO6ZRN26CCPB` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CA5EA5DZHDTR26B67WGMW7BKCDZGW4YY6HNH37MR5CLUHO6ZRN26CCPB) |
-| Connoisseur authorization | v2 | v0.1.0 | `CB6NP3EO5DUPRKEOBZRQKCTRIUHK35DPWDODV2RYF24RWMG4Z2Q4G246` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CB6NP3EO5DUPRKEOBZRQKCTRIUHK35DPWDODV2RYF24RWMG4Z2Q4G246) |
-| Certificate registry | v2 | v0.1.0 | `CBTC2Y3PXQUVTHWDDBK27DI7LWV3HTGJ5LRYPSSXLL3U75SWRS7IHZZG` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CBTC2Y3PXQUVTHWDDBK27DI7LWV3HTGJ5LRYPSSXLL3U75SWRS7IHZZG) |
-| Whole-work NFT | v2 | v0.1.0 | `CABDLZI442DZQJFOJIEOS6IMWW5FDSLPZC3HHPZWJT5RPL346I6WQIH3` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CABDLZI442DZQJFOJIEOS6IMWW5FDSLPZC3HHPZWJT5RPL346I6WQIH3) |
-| Participation | v2 | v0.1.0 | `CDFFRWEAMTPL4PADGS34TBVTDJYPLZRSKN5XSUK6YEQA3HQY7VJJRWPE` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CDFFRWEAMTPL4PADGS34TBVTDJYPLZRSKN5XSUK6YEQA3HQY7VJJRWPE) |
-| Marketplace | v2 | v0.1.0 | `CBZFE5GO3L4ZUMBHZCRRZBNWX6JEY2QXI7CIP3QHFIJX5QHYDPS7ZHNU` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CBZFE5GO3L4ZUMBHZCRRZBNWX6JEY2QXI7CIP3QHFIJX5QHYDPS7ZHNU) |
-| Distribution | v2 | v0.1.0 | `CAJFTME25FPLOQABRTVWGXAFRXFBAAWKC2UYWDQEWLDQ7D6D6S6R5VYL` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CAJFTME25FPLOQABRTVWGXAFRXFBAAWKC2UYWDQEWLDQ7D6D6S6R5VYL) |
-| USDC asset contract | v2 | v0.1.0 | `CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA) |
-| XLM asset contract | v2 | v0.1.0 | `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC) |
+| Contract | Registry version | Contracts tag | Network | ID | Active | Explorer |
+| --- | --- | --- | --- | --- | --- | --- |
+| Roles | v1 | v0.1.0 | testnet | `CBMIHTVOH2ULKCEMW3EDYLMB2QP2MBEDPXKZERQGSBKYJOZAYBYP23KV` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBMIHTVOH2ULKCEMW3EDYLMB2QP2MBEDPXKZERQGSBKYJOZAYBYP23KV) |
+| Fee collector | v1 | v0.1.0 | testnet | `CBTCDOQRULUXUVOWAWQBRIS656ONTLPYPUUYDSOIDSYHNRBGRY5LYY55` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBTCDOQRULUXUVOWAWQBRIS656ONTLPYPUUYDSOIDSYHNRBGRY5LYY55) |
+| Connoisseur authorization | v1 | v0.1.0 | testnet | `CB6NP3EO5DUPRKEOBZRQKCTRIUHK35DPWDODV2RYF24RWMG4Z2Q4G246` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CB6NP3EO5DUPRKEOBZRQKCTRIUHK35DPWDODV2RYF24RWMG4Z2Q4G246) |
+| Certificate registry | v1 | v0.1.0 | testnet | `CA22ROSPY5Z5FM3W75WGYKISSW5K2UEVVDLNMW6QWTR2OX3ODAIBUY6O` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CA22ROSPY5Z5FM3W75WGYKISSW5K2UEVVDLNMW6QWTR2OX3ODAIBUY6O) |
+| Whole-work NFT | v1 | v0.1.0 | testnet | `CABDLZI442DZQJFOJIEOS6IMWW5FDSLPZC3HHPZWJT5RPL346I6WQIH3` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CABDLZI442DZQJFOJIEOS6IMWW5FDSLPZC3HHPZWJT5RPL346I6WQIH3) |
+| Participation | v1 | v0.1.0 | testnet | `CA3BKT4AGBCBUD4PT7333AMA6TQXQ6KIJ4ZA5BNR4UDZ2JPF4CTXWTHN` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CA3BKT4AGBCBUD4PT7333AMA6TQXQ6KIJ4ZA5BNR4UDZ2JPF4CTXWTHN) |
+| Marketplace | v1 | v0.1.0 | testnet | `CBX2NAMHFYTMUZID2ORWFGL2PK3AVU6VBXFGTHLDDJQ2DECD2WKLCW6R` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBX2NAMHFYTMUZID2ORWFGL2PK3AVU6VBXFGTHLDDJQ2DECD2WKLCW6R) |
+| Distribution | v1 | v0.1.0 | testnet | `CD5YZLUL4HQI4ISXANXDO6XNU2CGLKEWGKNUMDTLT674L5ZXPRFMHQMM` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CD5YZLUL4HQI4ISXANXDO6XNU2CGLKEWGKNUMDTLT674L5ZXPRFMHQMM) |
+| USDC asset contract | v1 | v0.1.0 | testnet | `CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA) |
+| XLM asset contract | v1 | v0.1.0 | testnet | `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC) |
+| Roles | v2 | v0.1.0 | testnet | `CBMIHTVOH2ULKCEMW3EDYLMB2QP2MBEDPXKZERQGSBKYJOZAYBYP23KV` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CBMIHTVOH2ULKCEMW3EDYLMB2QP2MBEDPXKZERQGSBKYJOZAYBYP23KV) |
+| Fee collector | v2 | v0.1.0 | testnet | `CA5EA5DZHDTR26B67WGMW7BKCDZGW4YY6HNH37MR5CLUHO6ZRN26CCPB` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CA5EA5DZHDTR26B67WGMW7BKCDZGW4YY6HNH37MR5CLUHO6ZRN26CCPB) |
+| Connoisseur authorization | v2 | v0.1.0 | testnet | `CB6NP3EO5DUPRKEOBZRQKCTRIUHK35DPWDODV2RYF24RWMG4Z2Q4G246` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CB6NP3EO5DUPRKEOBZRQKCTRIUHK35DPWDODV2RYF24RWMG4Z2Q4G246) |
+| Certificate registry | v2 | v0.1.0 | testnet | `CBTC2Y3PXQUVTHWDDBK27DI7LWV3HTGJ5LRYPSSXLL3U75SWRS7IHZZG` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CBTC2Y3PXQUVTHWDDBK27DI7LWV3HTGJ5LRYPSSXLL3U75SWRS7IHZZG) |
+| Whole-work NFT | v2 | v0.1.0 | testnet | `CABDLZI442DZQJFOJIEOS6IMWW5FDSLPZC3HHPZWJT5RPL346I6WQIH3` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CABDLZI442DZQJFOJIEOS6IMWW5FDSLPZC3HHPZWJT5RPL346I6WQIH3) |
+| Participation | v2 | v0.1.0 | testnet | `CDFFRWEAMTPL4PADGS34TBVTDJYPLZRSKN5XSUK6YEQA3HQY7VJJRWPE` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CDFFRWEAMTPL4PADGS34TBVTDJYPLZRSKN5XSUK6YEQA3HQY7VJJRWPE) |
+| Marketplace | v2 | v0.1.0 | testnet | `CBZFE5GO3L4ZUMBHZCRRZBNWX6JEY2QXI7CIP3QHFIJX5QHYDPS7ZHNU` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CBZFE5GO3L4ZUMBHZCRRZBNWX6JEY2QXI7CIP3QHFIJX5QHYDPS7ZHNU) |
+| Distribution | v2 | v0.1.0 | testnet | `CAJFTME25FPLOQABRTVWGXAFRXFBAAWKC2UYWDQEWLDQ7D6D6S6R5VYL` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CAJFTME25FPLOQABRTVWGXAFRXFBAAWKC2UYWDQEWLDQ7D6D6S6R5VYL) |
+| USDC asset contract | v2 | v0.1.0 | testnet | `CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA) |
+| XLM asset contract | v2 | v0.1.0 | testnet | `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC` | Yes | [Explorer](https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC) |
+| Roles | v3 | v0.2.0 | testnet | `CCDVNSOSY3S45UYZH3N7Q24LUZEK77EAYHWDL5ZYX7H4SDXEFK2G2OYJ` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CCDVNSOSY3S45UYZH3N7Q24LUZEK77EAYHWDL5ZYX7H4SDXEFK2G2OYJ) |
+| Fee collector | v3 | v0.2.0 | testnet | `CATWKQFEW2CGBPDVEUYFMJAC27NRNTLDGAMNQHKVMU3OZ54XHHHRMJMS` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CATWKQFEW2CGBPDVEUYFMJAC27NRNTLDGAMNQHKVMU3OZ54XHHHRMJMS) |
+| Connoisseur authorization | v3 | v0.2.0 | testnet | `CCEX7WG3M6JW7YWNBSSVP473KIEGWPGMPOP3JFJ6A4BGTBW2UFKQVUDT` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CCEX7WG3M6JW7YWNBSSVP473KIEGWPGMPOP3JFJ6A4BGTBW2UFKQVUDT) |
+| Certificate registry | v3 | v0.2.0 | testnet | `CB4G7J4XGFL66CFQT5DUBPIVKLJKRGXKXY25IGDMKFZVIIJVLWMVQSJJ` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CB4G7J4XGFL66CFQT5DUBPIVKLJKRGXKXY25IGDMKFZVIIJVLWMVQSJJ) |
+| Whole-work NFT | v3 | v0.2.0 | testnet | `CBEVANRZPBH4XJYGMWZUQMPZYAG2TIOYA6MRZGRNHJJNLSIUTRW3RAKT` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBEVANRZPBH4XJYGMWZUQMPZYAG2TIOYA6MRZGRNHJJNLSIUTRW3RAKT) |
+| Participation | v3 | v0.2.0 | testnet | `CBYXLDJXQ4LPA3NX77V6VW4OAVQBZQV6JTNVQ7FZ3VDU7BRTOHSSJLSZ` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBYXLDJXQ4LPA3NX77V6VW4OAVQBZQV6JTNVQ7FZ3VDU7BRTOHSSJLSZ) |
+| Marketplace | v3 | v0.2.0 | testnet | `CBTFT5GZEA4USVKFPYN7YXU3KUXJJL27ATBD5W72PBORU4CRFB6VA47K` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBTFT5GZEA4USVKFPYN7YXU3KUXJJL27ATBD5W72PBORU4CRFB6VA47K) |
+| Distribution | v3 | v0.2.0 | testnet | `CCZMGEYTOCZ56L6U26ZS6KGWQ2NNUC3FNXFO5LDS6YQYJ5KP2DVGULFX` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CCZMGEYTOCZ56L6U26ZS6KGWQ2NNUC3FNXFO5LDS6YQYJ5KP2DVGULFX) |
+| USDC asset contract | v3 | v0.2.0 | testnet | `CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA) |
+| XLM asset contract | v3 | v0.2.0 | testnet | `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC` | No | [Explorer](https://stellar.expert/explorer/testnet/contract/CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC) |
+
+
+## Mainnet
+
+**PENDING** — mainnet launch at HackMeridian.
+Contract IDs, the active registry version, and explorer links will be filled with real mainnet values after launch.
+
+| Contract | Registry version | Contracts tag | Network | ID | Active | Explorer |
+| --- | --- | --- | --- | --- | --- | --- |
+| — | — | — | mainnet | — | PENDING | — |
 

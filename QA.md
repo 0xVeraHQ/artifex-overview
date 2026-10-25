@@ -2,71 +2,91 @@
 
 # QA
 
+## Methodology
+
 Black-box checks of the public site and Stellar Testnet.
-An independent agent runs them with no access to the source code.
+An independent agent runs them with no access to the source code,
+the private repositories, or the server.
 
 A case is published as **PASS** (with a Testnet transaction link when the check produces one), **PENDING** (with a reason), or **PLANNED**.
 A result outside those three states is rejected by the generator and is not written here.
 
 Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 
-## V — Visitor
+## Pass history
+
+| Date | Pass | Validated | Blockers | Note |
+| --- | --- | --- | --- | --- |
+| 2026-10-21 | 1st | 9 | 11 | First external black-box pass |
+| 2026-10-22 | 2nd | 20 | 4 | Remediation from pass 1 |
+| 2026-10-23 | 3rd | 22 | 4 | Seed v6 and marketplace hardening |
+| 2026-10-25 | 4th | 22 | 4 | 4th QA pass in progress after P0/P1 fixes |
+
+
+## Mainnet
+
+**PENDING** — mainnet launch at HackMeridian.
+Mainnet cases will be filled with real transaction links after launch.
+
+## Cases (Testnet)
+
+### V — Visitor
 
 | Case | Check | Status | Reason | Testnet transaction |
 | --- | --- | --- | --- | --- |
-| V-01 | **Photographs in the catalog.** A visitor opens the catalog and sees a photograph on each piece that has one. | PENDING | third QA pass in progress | — |
-| V-02 | **Complete piece fiche.** A piece page shows title, artist, certificate state, and the attached photographs or documents. | PENDING | third QA pass in progress | — |
-| V-03 | **Valid certificate lists its signers.** Public verification of a finalized certificate lists the signers: one for a living author, two for a deceased author. | PENDING | third QA pass in progress | — |
-| V-04 | **Uncertified piece is marked.** A piece that has not been finalized is marked as not certified. | PENDING | third QA pass in progress | — |
-| V-05 | **Catalog filters.** Filters for certification, sale modality, and participation type narrow the list and can be cleared. | PENDING | third QA pass in progress | — |
-| V-06 | **Visitor has no action buttons.** Without a connected wallet, a visitor can browse and verify, and does not see certify, list, or buy actions. | PENDING | third QA pass in progress | — |
-| V-07 | **Terms document downloads.** The participation terms document linked from an offer can be downloaded. | PENDING | third QA pass in progress | — |
+| V-01 | **Photographs in the catalog.** A visitor opens the catalog and sees a photograph on each piece that has one. | PASS | — | — |
+| V-02 | **Complete piece fiche.** A piece page shows title, artist, certificate state, and the attached photographs or documents. | PASS | — | — |
+| V-03 | **Valid certificate lists its signers.** Public verification of a finalized certificate lists the signers: one for a living author, two for a deceased author. | PENDING | 4th QA pass in progress | — |
+| V-04 | **Uncertified piece is marked.** A piece that has not been finalized is marked as not certified. | PASS | — | — |
+| V-05 | **Catalog filters.** Filters for certification, sale modality, and participation type narrow the list and can be cleared. | PASS | — | — |
+| V-06 | **Visitor has no action buttons.** Without a connected wallet, a visitor can browse and verify, and does not see certify, list, or buy actions. | PASS | — | — |
+| V-07 | **Terms document downloads.** The participation terms document linked from an offer can be downloaded. | PASS | — | — |
 
 
-## C — Certification
-
-| Case | Check | Status | Reason | Testnet transaction |
-| --- | --- | --- | --- | --- |
-| C-01 | **Register a fiche with photographs.** An artist creates a piece fiche and attaches photographs. | PENDING | third QA pass in progress | — |
-| C-02 | **Living author, fee in XLM.** The living author signs once and pays the certification fee in XLM (5 XLM). The certificate finalizes. | PENDING | third QA pass in progress | — |
-| C-03 | **Museum authorizes a connoisseur.** For a deceased author, a museum authorizes the connoisseur who will sign. | PENDING | third QA pass in progress | — |
-| C-04 | **Connoisseur signs, second signature pending.** The connoisseur signs. The certificate stays pending until the second signature. | PENDING | third QA pass in progress | — |
-| C-05 | **Museum second signature finalizes.** The museum adds the second signature. The certificate becomes valid. | PENDING | third QA pass in progress | — |
-| C-06 | **Second signature on a pending demo piece.** A demo piece left pending receives its second signature and becomes valid. | PENDING | third QA pass in progress | — |
-| C-07 | **Digitize a prior certificate.** An existing certificate is digitized. The fiche stores the document hash and the certification flow records it. | PENDING | third QA pass in progress | — |
-| C-08 | **Verify C-02, C-05, and C-07.** The public verify page, including the QR link, shows the certificates from C-02, C-05, and C-07 as valid. | PENDING | third QA pass in progress | — |
-
-
-## S — Sales
+### C — Certification
 
 | Case | Check | Status | Reason | Testnet transaction |
 | --- | --- | --- | --- | --- |
-| S-01 | **List a whole digital work in XLM.** The owner lists the whole work as a digital sale priced in XLM. | PENDING | third QA pass in progress | — |
-| S-02 | **Buy the whole work.** A second account buys the whole work. Ownership moves to the buyer. | PENDING | third QA pass in progress | — |
-| S-03 | **Resale with three owners.** The work is sold again. The ownership history shows three owners. | PENDING | third QA pass in progress | — |
-| S-04 | **List with physical delivery.** The owner lists a whole work with a physical-delivery clause. | PENDING | third QA pass in progress | — |
-| S-05 | **Buy in USDC and send the delivery form.** A buyer pays in USDC and submits the physical-delivery form. Delivery itself stays off-chain. | PENDING | third QA pass in progress | — |
-| S-06 | **Museum offers each participation type.** A museum publishes one offer of each type — future sale, guaranteed repurchase, financing with return, and exploitation rights — each with a terms document. | PENDING | third QA pass in progress | — |
-| S-07 | **Buy an entire primary offer.** A buyer takes every unit of a primary offer in one payment. | PENDING | third QA pass in progress | — |
-| S-08 | **Buy part of a primary offer.** A buyer takes some of the units. The remainder stays available. | PENDING | third QA pass in progress | — |
-| S-09 | **List on the secondary market.** A holder lists units they already hold. | PENDING | third QA pass in progress | — |
-| S-10 | **Partial secondary purchase.** Another buyer takes part of that secondary listing. | PENDING | third QA pass in progress | — |
-| S-11 | **Cancel the remainder.** The seller cancels what is left of the listing. The remaining units return to the seller. | PENDING | third QA pass in progress | — |
-| S-12 | **Run distribution.** Distribution runs for an offer under its published terms. | PENDING | third QA pass in progress | — |
-| S-13 | **Buy the cheap demo offer.** A buyer purchases the low-priced public demo offer used as the Try it path. | PENDING | third QA pass in progress | — |
+| C-01 | **Register a fiche with photographs.** An artist creates a piece fiche and attaches photographs. | PASS | — | — |
+| C-02 | **Living author, fee in XLM.** The living author signs once and pays the certification fee in XLM (5 XLM). The certificate finalizes. | PASS | — | [42b39bfe96…](https://stellar.expert/explorer/testnet/tx/42b39bfe96f3aa1148b444e5897cb1e05273309e3b813e7494dfef69aa2cecca) |
+| C-03 | **Museum authorizes a connoisseur.** For a deceased author, a museum authorizes the connoisseur who will sign. | PASS | — | [e37daab6ac…](https://stellar.expert/explorer/testnet/tx/e37daab6acaa079e36fb9bef0838eb9a943ed906b025945dbbccf94b0b7113ad) |
+| C-04 | **Connoisseur signs, second signature pending.** The connoisseur signs. The certificate stays pending until the second signature. | PASS | — | — |
+| C-05 | **Museum second signature finalizes.** The museum adds the second signature. The certificate becomes valid. | PASS | — | — |
+| C-06 | **Second signature on a pending demo piece.** A demo piece left pending receives its second signature and becomes valid. | PENDING | 4th QA pass in progress | — |
+| C-07 | **Digitize a prior certificate.** An existing certificate is digitized. The fiche stores the document hash and the certification flow records it. | PENDING | 4th QA pass in progress | — |
+| C-08 | **Verify C-02, C-05, and C-07.** The public verify page, including the QR link, shows the certificates from C-02, C-05, and C-07 as valid. | PENDING | 4th QA pass in progress | — |
 
 
-## N — Negative cases
+### S — Sales
 
 | Case | Check | Status | Reason | Testnet transaction |
 | --- | --- | --- | --- | --- |
-| N-01 | **Buy without a wallet.** Choosing buy with no wallet does not submit a transaction. The page asks for Freighter. | PENDING | third QA pass in progress | — |
-| N-02 | **A collector cannot certify.** A collector session does not offer a certify action. | PENDING | third QA pass in progress | — |
-| N-03 | **One signature is not enough.** A deceased-author certificate with only one signature stays incomplete, and the page says so. | PENDING | third QA pass in progress | — |
-| N-04 | **More units than available.** Asking for more units than the offer has left is refused, with a clear message, and nothing is transferred. | PENDING | third QA pass in progress | — |
-| N-05 | **Insufficient balance.** A buy with too little XLM or USDC is refused, with a clear message. | PENDING | third QA pass in progress | — |
-| N-06 | **Unknown certificate.** A verify link for a certificate that does not exist is a not-found page. | PENDING | third QA pass in progress | — |
-| N-07 | **Ops routes are closed.** Operational endpoints do not respond to an anonymous caller. | PENDING | third QA pass in progress | — |
+| S-01 | **List a whole digital work in XLM.** The owner lists the whole work as a digital sale priced in XLM. | PENDING | 4th QA pass in progress | — |
+| S-02 | **Buy the whole work.** A second account buys the whole work. Ownership moves to the buyer. | PENDING | 4th QA pass in progress | — |
+| S-03 | **Resale with three owners.** The work is sold again. The ownership history shows three owners. | PENDING | 4th QA pass in progress | — |
+| S-04 | **List with physical delivery.** The owner lists a whole work with a physical-delivery clause. | PENDING | 4th QA pass in progress | — |
+| S-05 | **Buy in USDC and send the delivery form.** A buyer pays in USDC and submits the physical-delivery form. Delivery itself stays off-chain. | PENDING | 4th QA pass in progress | — |
+| S-06 | **Museum offers each participation type.** A museum publishes one offer of each type — future sale, guaranteed repurchase, financing with return, and exploitation rights — each with a terms document. | PASS | — | [bd9195a393…](https://stellar.expert/explorer/testnet/tx/bd9195a3934c3881b79c85842c6b34729c31622a4301151c8d7481fc4e5831cd) |
+| S-07 | **Buy an entire primary offer.** A buyer takes every unit of a primary offer in one payment. | PASS | — | [e43e55ac21…](https://stellar.expert/explorer/testnet/tx/e43e55ac21e9bb8eb2bf7c25473fa1c9684baef5dc4aff94e52a0c3370466654) |
+| S-08 | **Buy part of a primary offer.** A buyer takes some of the units. The remainder stays available. | PASS | — | [881c5f3917…](https://stellar.expert/explorer/testnet/tx/881c5f3917aa4e829ec7e8aa456fbf987ff7faaa403e9e7cef7c8061b1f3034a) |
+| S-09 | **List on the secondary market.** A holder lists units they already hold. | PASS | — | [a6c643dffc…](https://stellar.expert/explorer/testnet/tx/a6c643dffc200080bcd90a89ec8b1c942cfcb108231618b49efcb19e374365dd) |
+| S-10 | **Partial secondary purchase.** Another buyer takes part of that secondary listing. | PENDING | 4th QA pass in progress | — |
+| S-11 | **Cancel the remainder.** The seller cancels what is left of the listing. The remaining units return to the seller. | PENDING | 4th QA pass in progress | — |
+| S-12 | **Run distribution.** Distribution runs for an offer under its published terms. | PENDING | 4th QA pass in progress | — |
+| S-13 | **Buy the cheap demo offer.** A buyer purchases the low-priced public demo offer used as the Try it path (Estudio en azul). | PENDING | 4th QA pass in progress | — |
 
 
-35 cases: 35 PENDING.
+### N — Negative cases
+
+| Case | Check | Status | Reason | Testnet transaction |
+| --- | --- | --- | --- | --- |
+| N-01 | **Buy without a wallet.** Choosing buy with no wallet does not submit a transaction. The page asks for Freighter. | PASS | — | — |
+| N-02 | **A collector cannot certify.** A collector session does not offer a certify action. | PASS | — | — |
+| N-03 | **One signature is not enough.** A deceased-author certificate with only one signature stays incomplete, and the page says so. | PASS | — | — |
+| N-04 | **More units than available.** Asking for more units than the offer has left is refused, with a clear message, and nothing is transferred. | PASS | — | — |
+| N-05 | **Insufficient balance.** A buy with too little XLM or USDC is refused, with a clear message. | PASS | — | — |
+| N-06 | **Unknown certificate.** A verify link for a certificate that does not exist is a not-found page. | PASS | — | — |
+| N-07 | **Ops routes are closed.** Operational endpoints do not respond to an anonymous caller. | PASS | — | — |
+
+
+35 cases: 22 PASS, 13 PENDING.

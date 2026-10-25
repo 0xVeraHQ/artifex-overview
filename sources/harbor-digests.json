@@ -1,0 +1,28 @@
+{
+  "registry": "registry.hosting1337.com",
+  "project": "artifex",
+  "images": [
+    {
+      "name": "artifex-api",
+      "tag": "0.16.16",
+      "digest": "sha256:ab19d319835c7094ef4b6e417918ef9cc40c4f66edbdbd04904a1f3c4c65c9a0",
+      "publishedAt": "2026-10-22T19:24:48Z",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.16.16",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    },
+    {
+      "name": "artifex-web-ui",
+      "tag": "0.4.16",
+      "digest": "sha256:2e23faab92c12ec43cf66cf957e46886fbe4c4489f345c44662ee39703faa362",
+      "publishedAt": "2026-10-22T20:30:55Z",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.16",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    }
+  ]
+}

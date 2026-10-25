@@ -1,6 +1,6 @@
 # Architecture
 
-Artifex on Stellar Testnet. The diagrams match the running Scale deployment: a web app, an API, and Soroban contracts. Host layout, ports, and operational paths are not part of this document.
+Artifex on Stellar Testnet (HackMeridian Scale). The diagrams match the running deployment: a web app, an API, and Soroban contracts. Host layout, ports, and operational paths are not part of this document. Public identifiers live in this presentation repo (`artifex-overview`).
 
 Identifiers for the contracts and the project accounts are generated in [CONTRACTS.md](../CONTRACTS.md) and [WALLETS.md](../WALLETS.md).
 
