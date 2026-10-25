@@ -198,6 +198,8 @@ def qa_rows(doc: dict) -> list[dict]:
 
 def render_qa(doc: dict, cases: list[dict]) -> str:
     history = doc.get("history") or []
+    verdict = str(doc.get("verdict") or "").strip().upper()
+    verdict_note = str(doc.get("verdictNote") or "").strip()
     lines = [
         GENERATED,
         "# QA",
@@ -213,9 +215,20 @@ def render_qa(doc: dict, cases: list[dict]) -> str:
         "",
         f"Network: [Stellar Testnet]({explorer_for('testnet')}).",
         "",
+    ]
+    if verdict == "PASS":
+        lines.extend(
+            [
+                f"**Verdict: PASS** — {verdict_note}." if verdict_note else "**Verdict: PASS**.",
+                "",
+            ]
+        )
+    lines.extend(
+        [
         "## Pass history",
         "",
-    ]
+        ]
+    )
     if history:
         hist_rows = []
         for row in history:
@@ -223,8 +236,8 @@ def render_qa(doc: dict, cases: list[dict]) -> str:
                 [
                     str(row.get("date") or ""),
                     str(row.get("pass") or ""),
-                    str(row.get("validated") or ""),
-                    str(row.get("blockers") or ""),
+                    "" if row.get("validated") is None else str(row.get("validated")),
+                    "" if row.get("blockers") is None else str(row.get("blockers")),
                     str(row.get("note") or "—"),
                 ]
             )
@@ -294,69 +307,96 @@ def render_qa(doc: dict, cases: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def _validate_digest_image(image: dict, registry: str, project: str) -> dict:
+    name = str(image.get("name") or "").strip()
+    tag = str(image.get("tag") or "").strip()
+    digest = str(image.get("digest") or "").strip()
+    published = str(image.get("publishedAt") or "").strip()
+    cosign = image.get("cosign") or {}
+    if name not in {"artifex-api", "artifex-web-ui"}:
+        raise Reject(f"unexpected image {name}")
+    if not TAG_RE.fullmatch(tag):
+        raise Reject(f"{name} tag {tag!r} is not SemVer")
+    if not DIGEST_RE.fullmatch(digest):
+        raise Reject(f"{name} digest is not sha256:<64 hex>")
+    if not published:
+        raise Reject(f"{name}:{tag} has no publishedAt")
+    if cosign.get("verified") is not True:
+        raise Reject(f"{name}:{tag} is not cosign-verified; refusing to publish it")
+    identity = str(cosign.get("identity") or "").strip()
+    issuer = str(cosign.get("oidcIssuer") or "").strip()
+    if not identity.startswith("https://github.com/0xVeraHQ/") or "docker-release.yml@refs/tags/v" not in identity:
+        raise Reject(f"{name}:{tag} cosign identity is not the Artifex release workflow")
+    if issuer != "https://token.actions.githubusercontent.com":
+        raise Reject(f"{name}:{tag} cosign issuer is not GitHub Actions")
+    if f"refs/tags/v{tag}" not in identity:
+        raise Reject(f"{name}:{tag} cosign identity does not match tag {tag}")
+    return {
+        "name": name,
+        "tag": tag,
+        "digest": digest,
+        "published": published,
+        "note": " ".join(str(image.get("note") or "").split()),
+        "ref": f"{registry}/{project}/{name}@{digest}",
+    }
+
+
 def render_releases(digests: dict, versions: dict[str, str]) -> str:
     registry = str(digests.get("registry") or "").strip()
     project = str(digests.get("project") or "").strip()
     images = digests.get("images")
+    history = digests.get("history") or []
     if not registry or "/" in registry or " " in registry:
         raise Reject("digests.registry must be a registry hostname")
     if not project or "/" in project:
         raise Reject("digests.project must be a registry project name")
     if not isinstance(images, list) or not images:
         raise Reject("digests.images is empty")
+    if not isinstance(history, list):
+        raise Reject("digests.history must be a list when present")
     expected = {
         "artifex-api": versions["ARTIFEX_API_TAG"],
         "artifex-web-ui": versions["ARTIFEX_WEB_UI_TAG"],
     }
-    order = {"artifex-api": 0, "artifex-web-ui": 1}
-    images.sort(key=lambda item: order.get(str(item.get("name")), 99))
-    rows = []
-    seen = set()
+    current: list[dict] = []
+    seen_current: set[str] = set()
     for image in images:
-        name = str(image.get("name") or "").strip()
-        tag = str(image.get("tag") or "").strip()
-        digest = str(image.get("digest") or "").strip()
-        published = str(image.get("publishedAt") or "").strip()
-        cosign = image.get("cosign") or {}
-        if name not in expected:
-            raise Reject(f"unexpected image {name}")
-        if seen & {name}:
-            raise Reject(f"duplicate image {name}")
-        seen.add(name)
-        if tag != expected[name]:
+        row = _validate_digest_image(image, registry, project)
+        if row["name"] in seen_current:
+            raise Reject(f"duplicate current image {row['name']}")
+        if row["tag"] != expected[row["name"]]:
             raise Reject(
-                f"{name} digest tag {tag} does not match versions.env {expected[name]}"
+                f"{row['name']} digest tag {row['tag']} does not match versions.env {expected[row['name']]}"
             )
-        if not DIGEST_RE.fullmatch(digest):
-            raise Reject(f"{name} digest is not sha256:<64 hex>")
-        if not published:
-            raise Reject(f"{name} has no publishedAt")
-        if cosign.get("verified") is not True:
-            raise Reject(f"{name} is not cosign-verified; refusing to publish it")
-        identity = str(cosign.get("identity") or "").strip()
-        issuer = str(cosign.get("oidcIssuer") or "").strip()
-        if not identity.startswith("https://github.com/0xVeraHQ/") or "docker-release.yml@refs/tags/v" not in identity:
-            raise Reject(f"{name} cosign identity is not the Artifex release workflow")
-        if issuer != "https://token.actions.githubusercontent.com":
-            raise Reject(f"{name} cosign issuer is not GitHub Actions")
-        if f"refs/tags/v{tag}" not in identity:
-            raise Reject(f"{name} cosign identity does not match tag {tag}")
-        ref = f"{registry}/{project}/{name}@{digest}"
+        seen_current.add(row["name"])
+        current.append(row)
+    if seen_current != set(expected):
+        raise Reject(f"digests missing images: {set(expected) - seen_current}")
+    historical: list[dict] = []
+    for image in history:
+        historical.append(_validate_digest_image(image, registry, project))
+    display = current + historical
+    display.sort(
+        key=lambda item: (
+            0 if item["name"] == "artifex-api" else 1,
+            tuple(-int(p) for p in item["tag"].split(".")),
+        )
+    )
+    rows = []
+    for image in display:
+        note = image["note"] or ("Current orch tag" if image["tag"] == expected[image["name"]] else "—")
         rows.append(
             [
-                f"`{registry}/{project}/{name}`",
-                tag,
-                f"`{digest}`",
-                published[:10],
+                f"`{registry}/{project}/{image['name']}`",
+                image["tag"],
+                f"`{image['digest']}`",
+                image["published"][:10],
                 "Verified, keyless",
+                note,
             ]
         )
-        image["_ref"] = ref
-        image["_identity"] = identity
-    if seen != set(expected):
-        raise Reject(f"digests missing images: {set(expected) - seen}")
     verify = []
-    for image in images:
+    for image in current:
         repo = "artifex-api" if image["name"] == "artifex-api" else "artifex-web-ui"
         verify.append(
             "```bash\n"
@@ -364,17 +404,16 @@ def render_releases(digests: dict, versions: dict[str, str]) -> str:
             "  --certificate-identity-regexp \\\n"
             f"    '^https://github.com/0xVeraHQ/{repo}/\\.github/workflows/docker-release\\.yml@refs/tags/v.+$' \\\n"
             "  --certificate-oidc-issuer https://token.actions.githubusercontent.com \\\n"
-            f"  {image['_ref']}\n"
+            f"  {image['ref']}\n"
             "```"
         )
     lines = [
         GENERATED,
         "# Releases",
         "",
-        "Harbor images for the running Testnet deployment.",
-        "The tag is the tag the site is running. Digests and the cosign check come from the release job.",
-        "Contract Wasm is not an image;",
-        "its tag is in [CONTRACTS.md](CONTRACTS.md).",
+        "Harbor images for Artifex. Current rows match `versions.env` in artifex-orch.",
+        "History rows keep cosign-verified digests used during HackMeridian (Testnet QA gate).",
+        "Contract Wasm is not an image; its tag is in [CONTRACTS.md](CONTRACTS.md).",
         "",
         f"Registry: `{registry}` · project: `{project}`.",
         "",
@@ -383,7 +422,7 @@ def render_releases(digests: dict, versions: dict[str, str]) -> str:
         "`https://token.actions.githubusercontent.com`.",
         "",
         table(
-            ["Image", "Tag", "Digest", "Published", "Cosign"],
+            ["Image", "Tag", "Digest", "Published", "Cosign", "Note"],
             rows,
         ),
         "",
@@ -397,7 +436,92 @@ def render_releases(digests: dict, versions: dict[str, str]) -> str:
     return "\n".join(lines)
 
 
-def render_contracts(registry: dict) -> tuple[str, dict]:
+DEPLOY_KEY_MAP = {
+    "artifex_roles": "roles",
+    "artifex_fee_collector": "feeCollector",
+    "artifex_connoisseur": "connoisseur",
+    "artifex_cert_registry": "certRegistry",
+    "artifex_whole_nft": "wholeNft",
+    "artifex_participation": "participation",
+    "artifex_marketplace": "marketplace",
+    "artifex_distribution": "distribution",
+}
+
+
+def render_mainnet_contracts(deploy: dict | None) -> tuple[str, list[list[str]], dict | None]:
+    if not deploy:
+        stub = [["—", "—", "—", "mainnet", "—", "PENDING", "—"]]
+        text = (
+            "**PENDING** — mainnet launch at HackMeridian.\n"
+            "Contract IDs, the active registry version, and explorer links will be filled "
+            "with real mainnet values after launch.\n"
+        )
+        return text, stub, None
+    if str(deploy.get("network") or "").lower() != "mainnet":
+        raise Reject("mainnet deploy network must be mainnet")
+    deployer = str(deploy.get("deployer") or "")
+    if not G_RE.fullmatch(deployer):
+        raise Reject("mainnet deploy deployer is not a public account")
+    deployed_at = str(deploy.get("deployedAt") or "").strip()
+    raw = deploy.get("contracts") or {}
+    contracts: dict[str, str] = {}
+    for deploy_key, field in DEPLOY_KEY_MAP.items():
+        cid = str(raw.get(deploy_key) or "")
+        if not C_RE.fullmatch(cid):
+            raise Reject(f"mainnet {deploy_key} is not a contract id")
+        contracts[field] = cid
+    usdc = str(deploy.get("usdcSac") or "")
+    xlm = str(deploy.get("xlmSac") or "")
+    if not C_RE.fullmatch(usdc) or not C_RE.fullmatch(xlm):
+        raise Reject("mainnet usdcSac/xlmSac must be contract ids")
+    contracts["usdcSac"] = usdc
+    contracts["xlmSac"] = xlm
+    txs = deploy.get("transactions") or []
+    if not isinstance(txs, list) or not txs:
+        raise Reject("mainnet deploy has no transactions")
+    fee_sum = 0
+    for tx in txs:
+        h = str(tx.get("hash") or "")
+        if not TX_RE.fullmatch(h):
+            raise Reject("mainnet deploy transaction hash is invalid")
+        fee_sum += int(str(tx.get("fee_charged") or "0"))
+    fee_xlm = fee_sum / 10_000_000
+    explorer = explorer_for("mainnet")
+    rows = []
+    for key, label in CONTRACT_LABELS.items():
+        cid = contracts[key]
+        rows.append(
+            [
+                label,
+                "mainnet",
+                "v0.1.0",
+                "mainnet",
+                f"`{cid}`",
+                "Yes",
+                f"[Explorer]({explorer}/contract/{cid})",
+            ]
+        )
+    sample = str(txs[0]["hash"])
+    text = (
+        f"**LIVE** — deployed {deployed_at or 'during HackMeridian'} from platform "
+        f"`{deployer}` ({len(txs)} transactions, ~{fee_xlm:.0f} XLM fees).\n"
+        "Active `cert_registry` supports living-author single-signature finalize.\n"
+        f"Sample deploy tx: [{sample[:12]}…]({explorer}/tx/{sample}). "
+        "Full list in artifex-orch `deployments/mainnet.json`.\n"
+        "Source: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts).\n"
+    )
+    meta = {
+        "deployer": deployer,
+        "deployedAt": deployed_at,
+        "txCount": len(txs),
+        "feeXlm": fee_xlm,
+        "contracts": contracts,
+        "usdcIssuer": str(deploy.get("usdcIssuer") or ""),
+    }
+    return text, rows, meta
+
+
+def render_contracts(registry: dict, mainnet_deploy: dict | None = None) -> tuple[str, dict, dict | None]:
     active_id = str(registry.get("activeVersion") or "")
     versions = registry.get("versions")
     if not isinstance(versions, dict) or active_id not in versions:
@@ -441,13 +565,14 @@ def render_contracts(registry: dict) -> tuple[str, dict]:
         addr = str(active.get(field) or "")
         if not G_RE.fullmatch(addr):
             raise Reject(f"active {field} is not a public account")
+    mainnet_text, mainnet_rows, mainnet_meta = render_mainnet_contracts(mainnet_deploy)
     lines = [
         GENERATED,
         "# Contracts",
         "",
         "## Testnet",
         "",
-        "Soroban contracts on Stellar Testnet. The active set is the one the public API serves:",
+        "Soroban contracts on Stellar Testnet. The active set is the one the public API serves while the app is still on Testnet:",
         "",
         "https://artifex.0xvera.com/api/contracts/registry",
         "",
@@ -465,16 +590,15 @@ def render_contracts(registry: dict) -> tuple[str, dict]:
         "",
         "## Mainnet",
         "",
-        "**PENDING** — mainnet launch at HackMeridian.",
-        "Contract IDs, the active registry version, and explorer links will be filled with real mainnet values after launch.",
+        mainnet_text,
         "",
         table(
             ["Contract", "Registry version", "Contracts tag", "Network", "ID", "Active", "Explorer"],
-            [["—", "—", "—", "mainnet", "—", "PENDING", "—"]],
+            mainnet_rows,
         ),
         "",
     ]
-    return "\n".join(lines), active
+    return "\n".join(lines), active, mainnet_meta
 
 
 def render_wallets(doc: dict, active: dict) -> str:
@@ -559,7 +683,7 @@ def render_wallets(doc: dict, active: dict) -> str:
         "",
         table(["Role", "Address", "Purpose", "Explorer"], mainnet_rows),
         "",
-        "Circle mainnet USDC issuer: `GA5ZSE54V4KSTRTMB2OGVL94Q7CPXNHPMNYXEGPRZQSIWJTIPUJYZSDC`.",
+        "Circle mainnet USDC issuer: `GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN`.",
         "",
     ]
     return "\n".join(lines)
@@ -702,7 +826,11 @@ def render_roadmap(doc: dict) -> tuple[str, str]:
     return "\n".join(lines), headline
 
 
-def qa_headline(cases: list[dict]) -> str:
+def qa_headline(doc: dict, cases: list[dict]) -> str:
+    verdict = str(doc.get("verdict") or "").strip().upper()
+    note = str(doc.get("verdictNote") or "").strip()
+    if verdict == "PASS":
+        return f"PASS — {note}" if note else "PASS"
     statuses = {case["status"] for case in cases}
     if statuses == {"PASS"}:
         return "PASS"
@@ -714,11 +842,26 @@ def qa_headline(cases: list[dict]) -> str:
     return "PENDING"
 
 
-def render_status(cases, versions, active_version: str, contracts_tag: str, roadmap_headline: str) -> str:
+def render_status(
+    qa_doc: dict,
+    cases,
+    versions,
+    active_version: str,
+    contracts_tag: str,
+    roadmap_headline: str,
+    mainnet_meta: dict | None,
+) -> str:
+    if mainnet_meta:
+        contracts_state = (
+            f"Mainnet deployed ({mainnet_meta['txCount']} txs); "
+            f"Testnet {active_version} still served until app cutover"
+        )
+    else:
+        contracts_state = f"Registry {active_version} on Testnet, contracts tag {contracts_tag}"
     rows = [
         [
             "QA",
-            qa_headline(cases),
+            qa_headline(qa_doc, cases),
             "[QA.md](QA.md)",
         ],
         [
@@ -728,7 +871,7 @@ def render_status(cases, versions, active_version: str, contracts_tag: str, road
         ],
         [
             "Active contracts",
-            f"Registry {active_version} on Testnet, contracts tag {contracts_tag}",
+            contracts_state,
             "[CONTRACTS.md](CONTRACTS.md)",
         ],
         [
@@ -762,25 +905,32 @@ def main() -> int:
     parser.add_argument("--versions", type=Path, required=True)
     parser.add_argument("--registry", type=Path, required=True)
     parser.add_argument("--digests", type=Path, required=True)
+    parser.add_argument("--mainnet-deploy", type=Path, default=None)
     args = parser.parse_args()
     root = args.root.resolve()
     try:
         versions = parse_versions(args.versions)
         registry = load_json(args.registry)
         digests = load_json(args.digests)
+        mainnet_path = args.mainnet_deploy or root / "sources" / "mainnet.deploy.json"
+        mainnet_deploy = None
+        if mainnet_path.is_file():
+            mainnet_deploy = load_json(mainnet_path)
         qa = load_json(args.qa or root / "qa" / "results.json")
         roadmap = yaml.safe_load((args.roadmap or root / "roadmap.yaml").read_text(encoding="utf-8"))
         wallets = yaml.safe_load((args.wallets or root / "wallets.yaml").read_text(encoding="utf-8"))
         pieces = yaml.safe_load((args.pieces or root / "pieces.yaml").read_text(encoding="utf-8"))
         cases = qa_rows(qa)
-        contracts_md, active = render_contracts(registry)
+        contracts_md, active, mainnet_meta = render_contracts(registry, mainnet_deploy)
         roadmap_md, headline = render_roadmap(roadmap)
         status = render_status(
+            qa,
             cases,
             versions,
             str(registry["activeVersion"]),
             str(active["contractsRepoTag"]),
             headline,
+            mainnet_meta,
         )
         files = {
             "QA.md": render_qa(qa, cases),

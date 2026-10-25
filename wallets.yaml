@@ -32,13 +32,13 @@ networks:
           Public demo organization wallet that published the demo participation
           offers and the secondary listing on Silencio blanco.
   mainnet:
-    status: PREP
-    reason: platform funded; Artifex contracts not yet deployed
+    status: LIVE
+    reason: platform funded; contracts deployed; application cutover in progress
     accounts:
       - id: platform-mainnet
         role: Platform
         address: GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V
         purpose: >
-          Mainnet platform account, created and funded. Circle USDC trustline
-          opened
+          Mainnet platform / deployer. Circle USDC trustline opened
           ([tx](https://stellar.expert/explorer/public/tx/a9df809b9748f309b720ff3aad0e86bc8c82c591af9dc085830326436b807118)).
+          Deployed the HackMeridian mainnet contract set (38 txs, ~88 XLM).

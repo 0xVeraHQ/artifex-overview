@@ -2,10 +2,9 @@
 
 # Releases
 
-Harbor images for the running Testnet deployment.
-The tag is the tag the site is running. Digests and the cosign check come from the release job.
-Contract Wasm is not an image;
-its tag is in [CONTRACTS.md](CONTRACTS.md).
+Harbor images for Artifex. Current rows match `versions.env` in artifex-orch.
+History rows keep cosign-verified digests used during HackMeridian (Testnet QA gate).
+Contract Wasm is not an image; its tag is in [CONTRACTS.md](CONTRACTS.md).
 
 Registry: `registry.hosting1337.com` · project: `artifex`.
 
@@ -13,10 +12,11 @@ Each image is signed keyless with cosign. The signing identity is the GitHub Act
 workflow `docker-release.yml` on the matching `vX.Y.Z` tag, issued by
 `https://token.actions.githubusercontent.com`.
 
-| Image | Tag | Digest | Published | Cosign |
-| --- | --- | --- | --- | --- |
-| `registry.hosting1337.com/artifex/artifex-api` | 0.16.23 | `sha256:31bd6623cde7f67e85f0cc5cc43f19a49cabe10dbedde47292179f110786d876` | 2026-10-25 | Verified, keyless |
-| `registry.hosting1337.com/artifex/artifex-web-ui` | 0.4.21 | `sha256:eec0471fdb707759265ec11e8013ed218f190ae344b63f23779f85a9c005e527` | 2026-10-25 | Verified, keyless |
+| Image | Tag | Digest | Published | Cosign | Note |
+| --- | --- | --- | --- | --- | --- |
+| `registry.hosting1337.com/artifex/artifex-api` | 0.17.1 | `sha256:d0920748d3a11102ee70fdfc61b11a6aafcb7bb92a8621b48b88f6f87b63296f` | 2026-10-25 | Verified, keyless | Mainnet support (orch current) |
+| `registry.hosting1337.com/artifex/artifex-api` | 0.16.23 | `sha256:31bd6623cde7f67e85f0cc5cc43f19a49cabe10dbedde47292179f110786d876` | 2026-10-25 | Verified, keyless | Testnet QA re-test gate (APTO) |
+| `registry.hosting1337.com/artifex/artifex-web-ui` | 0.4.22 | `sha256:3463ddcbb6fdf620a0f7c9b78121fc593a5e99a9b7fde63802c298e0dc5c5ec5` | 2026-10-25 | Verified, keyless | Orch current |
 
 
 ## Check a signature
@@ -28,7 +28,7 @@ cosign verify \
   --certificate-identity-regexp \
     '^https://github.com/0xVeraHQ/artifex-api/\.github/workflows/docker-release\.yml@refs/tags/v.+$' \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-  registry.hosting1337.com/artifex/artifex-api@sha256:31bd6623cde7f67e85f0cc5cc43f19a49cabe10dbedde47292179f110786d876
+  registry.hosting1337.com/artifex/artifex-api@sha256:d0920748d3a11102ee70fdfc61b11a6aafcb7bb92a8621b48b88f6f87b63296f
 ```
 
 ```bash
@@ -36,5 +36,5 @@ cosign verify \
   --certificate-identity-regexp \
     '^https://github.com/0xVeraHQ/artifex-web-ui/\.github/workflows/docker-release\.yml@refs/tags/v.+$' \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-  registry.hosting1337.com/artifex/artifex-web-ui@sha256:eec0471fdb707759265ec11e8013ed218f190ae344b63f23779f85a9c005e527
+  registry.hosting1337.com/artifex/artifex-web-ui@sha256:3463ddcbb6fdf620a0f7c9b78121fc593a5e99a9b7fde63802c298e0dc5c5ec5
 ```

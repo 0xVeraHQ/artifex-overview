@@ -7,7 +7,7 @@ Statuses are **DONE**, **IN PROGRESS**, or **PLANNED**.
 
 | Phase | Status | Scope |
 | --- | --- | --- |
-| HackMeridian | IN PROGRESS | Contract v3 then v4 live on Testnet (whole-work sale, living-author cert, proportional distribute); Fourth external QA pass (28 validated); blockers under re-test on api 0.16.23 / web 0.4.21; Mainnet platform funded with Circle USDC trustline; Stellar mainnet contract deploy |
+| HackMeridian | IN PROGRESS | External QA APTO for mainnet (9 → 20 → 22 → 28 → apto); Mainnet Soroban contracts deployed (38 txs); platform + USDC trustline live; Application cutover to mainnet in progress (api 0.17.1 / web 0.4.22); Mainnet demo catalog after cutover |
 | Phase 1 | PLANNED | Smart wallet with passkeys on the web |
 | Phase 2 | PLANNED | iOS app with biometric signing; Android app with biometric signing |
 | Phase 3 | PLANNED | Legal review of participations; Contract audit; Institutional custody; Separate platform and validator accounts, each with a multisig; OpenZeppelin contracts where they fit the product; Trustless Work escrow for physical-delivery sales; Path payments for any-asset checkout |

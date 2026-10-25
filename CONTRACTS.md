@@ -4,7 +4,7 @@
 
 ## Testnet
 
-Soroban contracts on Stellar Testnet. The active set is the one the public API serves:
+Soroban contracts on Stellar Testnet. The active set is the one the public API serves while the app is still on Testnet:
 
 https://artifex.0xvera.com/api/contracts/registry
 
@@ -61,10 +61,22 @@ Versions **v3** and **v4** are listed when present; activating each on the publi
 
 ## Mainnet
 
-**PENDING** — mainnet launch at HackMeridian.
-Contract IDs, the active registry version, and explorer links will be filled with real mainnet values after launch.
+**LIVE** — deployed 2026-10-25T22:10:25Z from platform `GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V` (38 transactions, ~88 XLM fees).
+Active `cert_registry` supports living-author single-signature finalize.
+Sample deploy tx: [2dc775d32cf2…](https://stellar.expert/explorer/public/tx/2dc775d32cf2c046c9597268db4961a1d4c3d53063a5c00660be9445d9281449). Full list in artifex-orch `deployments/mainnet.json`.
+Source: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts).
+
 
 | Contract | Registry version | Contracts tag | Network | ID | Active | Explorer |
 | --- | --- | --- | --- | --- | --- | --- |
-| — | — | — | mainnet | — | PENDING | — |
+| Roles | mainnet | v0.1.0 | mainnet | `CBAG24ESXBYNKGC34VJZJ3XIL2ECCWJLPAK37IQIRQF5OBNZWUBKKELG` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CBAG24ESXBYNKGC34VJZJ3XIL2ECCWJLPAK37IQIRQF5OBNZWUBKKELG) |
+| Fee collector | mainnet | v0.1.0 | mainnet | `CBWJBOE3CESO5T2OZKLDASOFXAFQ4NAKWXZ26ZNYYWYI4E2VJCZJJ7Q2` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CBWJBOE3CESO5T2OZKLDASOFXAFQ4NAKWXZ26ZNYYWYI4E2VJCZJJ7Q2) |
+| Connoisseur authorization | mainnet | v0.1.0 | mainnet | `CAWJ56K3J6SOKUBTYDUKHPAU556KYYCWYUGQUTTHU7HH5UBNENWOPY5O` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CAWJ56K3J6SOKUBTYDUKHPAU556KYYCWYUGQUTTHU7HH5UBNENWOPY5O) |
+| Certificate registry | mainnet | v0.1.0 | mainnet | `CD4QIRNEXTEOXZGBI3JKKHMPS5IBDQACMZET6ZS2ID2GTPPC2FZMEZDG` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CD4QIRNEXTEOXZGBI3JKKHMPS5IBDQACMZET6ZS2ID2GTPPC2FZMEZDG) |
+| Whole-work NFT | mainnet | v0.1.0 | mainnet | `CCPE7A2HCTUUOIZSALBXYNEUU53COWMBFZEC6G3IIURBMHUNFWURYTEM` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CCPE7A2HCTUUOIZSALBXYNEUU53COWMBFZEC6G3IIURBMHUNFWURYTEM) |
+| Participation | mainnet | v0.1.0 | mainnet | `CAHS2BD7AI6U63C44VSE5EBVNBXQFZEOXDY4BNWDGNHKNQNWB4DBIU5D` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CAHS2BD7AI6U63C44VSE5EBVNBXQFZEOXDY4BNWDGNHKNQNWB4DBIU5D) |
+| Marketplace | mainnet | v0.1.0 | mainnet | `CACYT65VWTZD5JM2PKRZCNYLMHVNYXBS7RNM3YXXSSI3IMNG5MHXXNY7` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CACYT65VWTZD5JM2PKRZCNYLMHVNYXBS7RNM3YXXSSI3IMNG5MHXXNY7) |
+| Distribution | mainnet | v0.1.0 | mainnet | `CCBEWM4REV3LOK5XRZ5VIMAUY23Q4UBTPQBDAYBUHAVJNOVFQ7XRPHZU` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CCBEWM4REV3LOK5XRZ5VIMAUY23Q4UBTPQBDAYBUHAVJNOVFQ7XRPHZU) |
+| USDC asset contract | mainnet | v0.1.0 | mainnet | `CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75) |
+| XLM asset contract | mainnet | v0.1.0 | mainnet | `CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA` | Yes | [Explorer](https://stellar.expert/explorer/public/contract/CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA) |
 

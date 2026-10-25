@@ -43,9 +43,9 @@ Component diagram and certification / sale flows: [docs/architecture.md](docs/ar
 <!-- GENERATED:status -->
 | Area | State | Document |
 | --- | --- | --- |
-| QA | PENDING — Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | [QA.md](QA.md) |
-| Latest release | api 0.16.23, web 0.4.21, cosign verified | [RELEASES.md](RELEASES.md) |
-| Active contracts | Registry v4 on Testnet, contracts tag v0.2.1-living-author | [CONTRACTS.md](CONTRACTS.md) |
+| QA | PASS — APTO for mainnet (re-test api 0.16.23 / web 0.4.21–0.4.22) | [QA.md](QA.md) |
+| Latest release | api 0.17.1, web 0.4.22, cosign verified | [RELEASES.md](RELEASES.md) |
+| Active contracts | Mainnet deployed (38 txs); Testnet v4 still served until app cutover | [CONTRACTS.md](CONTRACTS.md) |
 | Roadmap | HackMeridian in progress | [ROADMAP.md](ROADMAP.md) |
 
 <!-- /GENERATED:status -->
@@ -78,12 +78,11 @@ From Sunday 25 October 2026 09:00 Lisbon, the Scale track prioritizes production
 
 **Landed today:**
 
-- api **0.16.20** / web **0.4.19** / registry **v3** — whole-work sale, USDC fix, locked-unit recovery, indexing, automatic distribution, roles, verification, `llms.txt` / `robots.txt` / `sitemap.xml`; 15 demo artworks reseeded.
-- Fourth external QA: **28** validated (9 → 20 → 22 → 28). Certification (one and two signatures), QR verify, primary/secondary participations, USDC buy, and automatic distribute work. Three blockers remain under re-test.
-- api **0.16.23** / web **0.4.21** / registry **v4** — living-author one-signature `cert_registry`, whole-work buy/cancel/resale by active token sale with accumulated owner history, proportional distribution.
-- Mainnet platform account funded; Circle USDC trustline open (public address in [WALLETS.md](WALLETS.md)).
+- External QA **APTO for mainnet** after re-test on api **0.16.23** / web **0.4.21–0.4.22** (evolution **9 → 20 → 22 → 28 → apto**). Whole-work buy/cancel/resale, living-author one signature, and proportional distribute cleared.
+- api **0.17.1** / web **0.4.22** (cosign verified) — mainnet support in orch tags. Prior gate: api **0.16.23**.
+- **Mainnet contracts deployed** (38 txs, ~88 XLM) from platform `GCNSEG…Q3V`; Circle USDC trustline open. IDs in [CONTRACTS.md](CONTRACTS.md) / [WALLETS.md](WALLETS.md).
 
-**In progress:** re-test of the three blockers on v4. **Next:** Stellar **mainnet** contract deploy.
+**In progress:** application cutover to mainnet. Public site still on Testnet until `/api/meta` reports `stellarNetwork: mainnet`.
 
 Dated evidence: [HACKMERIDIAN.md](HACKMERIDIAN.md). Roadmap: [ROADMAP.md](ROADMAP.md).
 
@@ -91,11 +90,11 @@ The original application named OpenZeppelin contracts, Trustless Work escrow, an
 
 ## Known limitations
 
-- Application deployment today is Stellar **Testnet**. Mainnet contracts are not deployed yet; the mainnet platform wallet is funded (see [WALLETS.md](WALLETS.md)). Contract and piece Mainnet sections stay **PENDING** until deploy.
+- The public app is still on Stellar **Testnet** until cutover finishes. **Mainnet contracts are deployed**; demo pieces on mainnet are not listed yet ([PIECES.md](PIECES.md) remains Testnet). See [HACKMERIDIAN.md](HACKMERIDIAN.md).
 - Platform and validator are the same Testnet address today. Splitting them behind multisig is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
 - Participations are not a legal opinion on title. Counsel review is [phase 3](ROADMAP.md).
 - Signing is Freighter. Passkey smart wallet is [phase 1](ROADMAP.md); iOS / Android are [phase 2](ROADMAP.md).
-- Three whole-work blockers from the 4th QA pass are under re-test on api **0.16.23** / web **0.4.21** / registry **v4**. Open cases are **PENDING** in [QA.md](QA.md). See [HACKMERIDIAN.md](HACKMERIDIAN.md).
+- A few non-blocking Testnet cases remain **PENDING** in [QA.md](QA.md) (catalog filter, register form completeness, prior digitization, three-owner resale). The mainnet gate verdict is **PASS / APTO**.
 
 ## Team
 

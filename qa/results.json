@@ -3,7 +3,7 @@
   "pass": "fourth",
   "mainnet": {
     "status": "PENDING",
-    "reason": "mainnet launch at HackMeridian"
+    "reason": "contracts deployed; application cutover to mainnet in progress"
   },
   "history": [
     {
@@ -32,7 +32,14 @@
       "pass": "4th",
       "validated": 28,
       "blockers": 3,
-      "note": "api 0.16.20 → 0.16.22; 7 open, 1 untested; blockers under re-test on 0.16.23 / 0.4.21 / v4"
+      "note": "api 0.16.20 \u2192 0.16.22; 7 open, 1 untested; three whole-work blockers"
+    },
+    {
+      "date": "2026-10-25",
+      "pass": "4th re-test",
+      "validated": 31,
+      "blockers": 0,
+      "note": "APTO for mainnet on api 0.16.23 / web 0.4.21\u20130.4.22; S-02/S-04/S-05/S-12 PASS; evolution 9 \u2192 20 \u2192 22 \u2192 28 \u2192 apto"
     }
   ],
   "cases": [
@@ -100,7 +107,7 @@
       "title": "Living author, fee in XLM",
       "description": "The living author signs once and pays the certification fee in XLM (5 XLM). The certificate finalizes.",
       "status": "PASS",
-      "txHash": "26cfdc9fcc33318ae18d2390c2bf5f4ba9b9e63eb7cc37a1cd0fc9b72b879444"
+      "txHash": "426463bdf506cecb33e2263231d8b66e6649ae8dafe45866897f36cc1d6c7692"
     },
     {
       "id": "C-03",
@@ -162,8 +169,8 @@
       "group": "S",
       "title": "Buy the whole work",
       "description": "A second account buys the whole work. Ownership moves to the buyer.",
-      "status": "PENDING",
-      "reason": "Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4"
+      "status": "PASS",
+      "txHash": "59536ffc75242237b1283be22e47ecf931bdd2af975458d62bb1328a882ea183"
     },
     {
       "id": "S-03",
@@ -171,29 +178,29 @@
       "title": "Resale with three owners",
       "description": "The work is sold again. The ownership history shows three owners.",
       "status": "PENDING",
-      "reason": "not tested on 4th pass; waiting on whole-work buy re-test"
+      "reason": "not exercised on re-test; whole-work buy path cleared (S-02)"
     },
     {
       "id": "S-04",
       "group": "S",
       "title": "List with physical delivery",
       "description": "The owner lists a whole work with a physical-delivery clause.",
-      "status": "PENDING",
-      "reason": "Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4"
+      "status": "PASS",
+      "txHash": "ef18d9b27208580f46a47d8c7c92a0d9dae4ff51fd6308c7cee919a20c1a7542"
     },
     {
       "id": "S-05",
       "group": "S",
       "title": "Buy in USDC and send the delivery form",
       "description": "A buyer pays in USDC and submits the physical-delivery form. Delivery itself stays off-chain.",
-      "status": "PENDING",
-      "reason": "Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4"
+      "status": "PASS",
+      "txHash": "5bfd0a49753219c9c5384b5f7b76165144002a5a9193eebca898f17d10a1c514"
     },
     {
       "id": "S-06",
       "group": "S",
       "title": "Museum offers each participation type",
-      "description": "A museum publishes one offer of each type — future sale, guaranteed repurchase, financing with return, and exploitation rights — each with a terms document.",
+      "description": "A museum publishes one offer of each type \u2014 future sale, guaranteed repurchase, financing with return, and exploitation rights \u2014 each with a terms document.",
       "status": "PASS",
       "txHash": "2f4c622d24c621ff0519babd258f2c1e9cce0e830da87de1714c1b83ddc81c95"
     },
@@ -242,9 +249,8 @@
       "group": "S",
       "title": "Run distribution",
       "description": "Distribution runs for an offer under its published terms.",
-      "status": "PENDING",
-      "reason": "Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4",
-      "txHash": "4a6380f6555ae2f1e224308ba276bf62ae6d21a0aac2b6ca93d40f1e283e9ca9"
+      "status": "PASS",
+      "txHash": "a7e1c353199e72c95e468393e4b84124bc0c252469cc4b4b4a10e380794877ce"
     },
     {
       "id": "S-13",
@@ -303,5 +309,7 @@
       "description": "Operational endpoints do not respond to an anonymous caller.",
       "status": "PASS"
     }
-  ]
+  ],
+  "verdict": "PASS",
+  "verdictNote": "APTO for mainnet (re-test api 0.16.23 / web 0.4.21\u20130.4.22)"
 }

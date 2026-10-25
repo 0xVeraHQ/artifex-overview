@@ -4,23 +4,39 @@
   "images": [
     {
       "name": "artifex-api",
-      "tag": "0.16.23",
-      "digest": "sha256:31bd6623cde7f67e85f0cc5cc43f19a49cabe10dbedde47292179f110786d876",
-      "publishedAt": "2026-10-25T18:02:33Z",
+      "tag": "0.17.1",
+      "digest": "sha256:d0920748d3a11102ee70fdfc61b11a6aafcb7bb92a8621b48b88f6f87b63296f",
+      "publishedAt": "2026-10-25T20:53:53Z",
+      "note": "Mainnet support (orch current)",
       "cosign": {
         "verified": true,
-        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.16.23",
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.1",
         "oidcIssuer": "https://token.actions.githubusercontent.com"
       }
     },
     {
       "name": "artifex-web-ui",
-      "tag": "0.4.21",
-      "digest": "sha256:eec0471fdb707759265ec11e8013ed218f190ae344b63f23779f85a9c005e527",
-      "publishedAt": "2026-10-25T18:03:24Z",
+      "tag": "0.4.22",
+      "digest": "sha256:3463ddcbb6fdf620a0f7c9b78121fc593a5e99a9b7fde63802c298e0dc5c5ec5",
+      "publishedAt": "2026-10-25T18:56:20Z",
+      "note": "Orch current",
       "cosign": {
         "verified": true,
-        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.21",
+        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.22",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    }
+  ],
+  "history": [
+    {
+      "name": "artifex-api",
+      "tag": "0.16.23",
+      "digest": "sha256:31bd6623cde7f67e85f0cc5cc43f19a49cabe10dbedde47292179f110786d876",
+      "publishedAt": "2026-10-25T18:02:33Z",
+      "note": "Testnet QA re-test gate (APTO)",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.16.23",
         "oidcIssuer": "https://token.actions.githubusercontent.com"
       }
     }

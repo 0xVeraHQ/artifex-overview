@@ -1,0 +1,238 @@
+{
+  "network": "mainnet",
+  "deployer": "GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V",
+  "deployedAt": "2026-10-25T22:10:25Z",
+  "identity": "artifex-mainnet-platform",
+  "stellarNetwork": "artifex-mainnet",
+  "usdcIssuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+  "usdcSac": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+  "xlmSac": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA",
+  "contracts": {
+    "artifex_roles": "CBAG24ESXBYNKGC34VJZJ3XIL2ECCWJLPAK37IQIRQF5OBNZWUBKKELG",
+    "artifex_fee_collector": "CBWJBOE3CESO5T2OZKLDASOFXAFQ4NAKWXZ26ZNYYWYI4E2VJCZJJ7Q2",
+    "artifex_connoisseur": "CAWJ56K3J6SOKUBTYDUKHPAU556KYYCWYUGQUTTHU7HH5UBNENWOPY5O",
+    "artifex_cert_registry": "CD4QIRNEXTEOXZGBI3JKKHMPS5IBDQACMZET6ZS2ID2GTPPC2FZMEZDG",
+    "artifex_whole_nft": "CCPE7A2HCTUUOIZSALBXYNEUU53COWMBFZEC6G3IIURBMHUNFWURYTEM",
+    "artifex_participation": "CAHS2BD7AI6U63C44VSE5EBVNBXQFZEOXDY4BNWDGNHKNQNWB4DBIU5D",
+    "artifex_marketplace": "CACYT65VWTZD5JM2PKRZCNYLMHVNYXBS7RNM3YXXSSI3IMNG5MHXXNY7",
+    "artifex_distribution": "CCBEWM4REV3LOK5XRZ5VIMAUY23Q4UBTPQBDAYBUHAVJNOVFQ7XRPHZU"
+  },
+  "supersededContracts": {
+    "artifex_cert_registry_broken_no_living_autosign": "CA7QRL7XJE6TF3UEKX4OIATR36EUHQCLSWI3W3C7AMYH4VAF5WVIUNYE"
+  },
+  "wasmHashes": {
+    "artifex_cert_registry": "f3c4dbf422d7e6147347026ac1496e2b3265af4b5a4c82cfcff401cd28d7017b",
+    "artifex_fee_collector": "eb172bbca6cc59e59533d94229cdcab3a07dafbe44e70252aafefe70f5e0ad46",
+    "artifex_roles": "44c23d6eb67f685bfc9b7720654cd4a88ac4c8c83af963ae857828bf6e03c8d5"
+  },
+  "transactions": [
+    {
+      "hash": "2dc775d32cf2c046c9597268db4961a1d4c3d53063a5c00660be9445d9281449",
+      "fee_charged": "39220732",
+      "created_at": "2026-10-25T21:32:03Z"
+    },
+    {
+      "hash": "44d96e0e67946091d85c14cfd31aa8054c4d4395b2c832f29ae63fe668de419b",
+      "fee_charged": "104669090",
+      "created_at": "2026-10-25T21:34:53Z"
+    },
+    {
+      "hash": "974fddc34c7e6074d388a0f7d1ccb57ea9211f0c8dfe73638f6dc205974b3e78",
+      "fee_charged": "40532254",
+      "created_at": "2026-10-25T21:37:48Z"
+    },
+    {
+      "hash": "a5a8a850ea01772592665cc01f62def007ec876015b1c5cefbb293c51691e476",
+      "fee_charged": "104865075",
+      "created_at": "2026-10-25T21:38:18Z"
+    },
+    {
+      "hash": "548e741b2782497fb1a31e7aa3edf3ca3e7556f37baa593569a87a8ee839e041",
+      "fee_charged": "132240971",
+      "created_at": "2026-10-25T21:38:33Z"
+    },
+    {
+      "hash": "02f9fe5410484c2465d3bf76bd5dbcc9d37ebcb450a146ad0535797c3d31e1a7",
+      "fee_charged": "124417909",
+      "created_at": "2026-10-25T21:44:13Z"
+    },
+    {
+      "hash": "a40b58473b5f1c84432570646f2a255951400bd4aebc46bf6ed18f2f5a924ca0",
+      "fee_charged": "131742302",
+      "created_at": "2026-10-25T21:49:33Z"
+    },
+    {
+      "hash": "eee0c2023be62d989f68475af504c53409d524084637494ad2ba724af38f6242",
+      "fee_charged": "88578675",
+      "created_at": "2026-10-25T21:50:18Z"
+    },
+    {
+      "hash": "cdc2f415d381fc3965712b817ed828641216a5b5359710f24f759f2b723ae262",
+      "fee_charged": "178020",
+      "created_at": "2026-10-25T21:50:33Z"
+    },
+    {
+      "hash": "a10fc16344919e1d41b4d30d89a306899636a103a7fff441bce528f71f142500",
+      "fee_charged": "178067",
+      "created_at": "2026-10-25T21:51:43Z"
+    },
+    {
+      "hash": "7039560ea720b612b26d2d964505af3c300c1d28b7193a8481e9987ef5985357",
+      "fee_charged": "178023",
+      "created_at": "2026-10-25T21:55:03Z"
+    },
+    {
+      "hash": "e90c2b3ea0cef418d00dbd95752f7ceb82c3c34803bcadecb2978cbaecdf4085",
+      "fee_charged": "178053",
+      "created_at": "2026-10-25T21:59:48Z"
+    },
+    {
+      "hash": "d69bc106bcdf82e8a65ea24ab1fa6e64ea158704c5201a70efffa06db99dfc8a",
+      "fee_charged": "178079",
+      "created_at": "2026-10-25T22:00:48Z"
+    },
+    {
+      "hash": "a9a39b5d4b97d7933fafffb1f836beeb6ebfcd34bca905b107a8e75e83bfad57",
+      "fee_charged": "178063",
+      "created_at": "2026-10-25T22:01:43Z"
+    },
+    {
+      "hash": "6950351698705198068123c917061da7d4f36ae2a8e0a97cec159456805a3df9",
+      "fee_charged": "178060",
+      "created_at": "2026-10-25T22:02:08Z"
+    },
+    {
+      "hash": "67b862ef23aea24b6aeef72473e2370f35c9488690ca82bad4e188f249412873",
+      "fee_charged": "178060",
+      "created_at": "2026-10-25T22:02:18Z"
+    },
+    {
+      "hash": "a03eac1dea63740e42e1b2cedc1e486b9c6f45b7b2281369b9c41396c47c63b0",
+      "fee_charged": "412697",
+      "created_at": "2026-10-25T22:02:28Z"
+    },
+    {
+      "hash": "2189b73b414b2d19168531af049d3564b1ce245e5b887a7ae956f98ba8397a6a",
+      "fee_charged": "617014",
+      "created_at": "2026-10-25T22:02:38Z"
+    },
+    {
+      "hash": "2636d08b79d1264ad8853083fc8fa64abe1d6da5cc8f836b44e3ec8985004cae",
+      "fee_charged": "189868",
+      "created_at": "2026-10-25T22:02:48Z"
+    },
+    {
+      "hash": "b9378c214964b0144a98cc3b0b49583272cf50fc50df533e6a8b6f38c4a65899",
+      "fee_charged": "557200",
+      "created_at": "2026-10-25T22:02:58Z"
+    },
+    {
+      "hash": "7ce3adbab977ae4f33898ef63b27d28ed38131084d397b137be26607d70671ed",
+      "fee_charged": "116923",
+      "created_at": "2026-10-25T22:03:08Z"
+    },
+    {
+      "hash": "1c8f83cf2514576ce9fb97738094f867c1fcd212dc5dd2adb49a0e261456f175",
+      "fee_charged": "323279",
+      "created_at": "2026-10-25T22:03:18Z"
+    },
+    {
+      "hash": "b7d95383e9c87ffa816d0a945fff4de0f755bf32020c53e8c91fea37d520322c",
+      "fee_charged": "263252",
+      "created_at": "2026-10-25T22:03:28Z"
+    },
+    {
+      "hash": "17144ad029b7a6a878e37815533627afcf11a48e5cb983616443e011fff7d5f7",
+      "fee_charged": "390129",
+      "created_at": "2026-10-25T22:03:38Z"
+    },
+    {
+      "hash": "35a7479c041a0d02465353781d5c31e3d92193f7e97e348b096597e3915bf289",
+      "fee_charged": "316770",
+      "created_at": "2026-10-25T22:03:48Z"
+    },
+    {
+      "hash": "d960bf678ac4ba78796b8e128ae54dff30ee6e514f8df8ba6bd4b0d6bc11667d",
+      "fee_charged": "819251",
+      "created_at": "2026-10-25T22:03:58Z"
+    },
+    {
+      "hash": "35182571245a1a02b67bbfde8a63fecf56a408295eb594f0818e16b654bb6a4c",
+      "fee_charged": "813098",
+      "created_at": "2026-10-25T22:04:08Z"
+    },
+    {
+      "hash": "d01b7131aba64bf1d1586d400df6c5eb80f986bb329ba28b7eef1ef8532bf238",
+      "fee_charged": "10113",
+      "created_at": "2026-10-25T22:04:18Z"
+    },
+    {
+      "hash": "8f03f312f7fdc2e98a103d62da539bab4206f777738cda345fe2331695497bf1",
+      "fee_charged": "819251",
+      "created_at": "2026-10-25T22:05:23Z"
+    },
+    {
+      "hash": "4d5d45f321547bb48ed3131e570370097e0dce3999052a0a03cd50092b247f1b",
+      "fee_charged": "438501",
+      "created_at": "2026-10-25T22:05:33Z"
+    },
+    {
+      "hash": "4f1046d7c99075672143e314bea6ea741d2a96524e839fd1e45d7365aa2ed0b2",
+      "fee_charged": "77547",
+      "created_at": "2026-10-25T22:07:23Z"
+    },
+    {
+      "hash": "5cfc99275a6e83e23c68124e7b3f5c7d84f8127230c7f61326a10f9c4a336a8c",
+      "fee_charged": "106497063",
+      "created_at": "2026-10-25T22:08:53Z"
+    },
+    {
+      "hash": "cefb43fe007ce602334d9c9967a38a0d46466952b2b22255057c7497eaac2159",
+      "fee_charged": "178053",
+      "created_at": "2026-10-25T22:09:03Z"
+    },
+    {
+      "hash": "56dd56039ccf247d7368c99f7519a562ddeb4cfea6e55b456150d16e4a03c2c4",
+      "fee_charged": "557209",
+      "created_at": "2026-10-25T22:09:13Z"
+    },
+    {
+      "hash": "1b319c986a94185673baf3382703724d427e4ae13da0f3ea85d0909e6a15b84e",
+      "fee_charged": "3599",
+      "created_at": "2026-10-25T22:09:23Z"
+    },
+    {
+      "hash": "51916d18a5064299c604825885fed7c70216daf52a8c1994fddb2012cc1d0896",
+      "fee_charged": "892605",
+      "created_at": "2026-10-25T22:09:33Z"
+    },
+    {
+      "hash": "d46c9cf0ee0a58b249d77f3d78ba51bf4abae6dfec0a0623e3da83ef2b3e274a",
+      "fee_charged": "438501",
+      "created_at": "2026-10-25T22:09:38Z"
+    },
+    {
+      "hash": "841e4b8e576a0f4d5a43a4af423cbc1b06e95470fa2d64647045bc915491ad79",
+      "fee_charged": "10113",
+      "created_at": "2026-10-25T22:09:43Z"
+    }
+  ],
+  "costs": {
+    "preXlm": "250.0000900",
+    "postXlm": "161.2567431",
+    "postUsdc": "6.0000000",
+    "deltaXlm": "88.7433469",
+    "feeChargedStroops": "882433469",
+    "feeChargedXlm": "88.2433469",
+    "txCount": 38,
+    "note": "deltaXlm = mother balance drop (rent/reserves + fee_charged + probe deposits net); feeChargedXlm sums Horizon fee_charged for successful txs since 2026-10-25T21:30Z"
+  },
+  "wholeNftSaleV3": {
+    "list_for_sale": true,
+    "buy_sale": true,
+    "cancel_sale": true
+  },
+  "wiringVerified": true,
+  "livingAuthorAutosignVerified": true,
+  "feeCollectorConsumer": "CD4QIRNEXTEOXZGBI3JKKHMPS5IBDQACMZET6ZS2ID2GTPPC2FZMEZDG"
+}

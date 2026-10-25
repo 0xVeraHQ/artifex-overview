@@ -13,6 +13,8 @@ A result outside those three states is rejected by the generator and is not writ
 
 Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 
+**Verdict: PASS** — APTO for mainnet (re-test api 0.16.23 / web 0.4.21–0.4.22).
+
 ## Pass history
 
 | Date | Pass | Validated | Blockers | Note |
@@ -20,12 +22,13 @@ Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 | 2026-10-21 | 1st | 9 | 11 | First external black-box pass |
 | 2026-10-22 | 2nd | 20 | 4 | Remediation from pass 1 |
 | 2026-10-23 | 3rd | 22 | 4 | 15 demo artworks and marketplace hardening |
-| 2026-10-25 | 4th | 28 | 3 | api 0.16.20 → 0.16.22; 7 open, 1 untested; blockers under re-test on 0.16.23 / 0.4.21 / v4 |
+| 2026-10-25 | 4th | 28 | 3 | api 0.16.20 → 0.16.22; 7 open, 1 untested; three whole-work blockers |
+| 2026-10-25 | 4th re-test | 31 | 0 | APTO for mainnet on api 0.16.23 / web 0.4.21–0.4.22; S-02/S-04/S-05/S-12 PASS; evolution 9 → 20 → 22 → 28 → apto |
 
 
 ## Mainnet
 
-**PENDING** — mainnet launch at HackMeridian.
+**PENDING** — contracts deployed; application cutover to mainnet in progress.
 Mainnet cases will be filled with real transaction links after launch.
 
 ## Cases (Testnet)
@@ -48,7 +51,7 @@ Mainnet cases will be filled with real transaction links after launch.
 | Case | Check | Status | Reason | Testnet transaction |
 | --- | --- | --- | --- | --- |
 | C-01 | **Register a fiche with photographs.** An artist creates a piece fiche and attaches photographs. | PENDING | register form still omits dimensions, weight, description, and documents | — |
-| C-02 | **Living author, fee in XLM.** The living author signs once and pays the certification fee in XLM (5 XLM). The certificate finalizes. | PASS | — | [26cfdc9fcc…](https://stellar.expert/explorer/testnet/tx/26cfdc9fcc33318ae18d2390c2bf5f4ba9b9e63eb7cc37a1cd0fc9b72b879444) |
+| C-02 | **Living author, fee in XLM.** The living author signs once and pays the certification fee in XLM (5 XLM). The certificate finalizes. | PASS | — | [426463bdf5…](https://stellar.expert/explorer/testnet/tx/426463bdf506cecb33e2263231d8b66e6649ae8dafe45866897f36cc1d6c7692) |
 | C-03 | **Museum authorizes a connoisseur.** For a deceased author, a museum authorizes the connoisseur who will sign. | PASS | — | [bdc471c45a…](https://stellar.expert/explorer/testnet/tx/bdc471c45a7a4c137280612b01cd511f2f67b82dba640da972a2b149d03b03b9) |
 | C-04 | **Connoisseur signs, second signature pending.** The connoisseur signs. The certificate stays pending until the second signature. | PASS | — | [74aedeb5b8…](https://stellar.expert/explorer/testnet/tx/74aedeb5b839421f9ad2ef85c8b0ab9287bfff3bec94f3a138e0744fcd73589e) |
 | C-05 | **Museum second signature finalizes.** The museum adds the second signature. The certificate becomes valid. | PASS | — | [fa565f9a3c…](https://stellar.expert/explorer/testnet/tx/fa565f9a3c5a28e270212da3eebe626bfd5af48244a3cb67fe68dce7a2c49621) |
@@ -62,17 +65,17 @@ Mainnet cases will be filled with real transaction links after launch.
 | Case | Check | Status | Reason | Testnet transaction |
 | --- | --- | --- | --- | --- |
 | S-01 | **List a whole digital work in XLM.** The owner lists the whole work as a digital sale priced in XLM. | PASS | — | [fd66cf0ac6…](https://stellar.expert/explorer/testnet/tx/fd66cf0ac61805029bfea7f3e06d9740b1aed711c94cc080f40b6a4211192568) |
-| S-02 | **Buy the whole work.** A second account buys the whole work. Ownership moves to the buyer. | PENDING | Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | — |
-| S-03 | **Resale with three owners.** The work is sold again. The ownership history shows three owners. | PENDING | not tested on 4th pass; waiting on whole-work buy re-test | — |
-| S-04 | **List with physical delivery.** The owner lists a whole work with a physical-delivery clause. | PENDING | Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | — |
-| S-05 | **Buy in USDC and send the delivery form.** A buyer pays in USDC and submits the physical-delivery form. Delivery itself stays off-chain. | PENDING | Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | — |
+| S-02 | **Buy the whole work.** A second account buys the whole work. Ownership moves to the buyer. | PASS | — | [59536ffc75…](https://stellar.expert/explorer/testnet/tx/59536ffc75242237b1283be22e47ecf931bdd2af975458d62bb1328a882ea183) |
+| S-03 | **Resale with three owners.** The work is sold again. The ownership history shows three owners. | PENDING | not exercised on re-test; whole-work buy path cleared (S-02) | — |
+| S-04 | **List with physical delivery.** The owner lists a whole work with a physical-delivery clause. | PASS | — | [ef18d9b272…](https://stellar.expert/explorer/testnet/tx/ef18d9b27208580f46a47d8c7c92a0d9dae4ff51fd6308c7cee919a20c1a7542) |
+| S-05 | **Buy in USDC and send the delivery form.** A buyer pays in USDC and submits the physical-delivery form. Delivery itself stays off-chain. | PASS | — | [5bfd0a4975…](https://stellar.expert/explorer/testnet/tx/5bfd0a49753219c9c5384b5f7b76165144002a5a9193eebca898f17d10a1c514) |
 | S-06 | **Museum offers each participation type.** A museum publishes one offer of each type — future sale, guaranteed repurchase, financing with return, and exploitation rights — each with a terms document. | PASS | — | [2f4c622d24…](https://stellar.expert/explorer/testnet/tx/2f4c622d24c621ff0519babd258f2c1e9cce0e830da87de1714c1b83ddc81c95) |
 | S-07 | **Buy an entire primary offer.** A buyer takes every unit of a primary offer in one payment. | PASS | — | [0e41fba4ff…](https://stellar.expert/explorer/testnet/tx/0e41fba4ffd09fc8312fb09bca2943519e838bcf10cc5e4010208f2ba96cb5b6) |
 | S-08 | **Buy part of a primary offer.** A buyer takes some of the units. The remainder stays available. | PASS | — | [0c1abebd0b…](https://stellar.expert/explorer/testnet/tx/0c1abebd0bfbbc6893a22e131d0e973a3520b2cfbcd045b04275f7bbfd72d832) |
 | S-09 | **List on the secondary market.** A holder lists units they already hold. | PASS | — | [30271ae6d3…](https://stellar.expert/explorer/testnet/tx/30271ae6d306d16ec6d390b4df89040eeb0a8da1b83f04f5404d93f5e97ec69a) |
 | S-10 | **Partial secondary purchase.** Another buyer takes part of that secondary listing. | PASS | — | [4bfb943a1b…](https://stellar.expert/explorer/testnet/tx/4bfb943a1b1b7852c20325eb2deb905da9b89623516da8da21e0dcefd741455f) |
 | S-11 | **Cancel the remainder.** The seller cancels what is left of the listing. The remaining units return to the seller. | PASS | — | [e75a370b9e…](https://stellar.expert/explorer/testnet/tx/e75a370b9e9852bd62c54319e96c3d9583ce673971c091a2e6d01d97267ebba4) |
-| S-12 | **Run distribution.** Distribution runs for an offer under its published terms. | PENDING | Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | [4a6380f655…](https://stellar.expert/explorer/testnet/tx/4a6380f6555ae2f1e224308ba276bf62ae6d21a0aac2b6ca93d40f1e283e9ca9) |
+| S-12 | **Run distribution.** Distribution runs for an offer under its published terms. | PASS | — | [a7e1c35319…](https://stellar.expert/explorer/testnet/tx/a7e1c353199e72c95e468393e4b84124bc0c252469cc4b4b4a10e380794877ce) |
 | S-13 | **Buy the cheap demo offer.** A buyer purchases the low-priced public demo offer used as the Try it path (Estudio en azul). | PASS | — | [dae51abf3a…](https://stellar.expert/explorer/testnet/tx/dae51abf3ad34a818a2a58d4f56db5c4c9dc49e51cc371df8e90a3361244d683) |
 
 
@@ -89,4 +92,4 @@ Mainnet cases will be filled with real transaction links after launch.
 | N-07 | **Ops routes are closed.** Operational endpoints do not respond to an anonymous caller. | PASS | — | — |
 
 
-35 cases: 27 PASS, 8 PENDING.
+35 cases: 31 PASS, 4 PENDING.
