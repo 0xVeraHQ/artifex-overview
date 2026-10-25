@@ -14,7 +14,8 @@ workflow `docker-release.yml` on the matching `vX.Y.Z` tag, issued by
 
 | Image | Tag | Digest | Published | Cosign | Note |
 | --- | --- | --- | --- | --- | --- |
-| `registry.hosting1337.com/artifex/artifex-api` | 0.17.1 | `sha256:d0920748d3a11102ee70fdfc61b11a6aafcb7bb92a8621b48b88f6f87b63296f` | 2026-10-25 | Verified, keyless | Mainnet support (orch current) |
+| `registry.hosting1337.com/artifex/artifex-api` | 0.17.2 | `sha256:56692ae19f933e0cca9084c692dec9fe0b8e88a0934b3d0b5fab2368b0a4a638` | 2026-10-25 | Verified, keyless | Mainnet seed wallets / QA role asserts (orch current) |
+| `registry.hosting1337.com/artifex/artifex-api` | 0.17.1 | `sha256:d0920748d3a11102ee70fdfc61b11a6aafcb7bb92a8621b48b88f6f87b63296f` | 2026-10-25 | Verified, keyless | Mainnet cutover support |
 | `registry.hosting1337.com/artifex/artifex-api` | 0.16.23 | `sha256:31bd6623cde7f67e85f0cc5cc43f19a49cabe10dbedde47292179f110786d876` | 2026-10-25 | Verified, keyless | Testnet QA re-test gate (APTO) |
 | `registry.hosting1337.com/artifex/artifex-web-ui` | 0.4.22 | `sha256:3463ddcbb6fdf620a0f7c9b78121fc593a5e99a9b7fde63802c298e0dc5c5ec5` | 2026-10-25 | Verified, keyless | Orch current |
 
@@ -28,7 +29,7 @@ cosign verify \
   --certificate-identity-regexp \
     '^https://github.com/0xVeraHQ/artifex-api/\.github/workflows/docker-release\.yml@refs/tags/v.+$' \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-  registry.hosting1337.com/artifex/artifex-api@sha256:d0920748d3a11102ee70fdfc61b11a6aafcb7bb92a8621b48b88f6f87b63296f
+  registry.hosting1337.com/artifex/artifex-api@sha256:56692ae19f933e0cca9084c692dec9fe0b8e88a0934b3d0b5fab2368b0a4a638
 ```
 
 ```bash

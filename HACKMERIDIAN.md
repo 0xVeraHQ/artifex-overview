@@ -106,12 +106,38 @@ Public app cut over. Evidence:
 | `/api/health` | `stellarNetwork: mainnet` |
 | `/api/meta` | api **0.17.1**, `platformWallet` `GCNSEG…Q3V` |
 | `/api/contracts/registry` | active **mainnet-v1** (tag `vps-deploy`) |
-| `/api/pieces` | empty (`items: []`) — catalog pending seed/register |
+| `/api/pieces` | empty at cutover — seed follows |
 
-Overview docs now list **mainnet first**; Testnet tables remain as HackMeridian history. [PIECES.md](PIECES.md) Mainnet section is LIVE with an empty catalog until works appear.
+Overview docs list **mainnet first**; Testnet tables remain as HackMeridian history.
+
+---
+
+## 2026-10-26 — Monday
+
+### 00:25 — Mainnet seed `hackathon-scale-15-v6-mainnet` · api 0.17.2
+
+Lisbon time (WEST). Live app on api **0.17.2** / web **0.4.22**. Demo catalog seeded on Stellar **mainnet**.
+
+| Item | Value |
+| --- | --- |
+| Seed | `hackathon-scale-15-v6-mainnet` |
+| Pieces | **15** demo works |
+| Certified | **7** |
+| Pending second signature | **1** (Puerto al alba) |
+| Primary offers | **1–6** |
+| Whole-work tokens listed | **1–4** |
+| Secondary listing | **1** (Silencio blanco) |
+| QA roles | QA-1 artist, QA-4 connoisseur, QA-5 museum (Freighter pubkeys) |
+| Try it | **Estudio en azul** · offer **1** · **0.1 XLM** |
+
+Public evidence: [PIECES.md](PIECES.md), [WALLETS.md](WALLETS.md), [CONTRACTS.md](CONTRACTS.md), [stellar.expert public](https://stellar.expert/explorer/public). Platform account activity around seed: [GCNSEG…Q3V](https://stellar.expert/explorer/public/account/GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V).
+
+### 00:30 — Mainnet QA starts
+
+Independent QA on mainnet begins now. Case transaction hashes will be added to [QA.md](QA.md) when the pass reports.
 
 ---
 
 ## Planned during the event (not yet dated)
 
-- **Seed or register mainnet demo works** — fill [PIECES.md](PIECES.md) Mainnet rows and refresh [TRY-IT.md](TRY-IT.md) when a public mainnet buy path exists.
+- **Mainnet QA results** — append hashes and statuses to [QA.md](QA.md) / this diary when the pass closes.

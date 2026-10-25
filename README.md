@@ -44,7 +44,7 @@ Component diagram and certification / sale flows: [docs/architecture.md](docs/ar
 | Area | State | Document |
 | --- | --- | --- |
 | QA | PASS — APTO for mainnet (re-test api 0.16.23 / web 0.4.21–0.4.22) | [QA.md](QA.md) |
-| Latest release | api 0.17.1, web 0.4.22, cosign verified | [RELEASES.md](RELEASES.md) |
+| Latest release | api 0.17.2, web 0.4.22, cosign verified | [RELEASES.md](RELEASES.md) |
 | Active contracts | Mainnet live (mainnet-v1, tag vps-deploy); deploy 38 txs | [CONTRACTS.md](CONTRACTS.md) |
 | Roadmap | HackMeridian in progress | [ROADMAP.md](ROADMAP.md) |
 
@@ -54,9 +54,11 @@ Generated together with [QA.md](QA.md), [RELEASES.md](RELEASES.md), [CONTRACTS.m
 
 ## Try it
 
-The public app is on **Stellar mainnet**. The catalog is still empty after cutover (`/api/pieces` returns no items), so there is no priced demo buy yet. Open [the app](https://artifex.0xvera.com), connect [Freighter](https://www.freighter.app/) on **Public** network, and use the [public explorer](https://stellar.expert/explorer/public) for on-chain checks.
+1. Install [Freighter](https://www.freighter.app/) and set the network to **Public** (mainnet). Fund the account with real XLM.
+2. Open [the app](https://artifex.0xvera.com), find **Estudio en azul** (offer titled **Try it**, **0.1 XLM**), and buy one unit.
+3. Open the transaction on the [public explorer](https://stellar.expert/explorer/public) and confirm that the units arrived.
 
-The HackMeridian Testnet “Try it” path (Estudio en azul, 1 XLM) remains documented as history in [TRY-IT.md](TRY-IT.md). Catalog: [PIECES.md](PIECES.md).
+Full steps: [TRY-IT.md](TRY-IT.md). Catalog: [PIECES.md](PIECES.md).
 
 ## Before HackMeridian
 
@@ -74,23 +76,25 @@ Details: [CONTRACTS.md](CONTRACTS.md), [RELEASES.md](RELEASES.md), [PIECES.md](P
 
 From Sunday 25 October 2026 09:00 Lisbon, the Scale track prioritizes production readiness and mainnet launch.
 
-**Landed today:**
+**Landed:**
 
-- External QA **APTO for mainnet** after re-test on api **0.16.23** / web **0.4.21–0.4.22** (evolution **9 → 20 → 22 → 28 → apto**).
-- api **0.17.1** / web **0.4.22** (cosign verified); **mainnet contracts** deployed (38 txs, ~88 XLM).
-- **Application cut over to mainnet** — `/api/health` → `stellarNetwork: mainnet`, registry **mainnet-v1**. Catalog still empty pending seed/register.
+- External QA **APTO for mainnet** on Testnet (evolution **9 → 20 → 22 → 28 → apto**).
+- **Mainnet contracts** deployed; app on **mainnet** (api **0.17.2** / web **0.4.22**, registry **mainnet-v1**).
+- Seed **`hackathon-scale-15-v6-mainnet`**: 15 demo pieces, 7 certified, offers 1–6, whole tokens 1–4, secondary listing 1; QA-1 / QA-4 / QA-5 roles assigned.
+
+**In progress:** mainnet external QA (hashes land in [QA.md](QA.md) when the pass reports).
 
 Dated evidence: [HACKMERIDIAN.md](HACKMERIDIAN.md). Roadmap: [ROADMAP.md](ROADMAP.md).
 
-The original application named OpenZeppelin contracts, Trustless Work escrow, and path payments. After conversations with judges and mentors, those three move to the longer [roadmap](ROADMAP.md) (phase 3); the event focus was production readiness, external QA, and mainnet launch.
+The original application named OpenZeppelin contracts, Trustless Work escrow, and path payments. After conversations with judges and mentors, those three move to the longer [roadmap](ROADMAP.md) (phase 3).
 
 ## Known limitations
 
-- Live network is Stellar **mainnet**. The mainnet piece catalog is empty after cutover; Testnet demo rows stay in [PIECES.md](PIECES.md) as history. See [HACKMERIDIAN.md](HACKMERIDIAN.md).
+- Live network is Stellar **mainnet**. Testnet demo evidence stays in [PIECES.md](PIECES.md) / [QA.md](QA.md) as HackMeridian history.
 - Platform and validator are the same mainnet address today. Splitting them behind multisig is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
 - Participations are not a legal opinion on title. Counsel review is [phase 3](ROADMAP.md).
 - Signing is Freighter. Passkey smart wallet is [phase 1](ROADMAP.md); iOS / Android are [phase 2](ROADMAP.md).
-- A few non-blocking Testnet cases remain **PENDING** in [QA.md](QA.md). The mainnet gate verdict is **PASS / APTO**.
+- Mainnet QA is running; Testnet gate verdict remains **PASS / APTO**. A few non-blocking Testnet cases stay **PENDING** in [QA.md](QA.md).
 
 ## Team
 

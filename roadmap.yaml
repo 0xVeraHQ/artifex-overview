@@ -8,10 +8,10 @@ phases:
       OpenZeppelin, Trustless Work, and path payments; after mentor and
       judge conversations the event priority is production readiness.
     items:
-      - External QA APTO for mainnet (9 → 20 → 22 → 28 → apto)
-      - Mainnet Soroban contracts deployed (38 txs); platform + USDC trustline live
-      - Application cut over to mainnet (api 0.17.1, registry mainnet-v1)
-      - Mainnet demo catalog seed/register (catalog still empty)
+      - External QA APTO for mainnet on Testnet (9 → 20 → 22 → 28 → apto)
+      - Mainnet contracts + app cutover (api 0.17.2 / web 0.4.22, registry mainnet-v1)
+      - Seed hackathon-scale-15-v6-mainnet (15 pieces, offers 1–6, tokens 1–4)
+      - Mainnet external QA in progress
   - id: phase-1
     name: Phase 1
     status: PLANNED

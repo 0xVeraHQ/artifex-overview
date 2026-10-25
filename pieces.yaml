@@ -2,8 +2,265 @@ network: testnet
 seed: 15-demo-artworks
 mainnet:
   status: LIVE
-  reason: application cut over to mainnet; catalog empty pending seed/register
-  pieces: []
+  reason: 'seed hackathon-scale-15-v6-mainnet: 15 demo pieces, 7 certified, 1 pending second signature,
+    6 offers (1, 2, 3, 4, 5, 6), 4 whole tokens listed (1, 2, 3, 4), secondary listing(s) 1'
+  seedRunId: hackathon-scale-15-v6-mainnet
+  pieces:
+  - n: 1
+    title: Mar de invierno
+    artist: Elena Varga
+    pieceId: 87458dade39f63f1806bd6e64ccc0c56fdf370d31edba7d2a6c645fcfbdafcc4
+    certification: Living author (1 signature)
+    status: Certified
+    modality: Not for sale
+    forSale: false
+    price: —
+    tryIt: false
+    offerId: null
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 2
+    title: Figura en reposo
+    artist: Tomás Arriaga
+    pieceId: f3c7e94f3c327d158c6b533f723e13da05827355403ab055b6efe2512df48a41
+    certification: Deceased author (connoisseur + institution)
+    status: Certified
+    modality: Not for sale
+    forSale: false
+    price: —
+    tryIt: false
+    offerId: null
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 3
+    title: Puerto al alba
+    artist: Mireille Duclos
+    pieceId: 051fd8e2b40c781a2e04bb418a03b4b43e6a91aeb22279108f3a0f16b63ec2d7
+    certification: Deceased author (connoisseur + institution)
+    status: Pending second signature
+    modality: Not for sale
+    forSale: false
+    price: —
+    tryIt: false
+    offerId: null
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 4
+    title: Serie Kyoto nº 3
+    artist: Kenji Morita
+    pieceId: 406a080366dac0bedb4238eb0cad663ed4d9006a011dd5be135d4e9eafef8789
+    certification: Living author (1 signature)
+    status: Not certified
+    modality: Not for sale
+    forSale: false
+    price: —
+    tryIt: false
+    offerId: null
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 5
+    title: Cuenco ceniza
+    artist: Sofía Lindqvist
+    pieceId: 357122b6b2f6483c6aed84c58d619e5e29b2e2319273c7daa96750734aeaa84d
+    certification: Living author (1 signature)
+    status: Not certified
+    modality: Not for sale
+    forSale: false
+    price: —
+    tryIt: false
+    offerId: null
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 6
+    title: Estudio en azul
+    artist: Elena Varga
+    pieceId: 67b36becdd2b12df0918a9e68cd02b964595b970e0063f53f01066f5fb70fbbe
+    certification: Living author (1 signature)
+    status: Certified
+    modality: Participation — Future sale
+    forSale: true
+    price: 0.1 XLM
+    tryIt: true
+    offerId: '1'
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 7
+    title: Retrato de Clara
+    artist: Aurelio Benedetti
+    pieceId: bdaf39d626a0832062f9973afcc1ef72a0f88e479c3faec3e8fec04f336f7a9a
+    certification: Deceased author (connoisseur + heir)
+    status: Certified
+    modality: Whole work (physical delivery)
+    forSale: true
+    price: 2 XLM
+    tryIt: false
+    offerId: null
+    listingId: null
+    wholeTokenId: '1'
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 8
+    title: Torso II
+    artist: Tomás Arriaga
+    pieceId: a36a38e6b9f448fc1d1276df22a94618dc498cce36f83bbca3980b5c0ee7ab07
+    certification: Deceased author (institution + connoisseur)
+    status: Certified
+    modality: Participation — Exploitation rights
+    forSale: true
+    price: 0.1 XLM
+    tryIt: false
+    offerId: '2'
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 9
+    title: Ventana norte
+    artist: Kenji Morita
+    pieceId: a78df3eda00c9ee5a12c151b01e9c1217c444710498e19249b7a3a73b3626cd9
+    certification: Living author (1 signature)
+    status: Not certified
+    modality: Whole work (digital)
+    forSale: true
+    price: 1 XLM
+    tryIt: false
+    offerId: null
+    listingId: null
+    wholeTokenId: '2'
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 10
+    title: Paisaje de sal
+    artist: Hendrik Vos
+    pieceId: 916dc8af65a5799af400d8d7cd212447d4eed7d3499adf6430a81daa77151081
+    certification: Deceased author (connoisseur + heir)
+    status: Not certified
+    modality: Participation — Return financing
+    forSale: true
+    price: 0.1 XLM
+    tryIt: false
+    offerId: '3'
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 11
+    title: Nocturno en rojo
+    artist: Mireille Duclos
+    pieceId: da4ff18543b9f027a34d70ef7b570f77a8ea7244b7cc13ccf6e0fdc2e531ed54
+    certification: Deceased author (connoisseur + heir)
+    status: Certified
+    modality: Participation — Guaranteed buyback
+    forSale: true
+    price: 0.1 USDC
+    tryIt: false
+    offerId: '4'
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 12
+    title: Silencio blanco
+    artist: Hendrik Vos
+    pieceId: b7a5f13b81b1fe9d8dde798e4594028f0d63494adaa4e24cd0af9a41d7ba6789
+    certification: Prior certificate digitization
+    status: Certified
+    modality: Participation — Return financing
+    forSale: true
+    price: 0.1 USDC
+    tryIt: false
+    offerId: '5'
+    listingId: '1'
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 13
+    title: Autorretrato con sombrero
+    artist: Elena Varga
+    pieceId: 9f302fec833514fbfc74503cb1c047fa2c1e5bbcf24234cf19c24c475a5c2270
+    certification: Living author (1 signature)
+    status: Not certified
+    modality: Whole work (digital)
+    forSale: true
+    price: 0.5 USDC
+    tryIt: false
+    offerId: null
+    listingId: null
+    wholeTokenId: '3'
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 14
+    title: Cerámica nº 7
+    artist: Sofía Lindqvist
+    pieceId: a6ce76cd7d6a3cbe7127faf2877ccc2d97edc22564b9a650d73d639a1733bd64
+    certification: Living author (1 signature)
+    status: Not certified
+    modality: Whole work (physical delivery)
+    forSale: true
+    price: 0.5 USDC
+    tryIt: false
+    offerId: null
+    listingId: null
+    wholeTokenId: '4'
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
+  - n: 15
+    title: Mercado de flores
+    artist: Aurelio Benedetti
+    pieceId: 59fc37c4a606f1b0bd58cac85ca897c41346a7262b6835466f2b1a4558064fc8
+    certification: Deceased author (connoisseur + heir)
+    status: Not certified
+    modality: Participation — Future sale
+    forSale: true
+    price: 0.1 USDC
+    tryIt: false
+    offerId: '6'
+    listingId: null
+    wholeTokenId: null
+    certTx: null
+    offerTx: null
+    listingTx: null
+    distribTx: null
 pieces:
 - n: 1
   title: Mar de invierno

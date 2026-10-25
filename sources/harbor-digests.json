@@ -4,13 +4,13 @@
   "images": [
     {
       "name": "artifex-api",
-      "tag": "0.17.1",
-      "digest": "sha256:d0920748d3a11102ee70fdfc61b11a6aafcb7bb92a8621b48b88f6f87b63296f",
-      "publishedAt": "2026-10-25T20:53:53Z",
-      "note": "Mainnet support (orch current)",
+      "tag": "0.17.2",
+      "digest": "sha256:56692ae19f933e0cca9084c692dec9fe0b8e88a0934b3d0b5fab2368b0a4a638",
+      "publishedAt": "2026-10-25T23:18:00Z",
+      "note": "Mainnet seed wallets / QA role asserts (orch current)",
       "cosign": {
         "verified": true,
-        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.1",
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.2",
         "oidcIssuer": "https://token.actions.githubusercontent.com"
       }
     },
@@ -28,6 +28,18 @@
     }
   ],
   "history": [
+    {
+      "name": "artifex-api",
+      "tag": "0.17.1",
+      "digest": "sha256:d0920748d3a11102ee70fdfc61b11a6aafcb7bb92a8621b48b88f6f87b63296f",
+      "publishedAt": "2026-10-25T20:53:53Z",
+      "note": "Mainnet cutover support",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.1",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    },
     {
       "name": "artifex-api",
       "tag": "0.16.23",

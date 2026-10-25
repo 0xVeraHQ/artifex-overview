@@ -15,25 +15,26 @@ networks:
         role: Validator
         address: GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357
         purpose: >
-          Co-signs certification. On the current Testnet deployment this is the
+          Co-signs certification. On the Testnet deployment this was the
           same account as the platform. Roadmap phase 3 separates the two
           accounts and places each behind a multisig.
       - id: demo-museum
         role: Demo museum (QA)
         address: GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV
         purpose: >
-          Public demo account with the museum role. It is the institution
-          signature on a deceased-author certificate, and the Freighter
-          account used for museum QA steps.
+          Public demo account with the museum role on Testnet. Also used as
+          QA-5 on mainnet (same Freighter pubkey).
       - id: demo-seed-org
         role: Demo organization (seed)
         address: GAJT4VFXWBD2QXJNOBQBY6TKTFEPO5YYHQXBCBIOCC7TGW6YAGDSMERC
         purpose: >
-          Public demo organization wallet that published the demo participation
+          Public demo organization wallet that published Testnet participation
           offers and the secondary listing on Silencio blanco.
   mainnet:
     status: LIVE
-    reason: public app serving Stellar mainnet (api 0.17.1, registry mainnet-v1)
+    reason: >
+      public app on Stellar mainnet (api 0.17.2 / web 0.4.22, registry mainnet-v1);
+      seed hackathon-scale-15-v6-mainnet live
     accounts:
       - id: platform-mainnet
         registryField: platform
@@ -51,3 +52,20 @@ networks:
         purpose: >
           Co-signs certification on mainnet. Same account as the platform today;
           phase 3 separates the two behind multisig.
+      - id: qa1-artist-mainnet
+        role: QA-1 artist (Freighter)
+        address: GCPGMC55DFBJBOPRXZ7MZ6ZJU5GLAJLB5DXNIQS3RNKIKKXZN3YCH3RL
+        purpose: >
+          Public Freighter account with the artist role on mainnet (seed
+          hackathon-scale-15-v6-mainnet). Same pubkey as Testnet QA-1.
+      - id: qa4-connoisseur-mainnet
+        role: QA-4 connoisseur (Freighter)
+        address: GAJGJCAQFRQQX2PE4KYVC6STKIYBZZTNYN4BIVP73MSYNYJLW7ZCYT54
+        purpose: >
+          Public Freighter account with the connoisseur role on mainnet.
+      - id: qa5-museum-mainnet
+        role: QA-5 museum (Freighter)
+        address: GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV
+        purpose: >
+          Public Freighter account with the museum role on mainnet; Demo Museum
+          (QA) org admin.

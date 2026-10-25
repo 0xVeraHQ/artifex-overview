@@ -28,7 +28,7 @@ Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 
 ## Mainnet
 
-**LIVE** — app on mainnet (stellarNetwork mainnet); mainnet QA cases not yet filled.
+**PENDING** — mainnet QA in progress after seed hackathon-scale-15-v6-mainnet; hashes will be added when the pass reports.
 Mainnet case rows will be filled with public transaction links when mainnet QA runs.
 
 ## Cases (Testnet)

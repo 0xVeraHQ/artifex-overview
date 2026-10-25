@@ -4,12 +4,16 @@
 
 ## Mainnet
 
-**LIVE** — public app serving Stellar mainnet (api 0.17.1, registry mainnet-v1).
+**LIVE** — public app on Stellar mainnet (api 0.17.2 / web 0.4.22, registry mainnet-v1); seed hackathon-scale-15-v6-mainnet live
+.
 
 | Role | Address | Purpose | Explorer |
 | --- | --- | --- | --- |
 | Platform | `GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V` | Mainnet platform / deployer and the live `/api/meta` platformWallet. Circle USDC trustline opened ([tx](https://stellar.expert/explorer/public/tx/a9df809b9748f309b720ff3aad0e86bc8c82c591af9dc085830326436b807118)). Deployed the HackMeridian mainnet contract set (38 txs, ~88 XLM). | [Explorer](https://stellar.expert/explorer/public/account/GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V) |
 | Validator | `GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V` | Co-signs certification on mainnet. Same account as the platform today; phase 3 separates the two behind multisig. | [Explorer](https://stellar.expert/explorer/public/account/GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V) |
+| QA-1 artist (Freighter) | `GCPGMC55DFBJBOPRXZ7MZ6ZJU5GLAJLB5DXNIQS3RNKIKKXZN3YCH3RL` | Public Freighter account with the artist role on mainnet (seed hackathon-scale-15-v6-mainnet). Same pubkey as Testnet QA-1. | [Explorer](https://stellar.expert/explorer/public/account/GCPGMC55DFBJBOPRXZ7MZ6ZJU5GLAJLB5DXNIQS3RNKIKKXZN3YCH3RL) |
+| QA-4 connoisseur (Freighter) | `GAJGJCAQFRQQX2PE4KYVC6STKIYBZZTNYN4BIVP73MSYNYJLW7ZCYT54` | Public Freighter account with the connoisseur role on mainnet. | [Explorer](https://stellar.expert/explorer/public/account/GAJGJCAQFRQQX2PE4KYVC6STKIYBZZTNYN4BIVP73MSYNYJLW7ZCYT54) |
+| QA-5 museum (Freighter) | `GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV` | Public Freighter account with the museum role on mainnet; Demo Museum (QA) org admin. | [Explorer](https://stellar.expert/explorer/public/account/GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV) |
 
 
 Circle mainnet USDC issuer: `GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN`.
@@ -21,9 +25,9 @@ Public accounts for the Testnet deployment used before mainnet cutover.
 | Role | Address | Purpose | Explorer |
 | --- | --- | --- | --- |
 | Platform | `GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357` | Assigns on-chain roles and is the account that receives the certification fee (5 XLM or 1 USDC on Testnet). | [Explorer](https://stellar.expert/explorer/testnet/account/GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357) |
-| Validator | `GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357` | Co-signs certification. On the current Testnet deployment this is the same account as the platform. Roadmap phase 3 separates the two accounts and places each behind a multisig. | [Explorer](https://stellar.expert/explorer/testnet/account/GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357) |
-| Demo museum (QA) | `GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV` | Public demo account with the museum role. It is the institution signature on a deceased-author certificate, and the Freighter account used for museum QA steps. | [Explorer](https://stellar.expert/explorer/testnet/account/GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV) |
-| Demo organization (seed) | `GAJT4VFXWBD2QXJNOBQBY6TKTFEPO5YYHQXBCBIOCC7TGW6YAGDSMERC` | Public demo organization wallet that published the demo participation offers and the secondary listing on Silencio blanco. | [Explorer](https://stellar.expert/explorer/testnet/account/GAJT4VFXWBD2QXJNOBQBY6TKTFEPO5YYHQXBCBIOCC7TGW6YAGDSMERC) |
+| Validator | `GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357` | Co-signs certification. On the Testnet deployment this was the same account as the platform. Roadmap phase 3 separates the two accounts and places each behind a multisig. | [Explorer](https://stellar.expert/explorer/testnet/account/GBYYRWRRF4PNJJMZGE2Q5HUOCPSU3Y4WCTWJ3BQFFNUO3YIPOAD7A357) |
+| Demo museum (QA) | `GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV` | Public demo account with the museum role on Testnet. Also used as QA-5 on mainnet (same Freighter pubkey). | [Explorer](https://stellar.expert/explorer/testnet/account/GB7XRDD2A5AMOJVGMEZ4M7DIS3CSPQRP3FMRRPUDJ46XFGO4AFJ4QXFV) |
+| Demo organization (seed) | `GAJT4VFXWBD2QXJNOBQBY6TKTFEPO5YYHQXBCBIOCC7TGW6YAGDSMERC` | Public demo organization wallet that published Testnet participation offers and the secondary listing on Silencio blanco. | [Explorer](https://stellar.expert/explorer/testnet/account/GAJT4VFXWBD2QXJNOBQBY6TKTFEPO5YYHQXBCBIOCC7TGW6YAGDSMERC) |
 
 
 The Circle Testnet USDC issuer used for payments is

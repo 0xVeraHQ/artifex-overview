@@ -4,13 +4,29 @@
 
 ## Mainnet
 
-**LIVE** — application cut over to mainnet; catalog empty pending seed/register.
-Live `/api/pieces` is empty after cutover; rows will appear here when works are registered on mainnet.
-Explorer: [https://stellar.expert/explorer/public](https://stellar.expert/explorer/public).
+**15 artwork(s)** on Stellar mainnet.
+**LIVE** — seed hackathon-scale-15-v6-mainnet: 15 demo pieces, 7 certified, 1 pending second signature, 6 offers (1, 2, 3, 4, 5, 6), 4 whole tokens listed (1, 2, 3, 4), secondary listing(s) 1.
+Seed run: `hackathon-scale-15-v6-mainnet`.
+Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [https://stellar.expert/explorer/public](https://stellar.expert/explorer/public).
+Certification / offer / listing tx columns fill when indexed or when mainnet QA reports hashes.
 
-| # | Work | Certification | Status | Sale modality | Price | Explorer |
-| --- | --- | --- | --- | --- | --- | --- |
-| — | — | — | LIVE | — | — | — |
+| # | Work | Certification | Status | Sale modality | Price | Try it | Public page | Offer / listing | Certification tx | Offer tx | Listing tx | Distribution tx |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | **Mar de invierno** · Elena Varga | Living author (1 signature) | Certified | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/87458dade39f63f1806bd6e64ccc0c56fdf370d31edba7d2a6c645fcfbdafcc4) | — | — | — | — | — |
+| 2 | **Figura en reposo** · Tomás Arriaga | Deceased author (connoisseur + institution) | Certified | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/f3c7e94f3c327d158c6b533f723e13da05827355403ab055b6efe2512df48a41) | — | — | — | — | — |
+| 3 | **Puerto al alba** · Mireille Duclos | Deceased author (connoisseur + institution) | Pending second signature | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/051fd8e2b40c781a2e04bb418a03b4b43e6a91aeb22279108f3a0f16b63ec2d7) | — | — | — | — | — |
+| 4 | **Serie Kyoto nº 3** · Kenji Morita | Living author (1 signature) | Not certified | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/406a080366dac0bedb4238eb0cad663ed4d9006a011dd5be135d4e9eafef8789) | — | — | — | — | — |
+| 5 | **Cuenco ceniza** · Sofía Lindqvist | Living author (1 signature) | Not certified | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/357122b6b2f6483c6aed84c58d619e5e29b2e2319273c7daa96750734aeaa84d) | — | — | — | — | — |
+| 6 | **Estudio en azul** · Elena Varga | Living author (1 signature) | Certified | Participation — Future sale | 0.1 XLM | Yes | [Verify](https://artifex.0xvera.com/verify/67b36becdd2b12df0918a9e68cd02b964595b970e0063f53f01066f5fb70fbbe) | offer 1 | — | — | — | — |
+| 7 | **Retrato de Clara** · Aurelio Benedetti | Deceased author (connoisseur + heir) | Certified | Whole work (physical delivery) | 2 XLM | — | [Verify](https://artifex.0xvera.com/verify/bdaf39d626a0832062f9973afcc1ef72a0f88e479c3faec3e8fec04f336f7a9a) | token 1 | — | — | — | — |
+| 8 | **Torso II** · Tomás Arriaga | Deceased author (institution + connoisseur) | Certified | Participation — Exploitation rights | 0.1 XLM | — | [Verify](https://artifex.0xvera.com/verify/a36a38e6b9f448fc1d1276df22a94618dc498cce36f83bbca3980b5c0ee7ab07) | offer 2 | — | — | — | — |
+| 9 | **Ventana norte** · Kenji Morita | Living author (1 signature) | Not certified | Whole work (digital) | 1 XLM | — | [Verify](https://artifex.0xvera.com/verify/a78df3eda00c9ee5a12c151b01e9c1217c444710498e19249b7a3a73b3626cd9) | token 2 | — | — | — | — |
+| 10 | **Paisaje de sal** · Hendrik Vos | Deceased author (connoisseur + heir) | Not certified | Participation — Return financing | 0.1 XLM | — | [Verify](https://artifex.0xvera.com/verify/916dc8af65a5799af400d8d7cd212447d4eed7d3499adf6430a81daa77151081) | offer 3 | — | — | — | — |
+| 11 | **Nocturno en rojo** · Mireille Duclos | Deceased author (connoisseur + heir) | Certified | Participation — Guaranteed buyback | 0.1 USDC | — | [Verify](https://artifex.0xvera.com/verify/da4ff18543b9f027a34d70ef7b570f77a8ea7244b7cc13ccf6e0fdc2e531ed54) | offer 4 | — | — | — | — |
+| 12 | **Silencio blanco** · Hendrik Vos | Prior certificate digitization | Certified | Participation — Return financing | 0.1 USDC | — | [Verify](https://artifex.0xvera.com/verify/b7a5f13b81b1fe9d8dde798e4594028f0d63494adaa4e24cd0af9a41d7ba6789) | offer 5; listing 1 | — | — | — | — |
+| 13 | **Autorretrato con sombrero** · Elena Varga | Living author (1 signature) | Not certified | Whole work (digital) | 0.5 USDC | — | [Verify](https://artifex.0xvera.com/verify/9f302fec833514fbfc74503cb1c047fa2c1e5bbcf24234cf19c24c475a5c2270) | token 3 | — | — | — | — |
+| 14 | **Cerámica nº 7** · Sofía Lindqvist | Living author (1 signature) | Not certified | Whole work (physical delivery) | 0.5 USDC | — | [Verify](https://artifex.0xvera.com/verify/a6ce76cd7d6a3cbe7127faf2877ccc2d97edc22564b9a650d73d639a1733bd64) | token 4 | — | — | — | — |
+| 15 | **Mercado de flores** · Aurelio Benedetti | Deceased author (connoisseur + heir) | Not certified | Participation — Future sale | 0.1 USDC | — | [Verify](https://artifex.0xvera.com/verify/59fc37c4a606f1b0bd58cac85ca897c41346a7262b6835466f2b1a4558064fc8) | offer 6 | — | — | — | — |
 
 
 ## Testnet (history)

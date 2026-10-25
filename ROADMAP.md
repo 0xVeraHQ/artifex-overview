@@ -7,7 +7,7 @@ Statuses are **DONE**, **IN PROGRESS**, or **PLANNED**.
 
 | Phase | Status | Scope |
 | --- | --- | --- |
-| HackMeridian | IN PROGRESS | External QA APTO for mainnet (9 → 20 → 22 → 28 → apto); Mainnet Soroban contracts deployed (38 txs); platform + USDC trustline live; Application cut over to mainnet (api 0.17.1, registry mainnet-v1); Mainnet demo catalog seed/register (catalog still empty) |
+| HackMeridian | IN PROGRESS | External QA APTO for mainnet on Testnet (9 → 20 → 22 → 28 → apto); Mainnet contracts + app cutover (api 0.17.2 / web 0.4.22, registry mainnet-v1); Seed hackathon-scale-15-v6-mainnet (15 pieces, offers 1–6, tokens 1–4); Mainnet external QA in progress |
 | Phase 1 | PLANNED | Smart wallet with passkeys on the web |
 | Phase 2 | PLANNED | iOS app with biometric signing; Android app with biometric signing |
 | Phase 3 | PLANNED | Legal review of participations; Contract audit; Institutional custody; Separate platform and validator accounts, each with a multisig; OpenZeppelin contracts where they fit the product; Trustless Work escrow for physical-delivery sales; Path payments for any-asset checkout |

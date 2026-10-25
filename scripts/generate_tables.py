@@ -746,11 +746,14 @@ def _piece_rows(pieces: list, network: str) -> list[list[str]]:
         distrib_tx = tx_link(piece.get("distribTx"), network)
         offer_id = piece.get("offerId")
         listing_id = piece.get("listingId")
+        token_id = piece.get("wholeTokenId")
         ids = []
         if offer_id:
             ids.append(f"offer {offer_id}")
         if listing_id:
             ids.append(f"listing {listing_id}")
+        if token_id not in (None, "", "null"):
+            ids.append(f"token {token_id}")
         id_note = "; ".join(ids) if ids else "—"
         rows.append(
             [
@@ -803,9 +806,13 @@ def render_pieces(doc: dict) -> str:
     explorer_pub = explorer_for("mainnet")
     if mainnet_pieces:
         mainnet_rows = _piece_rows(mainnet_pieces, "mainnet")
+        seed = str(mainnet.get("seedRunId") or "").strip()
         mainnet_body = [
             f"**{len(mainnet_pieces)} artwork(s)** on Stellar mainnet.",
+            f"**{mainnet_status}** — {mainnet_reason}.",
+            *( [f"Seed run: `{seed}`."] if seed else [] ),
             f"Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [{explorer_pub}]({explorer_pub}).",
+            "Certification / offer / listing tx columns fill when indexed or when mainnet QA reports hashes.",
             "",
             table(PIECE_COLS, mainnet_rows),
         ]
