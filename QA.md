@@ -20,7 +20,7 @@ Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 | 2026-10-21 | 1st | 9 | 11 | First external black-box pass |
 | 2026-10-22 | 2nd | 20 | 4 | Remediation from pass 1 |
 | 2026-10-23 | 3rd | 22 | 4 | 15 demo artworks and marketplace hardening |
-| 2026-10-25 | 4th | 22 | 4 | 4th QA pass in progress after production fixes |
+| 2026-10-25 | 4th | 22 | 4 | 4th QA pass started after api 0.16.20 / web 0.4.19 / registry v3 |
 
 
 ## Mainnet

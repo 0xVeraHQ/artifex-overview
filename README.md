@@ -44,8 +44,8 @@ Component diagram and certification / sale flows: [docs/architecture.md](docs/ar
 | Area | State | Document |
 | --- | --- | --- |
 | QA | PENDING — 4th QA pass in progress | [QA.md](QA.md) |
-| Latest release | api 0.16.16, web 0.4.16, cosign verified | [RELEASES.md](RELEASES.md) |
-| Active contracts | Registry v2 on Testnet, contracts tag v0.1.0 | [CONTRACTS.md](CONTRACTS.md) |
+| Latest release | api 0.16.20, web 0.4.19, cosign verified | [RELEASES.md](RELEASES.md) |
+| Active contracts | Registry v3 on Testnet, contracts tag v0.2.0 | [CONTRACTS.md](CONTRACTS.md) |
 | Roadmap | HackMeridian in progress | [ROADMAP.md](ROADMAP.md) |
 
 <!-- /GENERATED:status -->
@@ -74,14 +74,11 @@ Details: [CONTRACTS.md](CONTRACTS.md), [RELEASES.md](RELEASES.md), [PIECES.md](P
 
 ## During HackMeridian
 
-From Sunday 25 October 2026 09:00 Lisbon, the Scale track work prioritizes production readiness and mainnet launch:
+From Sunday 25 October 2026 09:00 Lisbon, the Scale track prioritizes production readiness and mainnet launch.
 
-- Whole-work sale on contract version **v3**
-- Fix USDC purchases and recover units locked by interrupted flows
-- Index offers and listings so the marketplace matches the chain; automatic distribution to holders
-- Role permissions and verification improvements
-- Fourth external QA pass
-- Stellar **mainnet** launch
+**Landed today (api 0.16.20 / web 0.4.19):** whole-work sale on contract **v3**, USDC purchase fix, locked-unit recovery, offer/listing indexing, automatic distribution, role permissions, verification improvements, and public `llms.txt` / `robots.txt` / `sitemap.xml`. Testnet reinstalled with **15 demo artworks**. Active registry: **v3**.
+
+**In progress:** fourth external QA pass. **Next:** Stellar **mainnet** launch.
 
 Dated evidence: [HACKMERIDIAN.md](HACKMERIDIAN.md). Roadmap: [ROADMAP.md](ROADMAP.md).
 
@@ -93,8 +90,7 @@ The original application named OpenZeppelin contracts, Trustless Work escrow, an
 - Platform and validator are the same Testnet address today. Splitting them behind multisig is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
 - Participations are not a legal opinion on title. Counsel review is [phase 3](ROADMAP.md).
 - Signing is Freighter. Passkey smart wallet is [phase 1](ROADMAP.md); iOS / Android are [phase 2](ROADMAP.md).
-- Fourth external QA pass is in progress. Cases still open are **PENDING** in [QA.md](QA.md).
-- Whole-work sale on contract version **v3**, and activating that version on the public API, are in progress during the event — [HACKMERIDIAN.md](HACKMERIDIAN.md).
+- Fourth external QA pass is running against the v3 Testnet reinstall. Cases still open are **PENDING** in [QA.md](QA.md). See [HACKMERIDIAN.md](HACKMERIDIAN.md).
 
 ## Team
 

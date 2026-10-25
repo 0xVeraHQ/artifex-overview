@@ -32,7 +32,7 @@
       "pass": "4th",
       "validated": 22,
       "blockers": 4,
-      "note": "4th QA pass in progress after production fixes"
+      "note": "4th QA pass started after api 0.16.20 / web 0.4.19 / registry v3"
     }
   ],
   "cases": [

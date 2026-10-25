@@ -4,23 +4,23 @@
   "images": [
     {
       "name": "artifex-api",
-      "tag": "0.16.16",
-      "digest": "sha256:ab19d319835c7094ef4b6e417918ef9cc40c4f66edbdbd04904a1f3c4c65c9a0",
-      "publishedAt": "2026-10-22T19:24:48Z",
+      "tag": "0.16.20",
+      "digest": "sha256:3cea2d8788a5777d2b30aee6d4114e5ca8e1cb9cf28203936dfcca312c1f0502",
+      "publishedAt": "2026-10-25T13:44:55Z",
       "cosign": {
         "verified": true,
-        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.16.16",
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.16.20",
         "oidcIssuer": "https://token.actions.githubusercontent.com"
       }
     },
     {
       "name": "artifex-web-ui",
-      "tag": "0.4.16",
-      "digest": "sha256:2e23faab92c12ec43cf66cf957e46886fbe4c4489f345c44662ee39703faa362",
-      "publishedAt": "2026-10-22T20:30:55Z",
+      "tag": "0.4.19",
+      "digest": "sha256:86baf41a8901fc63d7d497e0ad723b8fc6d12fc526f02b2d0735dd63971c4f92",
+      "publishedAt": "2026-10-25T13:45:34Z",
       "cosign": {
         "verified": true,
-        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.16",
+        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.19",
         "oidcIssuer": "https://token.actions.githubusercontent.com"
       }
     }

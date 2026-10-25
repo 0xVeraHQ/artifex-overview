@@ -15,8 +15,8 @@ workflow `docker-release.yml` on the matching `vX.Y.Z` tag, issued by
 
 | Image | Tag | Digest | Published | Cosign |
 | --- | --- | --- | --- | --- |
-| `registry.hosting1337.com/artifex/artifex-api` | 0.16.16 | `sha256:ab19d319835c7094ef4b6e417918ef9cc40c4f66edbdbd04904a1f3c4c65c9a0` | 2026-10-22 | Verified, keyless |
-| `registry.hosting1337.com/artifex/artifex-web-ui` | 0.4.16 | `sha256:2e23faab92c12ec43cf66cf957e46886fbe4c4489f345c44662ee39703faa362` | 2026-10-22 | Verified, keyless |
+| `registry.hosting1337.com/artifex/artifex-api` | 0.16.20 | `sha256:3cea2d8788a5777d2b30aee6d4114e5ca8e1cb9cf28203936dfcca312c1f0502` | 2026-10-25 | Verified, keyless |
+| `registry.hosting1337.com/artifex/artifex-web-ui` | 0.4.19 | `sha256:86baf41a8901fc63d7d497e0ad723b8fc6d12fc526f02b2d0735dd63971c4f92` | 2026-10-25 | Verified, keyless |
 
 
 ## Check a signature
@@ -28,7 +28,7 @@ cosign verify \
   --certificate-identity-regexp \
     '^https://github.com/0xVeraHQ/artifex-api/\.github/workflows/docker-release\.yml@refs/tags/v.+$' \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-  registry.hosting1337.com/artifex/artifex-api@sha256:ab19d319835c7094ef4b6e417918ef9cc40c4f66edbdbd04904a1f3c4c65c9a0
+  registry.hosting1337.com/artifex/artifex-api@sha256:3cea2d8788a5777d2b30aee6d4114e5ca8e1cb9cf28203936dfcca312c1f0502
 ```
 
 ```bash
@@ -36,5 +36,5 @@ cosign verify \
   --certificate-identity-regexp \
     '^https://github.com/0xVeraHQ/artifex-web-ui/\.github/workflows/docker-release\.yml@refs/tags/v.+$' \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-  registry.hosting1337.com/artifex/artifex-web-ui@sha256:2e23faab92c12ec43cf66cf957e46886fbe4c4489f345c44662ee39703faa362
+  registry.hosting1337.com/artifex/artifex-web-ui@sha256:86baf41a8901fc63d7d497e0ad723b8fc6d12fc526f02b2d0735dd63971c4f92
 ```
