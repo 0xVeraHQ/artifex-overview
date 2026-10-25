@@ -8,10 +8,12 @@ Soroban contracts on Stellar Testnet. The active set is the one the public API s
 
 https://artifex.0xvera.com/api/contracts/registry
 
-Active registry version: **v2**. Contracts repository tag: **v0.1.0**.
+Source code: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts).
+
+Active contract version: **v2**. Contracts repository tag: **v0.1.0**.
 USDC and XLM rows are Stellar asset contracts used for payment, not Artifex business contracts.
 Inactive versions stay listed so a judge can see what they replaced.
-Registry **v3** is listed when present; cutover during HackMeridian is recorded in [HACKMERIDIAN.md](HACKMERIDIAN.md).
+Version **v3** is listed when present; activating it on the public API during HackMeridian is recorded in [HACKMERIDIAN.md](HACKMERIDIAN.md).
 
 | Contract | Registry version | Contracts tag | Network | ID | Active | Explorer |
 | --- | --- | --- | --- | --- | --- | --- |

@@ -25,14 +25,14 @@
       "pass": "3rd",
       "validated": 22,
       "blockers": 4,
-      "note": "Seed v6 and marketplace hardening"
+      "note": "15 demo artworks and marketplace hardening"
     },
     {
       "date": "2026-10-25",
       "pass": "4th",
       "validated": 22,
       "blockers": 4,
-      "note": "4th QA pass in progress after P0/P1 fixes"
+      "note": "4th QA pass in progress after production fixes"
     }
   ],
   "cases": [

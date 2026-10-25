@@ -2,8 +2,8 @@
 
 # Pieces
 
-Seed **hackathon-scale-15-v6** — 15 fictional works by fictional artists on Stellar Testnet.
-Seven works are certified under the seed design; ten are offered for sale.
+**15 demo artworks** by fictional artists on Stellar Testnet.
+**7 certified**; ten offered for sale.
 Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [https://stellar.expert/explorer/testnet](https://stellar.expert/explorer/testnet).
 
 ## Testnet

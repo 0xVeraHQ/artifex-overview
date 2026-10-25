@@ -29,7 +29,7 @@ networks:
         role: Demo organization (seed)
         address: GAJT4VFXWBD2QXJNOBQBY6TKTFEPO5YYHQXBCBIOCC7TGW6YAGDSMERC
         purpose: >
-          Public demo organization wallet that published Seed v6 participation
+          Public demo organization wallet that published the demo participation
           offers and the secondary listing on Silencio blanco.
   mainnet:
     status: PENDING

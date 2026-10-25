@@ -15,7 +15,7 @@ Reads (public, in this repo):
   qa/results.json    case id, description, status, optional Testnet tx hash
   roadmap.yaml       phases and allowed statuses
   wallets.yaml       public project accounts by network
-  pieces.yaml        Seed v6 pieces and on-chain evidence
+  pieces.yaml        15 demo artworks and on-chain evidence
 
 Reads (private checkouts or a release job; never committed here):
   versions.env       ARTIFEX_API_TAG, ARTIFEX_WEB_UI_TAG
@@ -451,10 +451,12 @@ def render_contracts(registry: dict) -> tuple[str, dict]:
         "",
         "https://artifex.0xvera.com/api/contracts/registry",
         "",
-        f"Active registry version: **{active_id}**. Contracts repository tag: **{active['contractsRepoTag']}**.",
+        "Source code: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts).",
+        "",
+        f"Active contract version: **{active_id}**. Contracts repository tag: **{active['contractsRepoTag']}**.",
         "USDC and XLM rows are Stellar asset contracts used for payment, not Artifex business contracts.",
         "Inactive versions stay listed so a judge can see what they replaced.",
-        "Registry **v3** is listed when present; cutover during HackMeridian is recorded in [HACKMERIDIAN.md](HACKMERIDIAN.md).",
+        "Version **v3** is listed when present; activating it on the public API during HackMeridian is recorded in [HACKMERIDIAN.md](HACKMERIDIAN.md).",
         "",
         table(
             ["Contract", "Registry version", "Contracts tag", "Network", "ID", "Active", "Explorer"],
@@ -551,7 +553,7 @@ def render_pieces(doc: dict) -> str:
         raise Reject("pieces.yaml network must be testnet")
     pieces = doc.get("pieces")
     if not isinstance(pieces, list) or len(pieces) != 15:
-        raise Reject("pieces.yaml must list the 15 Seed v6 works")
+        raise Reject("pieces.yaml must list the 15 demo artworks")
     explorer = explorer_for("testnet")
     rows = []
     for piece in pieces:
@@ -601,8 +603,8 @@ def render_pieces(doc: dict) -> str:
         GENERATED,
         "# Pieces",
         "",
-        f"Seed **{doc.get('seed') or 'hackathon-scale-15-v6'}** — 15 fictional works by fictional artists on Stellar Testnet.",
-        "Seven works are certified under the seed design; ten are offered for sale.",
+        "**15 demo artworks** by fictional artists on Stellar Testnet.",
+        "**7 certified**; ten offered for sale.",
         f"Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [{explorer}]({explorer}).",
         "",
         "## Testnet",

@@ -8,15 +8,15 @@ Times are **Lisbon (WEST / UTC+1 in late October)**. Each entry records what lan
 
 ## 2026-10-25 — Sunday
 
-### 09:00 — Event start · P0/P1 corrections begin
+### 09:00 — Event start · production fixes begin
 
-HackMeridian opens. Work starts on the production-readiness backlog agreed after mentor and judge conversations (the application had named OpenZeppelin, Trustless Work, and path payments; those remain on the longer roadmap).
+HackMeridian opens. Work starts on the production-readiness backlog agreed after mentor and judge conversations. The application had named OpenZeppelin, Trustless Work, and path payments; those three stay on the longer roadmap. The event priority is fixing Testnet sales flows, completing external QA, and launching on mainnet.
 
 In progress from 09:00:
 
 | Item | Intent | Evidence status |
 | --- | --- | --- |
-| Whole-work sale on registry **v3** | List and buy an entire work on the new contract set | **PENDING** — contract IDs exist in the API registry source; public API still serves **v2** until cutover |
+| Whole-work sale on contract version **v3** | List and buy an entire work on the new contract set | **PENDING** — v3 contract IDs are published in [CONTRACTS.md](CONTRACTS.md); the public API still serves **v2** until v3 is activated |
 | USDC purchase fix | Primary / whole-work checkout in Circle Testnet USDC | **PENDING** — release after fix |
 | Locked-unit recovery | Return units stuck from interrupted flows | **PENDING** — release after fix |
 | Offer and listing indexing | Public marketplace index matches on-chain offers and listings | **PENDING** — indexer work in progress |
@@ -28,11 +28,12 @@ Baseline already public before this entry (Testnet):
 
 - Live app: [https://artifex.0xvera.com](https://artifex.0xvera.com)
 - Images: api **0.16.16**, web **0.4.16**, cosign verified — [RELEASES.md](RELEASES.md)
-- Active contracts: registry **v2**, contracts tag **v0.1.0** — [CONTRACTS.md](CONTRACTS.md)
-- Seed v6: 15 pieces — [PIECES.md](PIECES.md)
+- Active contracts: version **v2**, contracts tag **v0.1.0** — [CONTRACTS.md](CONTRACTS.md)
+- **15 demo artworks** — [PIECES.md](PIECES.md)
 - External QA through pass 3: **22** validated, **4** blockers — [QA.md](QA.md)
+- Contracts source: [artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts)
 
-Next diary lines will attach release tags, digests, and Stellar Expert transaction links as each item lands. Fourth external QA pass runs after these corrections. Mainnet launch follows a clean Testnet cut.
+Next diary lines will attach release tags, digests, and explorer transaction links as each item lands. Fourth external QA pass runs after these corrections. Mainnet launch follows a clean Testnet state.
 
 ---
 

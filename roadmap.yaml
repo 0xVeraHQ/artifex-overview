@@ -8,9 +8,9 @@ phases:
       OpenZeppelin, Trustless Work, and path payments; after mentor and
       judge conversations the event priority is production readiness.
     items:
-      - Whole-work sale on contract registry v3
-      - USDC purchase fix and locked-unit recovery
-      - Offer and listing indexing; automatic distribution to holders
+      - Whole-work sale on contract version v3
+      - Fix USDC purchases and recover locked units
+      - Index offers and listings; automatic distribution to holders
       - Role permissions and verification improvements
       - Fourth external QA pass
       - Stellar mainnet launch

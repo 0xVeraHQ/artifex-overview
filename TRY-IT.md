@@ -12,7 +12,7 @@ A judge can buy one public participation unit on Stellar Testnet and see it arri
 | App | [https://artifex.0xvera.com](https://artifex.0xvera.com) |
 | Piece (verify) | [Public verify page](https://artifex.0xvera.com/verify/67b36becdd2b12df0918a9e68cd02b964595b970e0063f53f01066f5fb70fbbe) |
 
-Do not switch Freighter to Public (mainnet). Catalog row: [PIECES.md](PIECES.md).
+Do not switch Freighter to Public (mainnet). Demo catalog: [PIECES.md](PIECES.md).
 
 ## 1. Install Freighter and fund it
 
