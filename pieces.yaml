@@ -1,5 +1,9 @@
 network: testnet
 seed: 15-demo-artworks
+mainnet:
+  status: LIVE
+  reason: application cut over to mainnet; catalog empty pending seed/register
+  pieces: []
 pieces:
 - n: 1
   title: Mar de invierno
@@ -241,7 +245,3 @@ pieces:
   offerTx: 98f94b3bb79f8468215ac52c038f6b1b28b52e0bd408b19ecc7677391f8f9a26
   listingTx: null
   distribTx: null
-mainnet:
-  status: PENDING
-  reason: mainnet launch at HackMeridian
-  pieces: []

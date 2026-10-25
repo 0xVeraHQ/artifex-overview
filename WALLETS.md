@@ -2,9 +2,21 @@
 
 # Wallets
 
-## Testnet
+## Mainnet
 
-Public accounts for the Testnet deployment.
+**LIVE** — public app serving Stellar mainnet (api 0.17.1, registry mainnet-v1).
+
+| Role | Address | Purpose | Explorer |
+| --- | --- | --- | --- |
+| Platform | `GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V` | Mainnet platform / deployer and the live `/api/meta` platformWallet. Circle USDC trustline opened ([tx](https://stellar.expert/explorer/public/tx/a9df809b9748f309b720ff3aad0e86bc8c82c591af9dc085830326436b807118)). Deployed the HackMeridian mainnet contract set (38 txs, ~88 XLM). | [Explorer](https://stellar.expert/explorer/public/account/GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V) |
+| Validator | `GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V` | Co-signs certification on mainnet. Same account as the platform today; phase 3 separates the two behind multisig. | [Explorer](https://stellar.expert/explorer/public/account/GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V) |
+
+
+Circle mainnet USDC issuer: `GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN`.
+
+## Testnet (history)
+
+Public accounts for the Testnet deployment used before mainnet cutover.
 
 | Role | Address | Purpose | Explorer |
 | --- | --- | --- | --- |
@@ -16,15 +28,4 @@ Public accounts for the Testnet deployment.
 
 The Circle Testnet USDC issuer used for payments is
 `GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5`.
-That account is Circle's, not an Artifex account. See [TRY-IT.md](TRY-IT.md).
-
-## Mainnet
-
-**LIVE** — platform funded; contracts deployed; application cutover in progress.
-
-| Role | Address | Purpose | Explorer |
-| --- | --- | --- | --- |
-| Platform | `GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V` | Mainnet platform / deployer. Circle USDC trustline opened ([tx](https://stellar.expert/explorer/public/tx/a9df809b9748f309b720ff3aad0e86bc8c82c591af9dc085830326436b807118)). Deployed the HackMeridian mainnet contract set (38 txs, ~88 XLM). | [Explorer](https://stellar.expert/explorer/public/account/GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V) |
-
-
-Circle mainnet USDC issuer: `GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN`.
+That account is Circle's, not an Artifex account.

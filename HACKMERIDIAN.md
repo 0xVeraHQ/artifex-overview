@@ -95,10 +95,23 @@ Explorer: [stellar.expert public](https://stellar.expert/explorer/public). Full 
 
 ### 23:15 — Application cutover to mainnet in progress
 
-Contracts are live on mainnet. The public app at [artifex.0xvera.com](https://artifex.0xvera.com) is still serving Testnet until cutover finishes (`/api/meta` not yet `stellarNetwork: mainnet`). [PIECES.md](PIECES.md) remains the Testnet demo catalog until mainnet pieces are seeded.
+Contracts live on mainnet; app cutover started.
+
+### 23:40 — Application serving Stellar mainnet
+
+Public app cut over. Evidence:
+
+| Check | Value |
+| --- | --- |
+| `/api/health` | `stellarNetwork: mainnet` |
+| `/api/meta` | api **0.17.1**, `platformWallet` `GCNSEG…Q3V` |
+| `/api/contracts/registry` | active **mainnet-v1** (tag `vps-deploy`) |
+| `/api/pieces` | empty (`items: []`) — catalog pending seed/register |
+
+Overview docs now list **mainnet first**; Testnet tables remain as HackMeridian history. [PIECES.md](PIECES.md) Mainnet section is LIVE with an empty catalog until works appear.
 
 ---
 
 ## Planned during the event (not yet dated)
 
-- **Finish application cutover to mainnet** — then refresh [PIECES.md](PIECES.md) and make mainnet the primary network in the README.
+- **Seed or register mainnet demo works** — fill [PIECES.md](PIECES.md) Mainnet rows and refresh [TRY-IT.md](TRY-IT.md) when a public mainnet buy path exists.

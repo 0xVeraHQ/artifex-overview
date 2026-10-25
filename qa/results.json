@@ -2,8 +2,8 @@
   "network": "testnet",
   "pass": "fourth",
   "mainnet": {
-    "status": "PENDING",
-    "reason": "contracts deployed; application cutover to mainnet in progress"
+    "status": "LIVE",
+    "reason": "app on mainnet (stellarNetwork mainnet); mainnet QA cases not yet filled"
   },
   "history": [
     {

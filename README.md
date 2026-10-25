@@ -2,9 +2,9 @@
 
 Provenance, certification, and funding for art — on Stellar.
 
-Live app (Testnet): [https://artifex.0xvera.com](https://artifex.0xvera.com)
+Live app (**Stellar mainnet**): [https://artifex.0xvera.com](https://artifex.0xvera.com)
 
-Artifex is built for **HackMeridian 2026**, track **Scale**. This repository (`0xVeraHQ/artifex-overview`) is the public presentation for judges. It has the product story, public Testnet identifiers, and the status of QA, releases, contracts, wallets, pieces, and the roadmap. Tables are generated from the real sources. Do not edit them by hand.
+Artifex is built for **HackMeridian 2026**, track **Scale**. This repository (`0xVeraHQ/artifex-overview`) is the public presentation for judges. It has the product story, public mainnet identifiers (with Testnet history from the event), and the status of QA, releases, contracts, wallets, pieces, and the roadmap. Tables are generated from the real sources. Do not edit them by hand.
 
 Judges do not need the private application repositories. Everything to understand and verify Artifex is here, with explorer links for on-chain evidence. The Soroban contracts are public (see below).
 
@@ -45,7 +45,7 @@ Component diagram and certification / sale flows: [docs/architecture.md](docs/ar
 | --- | --- | --- |
 | QA | PASS — APTO for mainnet (re-test api 0.16.23 / web 0.4.21–0.4.22) | [QA.md](QA.md) |
 | Latest release | api 0.17.1, web 0.4.22, cosign verified | [RELEASES.md](RELEASES.md) |
-| Active contracts | Mainnet deployed (38 txs); Testnet v4 still served until app cutover | [CONTRACTS.md](CONTRACTS.md) |
+| Active contracts | Mainnet live (mainnet-v1, tag vps-deploy); deploy 38 txs | [CONTRACTS.md](CONTRACTS.md) |
 | Roadmap | HackMeridian in progress | [ROADMAP.md](ROADMAP.md) |
 
 <!-- /GENERATED:status -->
@@ -54,11 +54,9 @@ Generated together with [QA.md](QA.md), [RELEASES.md](RELEASES.md), [CONTRACTS.m
 
 ## Try it
 
-1. Install [Freighter](https://www.freighter.app/) and switch it to **Testnet**. Fund the account with [Friendbot](https://friendbot.stellar.org/).
-2. Open [the app](https://artifex.0xvera.com), find **Estudio en azul** (offer titled **Try it**), and buy one unit (priced in XLM).
-3. Open the transaction on the [Testnet explorer](https://stellar.expert/explorer/testnet) and confirm that the units arrived in your account.
+The public app is on **Stellar mainnet**. The catalog is still empty after cutover (`/api/pieces` returns no items), so there is no priced demo buy yet. Open [the app](https://artifex.0xvera.com), connect [Freighter](https://www.freighter.app/) on **Public** network, and use the [public explorer](https://stellar.expert/explorer/public) for on-chain checks.
 
-Full steps: [TRY-IT.md](TRY-IT.md). Demo catalog: [PIECES.md](PIECES.md).
+The HackMeridian Testnet “Try it” path (Estudio en azul, 1 XLM) remains documented as history in [TRY-IT.md](TRY-IT.md). Catalog: [PIECES.md](PIECES.md).
 
 ## Before HackMeridian
 
@@ -78,23 +76,21 @@ From Sunday 25 October 2026 09:00 Lisbon, the Scale track prioritizes production
 
 **Landed today:**
 
-- External QA **APTO for mainnet** after re-test on api **0.16.23** / web **0.4.21–0.4.22** (evolution **9 → 20 → 22 → 28 → apto**). Whole-work buy/cancel/resale, living-author one signature, and proportional distribute cleared.
-- api **0.17.1** / web **0.4.22** (cosign verified) — mainnet support in orch tags. Prior gate: api **0.16.23**.
-- **Mainnet contracts deployed** (38 txs, ~88 XLM) from platform `GCNSEG…Q3V`; Circle USDC trustline open. IDs in [CONTRACTS.md](CONTRACTS.md) / [WALLETS.md](WALLETS.md).
-
-**In progress:** application cutover to mainnet. Public site still on Testnet until `/api/meta` reports `stellarNetwork: mainnet`.
+- External QA **APTO for mainnet** after re-test on api **0.16.23** / web **0.4.21–0.4.22** (evolution **9 → 20 → 22 → 28 → apto**).
+- api **0.17.1** / web **0.4.22** (cosign verified); **mainnet contracts** deployed (38 txs, ~88 XLM).
+- **Application cut over to mainnet** — `/api/health` → `stellarNetwork: mainnet`, registry **mainnet-v1**. Catalog still empty pending seed/register.
 
 Dated evidence: [HACKMERIDIAN.md](HACKMERIDIAN.md). Roadmap: [ROADMAP.md](ROADMAP.md).
 
-The original application named OpenZeppelin contracts, Trustless Work escrow, and path payments. After conversations with judges and mentors, those three move to the longer [roadmap](ROADMAP.md) (phase 3); the event focus is a production-ready Testnet, external QA fit for judges, and mainnet launch.
+The original application named OpenZeppelin contracts, Trustless Work escrow, and path payments. After conversations with judges and mentors, those three move to the longer [roadmap](ROADMAP.md) (phase 3); the event focus was production readiness, external QA, and mainnet launch.
 
 ## Known limitations
 
-- The public app is still on Stellar **Testnet** until cutover finishes. **Mainnet contracts are deployed**; demo pieces on mainnet are not listed yet ([PIECES.md](PIECES.md) remains Testnet). See [HACKMERIDIAN.md](HACKMERIDIAN.md).
-- Platform and validator are the same Testnet address today. Splitting them behind multisig is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
+- Live network is Stellar **mainnet**. The mainnet piece catalog is empty after cutover; Testnet demo rows stay in [PIECES.md](PIECES.md) as history. See [HACKMERIDIAN.md](HACKMERIDIAN.md).
+- Platform and validator are the same mainnet address today. Splitting them behind multisig is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
 - Participations are not a legal opinion on title. Counsel review is [phase 3](ROADMAP.md).
 - Signing is Freighter. Passkey smart wallet is [phase 1](ROADMAP.md); iOS / Android are [phase 2](ROADMAP.md).
-- A few non-blocking Testnet cases remain **PENDING** in [QA.md](QA.md) (catalog filter, register form completeness, prior digitization, three-owner resale). The mainnet gate verdict is **PASS / APTO**.
+- A few non-blocking Testnet cases remain **PENDING** in [QA.md](QA.md). The mainnet gate verdict is **PASS / APTO**.
 
 ## Team
 

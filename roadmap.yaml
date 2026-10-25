@@ -10,8 +10,8 @@ phases:
     items:
       - External QA APTO for mainnet (9 → 20 → 22 → 28 → apto)
       - Mainnet Soroban contracts deployed (38 txs); platform + USDC trustline live
-      - Application cutover to mainnet in progress (api 0.17.1 / web 0.4.22)
-      - Mainnet demo catalog after cutover
+      - Application cut over to mainnet (api 0.17.1, registry mainnet-v1)
+      - Mainnet demo catalog seed/register (catalog still empty)
   - id: phase-1
     name: Phase 1
     status: PLANNED

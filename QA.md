@@ -28,8 +28,8 @@ Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 
 ## Mainnet
 
-**PENDING** — contracts deployed; application cutover to mainnet in progress.
-Mainnet cases will be filled with real transaction links after launch.
+**LIVE** — app on mainnet (stellarNetwork mainnet); mainnet QA cases not yet filled.
+Mainnet case rows will be filled with public transaction links when mainnet QA runs.
 
 ## Cases (Testnet)
 

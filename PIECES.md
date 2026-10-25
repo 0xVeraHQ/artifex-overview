@@ -2,11 +2,22 @@
 
 # Pieces
 
-**15 demo artworks** by fictional artists on Stellar Testnet.
-**7 certified**; ten offered for sale.
-Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [https://stellar.expert/explorer/testnet](https://stellar.expert/explorer/testnet).
+## Mainnet
 
-## Testnet
+**LIVE** — application cut over to mainnet; catalog empty pending seed/register.
+Live `/api/pieces` is empty after cutover; rows will appear here when works are registered on mainnet.
+Explorer: [https://stellar.expert/explorer/public](https://stellar.expert/explorer/public).
+
+| # | Work | Certification | Status | Sale modality | Price | Explorer |
+| --- | --- | --- | --- | --- | --- | --- |
+| — | — | — | LIVE | — | — | — |
+
+
+## Testnet (history)
+
+**15 demo artworks** by fictional artists used for HackMeridian QA on Stellar Testnet.
+**7 certified**; ten offered for sale.
+Explorer: [https://stellar.expert/explorer/testnet](https://stellar.expert/explorer/testnet).
 
 | # | Work | Certification | Status | Sale modality | Price | Try it | Public page | Offer / listing | Certification tx | Offer tx | Listing tx | Distribution tx |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -30,13 +41,3 @@ Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [htt
 Certification transactions are `fee_paid` events that name the piece id.
 Offer and listing transactions are `offer_new` / `listed` events that name the offer or listing id from the public fiche.
 A dash means the seed step does not apply, or the public indexer has not yet recorded a matching event.
-
-## Mainnet
-
-**PENDING** — mainnet launch at HackMeridian.
-Mainnet piece IDs and transaction hashes will be filled after launch.
-
-| # | Work | Certification | Status | Sale modality | Price | Explorer |
-| --- | --- | --- | --- | --- | --- | --- |
-| — | — | — | PENDING | — | — | — |
-

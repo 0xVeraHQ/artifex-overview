@@ -259,7 +259,7 @@ def render_qa(doc: dict, cases: list[dict]) -> str:
                 "## Mainnet",
                 "",
                 f"**{mainnet.get('status', 'PENDING')}** — {mainnet.get('reason', 'mainnet launch at HackMeridian')}.",
-                "Mainnet cases will be filled with real transaction links after launch.",
+                "Mainnet case rows will be filled with public transaction links when mainnet QA runs.",
                 "",
             ]
         )
@@ -565,28 +565,41 @@ def render_contracts(registry: dict, mainnet_deploy: dict | None = None) -> tupl
         addr = str(active.get(field) or "")
         if not G_RE.fullmatch(addr):
             raise Reject(f"active {field} is not a public account")
+    active_network = str(active.get("network") or "testnet").lower()
+    testnet_rows = [r for r in rows if r[3] == "testnet"]
+    registry_mainnet_rows = [r for r in rows if r[3] in {"mainnet", "public"}]
     mainnet_text, mainnet_rows, mainnet_meta = render_mainnet_contracts(mainnet_deploy)
+    if registry_mainnet_rows:
+        mainnet_rows = registry_mainnet_rows
+        if mainnet_meta is None:
+            mainnet_meta = {
+                "deployer": str(active.get("platform") or ""),
+                "deployedAt": "",
+                "txCount": 0,
+                "feeXlm": 0.0,
+            }
+        if active_network in {"mainnet", "public"}:
+            mainnet_text = (
+                f"**LIVE** — public API serves registry **{active_id}** "
+                f"(contracts tag **{active['contractsRepoTag']}**) on Stellar mainnet.\n"
+                "https://artifex.0xvera.com/api/contracts/registry\n"
+                "https://artifex.0xvera.com/api/health (`stellarNetwork: mainnet`)\n"
+                "Source: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts).\n"
+            )
+            if mainnet_deploy:
+                txs = mainnet_deploy.get("transactions") or []
+                mainnet_text += (
+                    f"Deploy record: {len(txs)} transactions from "
+                    f"`{mainnet_deploy.get('deployer')}` "
+                    f"({mainnet_deploy.get('deployedAt')}). "
+                    "See artifex-orch `deployments/mainnet.json`.\n"
+                )
+                mainnet_meta["txCount"] = len(txs)
+                mainnet_meta["deployer"] = str(mainnet_deploy.get("deployer") or "")
+                mainnet_meta["deployedAt"] = str(mainnet_deploy.get("deployedAt") or "")
     lines = [
         GENERATED,
         "# Contracts",
-        "",
-        "## Testnet",
-        "",
-        "Soroban contracts on Stellar Testnet. The active set is the one the public API serves while the app is still on Testnet:",
-        "",
-        "https://artifex.0xvera.com/api/contracts/registry",
-        "",
-        "Source code: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts).",
-        "",
-        f"Active contract version: **{active_id}**. Contracts repository tag: **{active['contractsRepoTag']}**.",
-        "USDC and XLM rows are Stellar asset contracts used for payment, not Artifex business contracts.",
-        "Inactive versions stay listed so a judge can see what they replaced.",
-        "Versions **v3** and **v4** are listed when present; activating each on the public API during HackMeridian is recorded in [HACKMERIDIAN.md](HACKMERIDIAN.md).",
-        "",
-        table(
-            ["Contract", "Registry version", "Contracts tag", "Network", "ID", "Active", "Explorer"],
-            rows,
-        ),
         "",
         "## Mainnet",
         "",
@@ -595,6 +608,20 @@ def render_contracts(registry: dict, mainnet_deploy: dict | None = None) -> tupl
         table(
             ["Contract", "Registry version", "Contracts tag", "Network", "ID", "Active", "Explorer"],
             mainnet_rows,
+        ),
+        "",
+        "## Testnet (history)",
+        "",
+        "Soroban contracts used on Stellar Testnet before and during HackMeridian.",
+        "Inactive after the application cut over to mainnet.",
+        "",
+        "Source code: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts).",
+        "",
+        "USDC and XLM rows are Stellar asset contracts used for payment, not Artifex business contracts.",
+        "",
+        table(
+            ["Contract", "Registry version", "Contracts tag", "Network", "ID", "Active", "Explorer"],
+            testnet_rows or [["—", "—", "—", "testnet", "—", "No", "—"]],
         ),
         "",
     ]
@@ -612,6 +639,7 @@ def render_wallets(doc: dict, active: dict) -> str:
     accounts = testnet.get("accounts")
     if not isinstance(accounts, list) or not accounts:
         raise Reject("wallets.yaml has no testnet accounts")
+    active_network = str(active.get("network") or "testnet").lower()
     rows = []
     seen = set()
     explorer = explorer_for("testnet")
@@ -627,7 +655,7 @@ def render_wallets(doc: dict, active: dict) -> str:
         if address in seen and field not in {"platform", "validator"}:
             raise Reject(f"duplicate account {address}")
         seen.add(address)
-        if field:
+        if field and active_network == "testnet":
             expected = str(active.get(field) or "")
             if address != expected:
                 raise Reject(
@@ -651,8 +679,15 @@ def render_wallets(doc: dict, active: dict) -> str:
         role = str(account.get("role") or "").strip()
         address = str(account.get("address") or "").strip()
         purpose = " ".join(str(account.get("purpose") or "").split())
+        field = account.get("registryField")
         if not role or not purpose or not G_RE.fullmatch(address):
             raise Reject("each mainnet wallet needs role, purpose, and a public account")
+        if field and active_network in {"mainnet", "public"}:
+            expected = str(active.get(field) or "")
+            if address != expected:
+                raise Reject(
+                    f"wallets.yaml mainnet {field} {address} does not match the active registry {expected}"
+                )
         mainnet_rows.append(
             [
                 role,
@@ -667,16 +702,6 @@ def render_wallets(doc: dict, active: dict) -> str:
         GENERATED,
         "# Wallets",
         "",
-        "## Testnet",
-        "",
-        "Public accounts for the Testnet deployment.",
-        "",
-        table(["Role", "Address", "Purpose", "Explorer"], rows),
-        "",
-        "The Circle Testnet USDC issuer used for payments is",
-        "`GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5`.",
-        "That account is Circle's, not an Artifex account. See [TRY-IT.md](TRY-IT.md).",
-        "",
         "## Mainnet",
         "",
         f"**{mainnet_status}** — {mainnet_reason}.",
@@ -685,17 +710,22 @@ def render_wallets(doc: dict, active: dict) -> str:
         "",
         "Circle mainnet USDC issuer: `GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN`.",
         "",
+        "## Testnet (history)",
+        "",
+        "Public accounts for the Testnet deployment used before mainnet cutover.",
+        "",
+        table(["Role", "Address", "Purpose", "Explorer"], rows),
+        "",
+        "The Circle Testnet USDC issuer used for payments is",
+        "`GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5`.",
+        "That account is Circle's, not an Artifex account.",
+        "",
     ]
     return "\n".join(lines)
 
 
-def render_pieces(doc: dict) -> str:
-    if doc.get("network") != "testnet":
-        raise Reject("pieces.yaml network must be testnet")
-    pieces = doc.get("pieces")
-    if not isinstance(pieces, list) or len(pieces) != 15:
-        raise Reject("pieces.yaml must list the 15 demo artworks")
-    explorer = explorer_for("testnet")
+def _piece_rows(pieces: list, network: str) -> list[list[str]]:
+    explorer = explorer_for(network)
     rows = []
     for piece in pieces:
         n = str(piece.get("n") or "")
@@ -710,10 +740,10 @@ def render_pieces(doc: dict) -> str:
         if not all([n, title, artist, cert, status, modality, piece_id]):
             raise Reject(f"piece {n or '?'} is incomplete")
         verify = f"[Verify](https://artifex.0xvera.com/verify/{piece_id})"
-        cert_tx = tx_link(piece.get("certTx"))
-        offer_tx = tx_link(piece.get("offerTx"))
-        listing_tx = tx_link(piece.get("listingTx"))
-        distrib_tx = tx_link(piece.get("distribTx"))
+        cert_tx = tx_link(piece.get("certTx"), network)
+        offer_tx = tx_link(piece.get("offerTx"), network)
+        listing_tx = tx_link(piece.get("listingTx"), network)
+        distrib_tx = tx_link(piece.get("distribTx"), network)
         offer_id = piece.get("offerId")
         listing_id = piece.get("listingId")
         ids = []
@@ -739,49 +769,76 @@ def render_pieces(doc: dict) -> str:
                 distrib_tx,
             ]
         )
+    return rows
+
+
+PIECE_COLS = [
+    "#",
+    "Work",
+    "Certification",
+    "Status",
+    "Sale modality",
+    "Price",
+    "Try it",
+    "Public page",
+    "Offer / listing",
+    "Certification tx",
+    "Offer tx",
+    "Listing tx",
+    "Distribution tx",
+]
+
+
+def render_pieces(doc: dict) -> str:
+    pieces = doc.get("pieces")
+    if not isinstance(pieces, list) or len(pieces) != 15:
+        raise Reject("pieces.yaml must list the 15 Testnet demo artworks")
+    testnet_rows = _piece_rows(pieces, "testnet")
     mainnet = doc.get("mainnet") or {}
+    mainnet_status = str(mainnet.get("status") or "PENDING")
+    mainnet_reason = str(mainnet.get("reason") or "mainnet launch at HackMeridian")
+    mainnet_pieces = mainnet.get("pieces") or []
+    if not isinstance(mainnet_pieces, list):
+        raise Reject("pieces.yaml mainnet.pieces must be a list")
+    explorer_pub = explorer_for("mainnet")
+    if mainnet_pieces:
+        mainnet_rows = _piece_rows(mainnet_pieces, "mainnet")
+        mainnet_body = [
+            f"**{len(mainnet_pieces)} artwork(s)** on Stellar mainnet.",
+            f"Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [{explorer_pub}]({explorer_pub}).",
+            "",
+            table(PIECE_COLS, mainnet_rows),
+        ]
+    else:
+        mainnet_body = [
+            f"**{mainnet_status}** — {mainnet_reason}.",
+            f"Live `/api/pieces` is empty after cutover; rows will appear here when works are registered on mainnet.",
+            f"Explorer: [{explorer_pub}]({explorer_pub}).",
+            "",
+            table(
+                ["#", "Work", "Certification", "Status", "Sale modality", "Price", "Explorer"],
+                [["—", "—", "—", mainnet_status, "—", "—", "—"]],
+            ),
+        ]
     lines = [
         GENERATED,
         "# Pieces",
         "",
-        "**15 demo artworks** by fictional artists on Stellar Testnet.",
+        "## Mainnet",
+        "",
+        *mainnet_body,
+        "",
+        "## Testnet (history)",
+        "",
+        "**15 demo artworks** by fictional artists used for HackMeridian QA on Stellar Testnet.",
         "**7 certified**; ten offered for sale.",
-        f"Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [{explorer}]({explorer}).",
+        f"Explorer: [{explorer_for('testnet')}]({explorer_for('testnet')}).",
         "",
-        "## Testnet",
-        "",
-        table(
-            [
-                "#",
-                "Work",
-                "Certification",
-                "Status",
-                "Sale modality",
-                "Price",
-                "Try it",
-                "Public page",
-                "Offer / listing",
-                "Certification tx",
-                "Offer tx",
-                "Listing tx",
-                "Distribution tx",
-            ],
-            rows,
-        ),
+        table(PIECE_COLS, testnet_rows),
         "",
         "Certification transactions are `fee_paid` events that name the piece id.",
         "Offer and listing transactions are `offer_new` / `listed` events that name the offer or listing id from the public fiche.",
         "A dash means the seed step does not apply, or the public indexer has not yet recorded a matching event.",
-        "",
-        "## Mainnet",
-        "",
-        f"**{mainnet.get('status', 'PENDING')}** — {mainnet.get('reason', 'mainnet launch at HackMeridian')}.",
-        "Mainnet piece IDs and transaction hashes will be filled after launch.",
-        "",
-        table(
-            ["#", "Work", "Certification", "Status", "Sale modality", "Price", "Explorer"],
-            [["—", "—", "—", "PENDING", "—", "—", "—"]],
-        ),
         "",
     ]
     return "\n".join(lines)
@@ -851,7 +908,14 @@ def render_status(
     roadmap_headline: str,
     mainnet_meta: dict | None,
 ) -> str:
-    if mainnet_meta:
+    if str(active_version).startswith("mainnet") or (
+        mainnet_meta and str(active_version) not in {"v1", "v2", "v3", "v4"}
+    ):
+        contracts_state = (
+            f"Mainnet live ({active_version}, tag {contracts_tag})"
+            + (f"; deploy {mainnet_meta['txCount']} txs" if mainnet_meta and mainnet_meta.get("txCount") else "")
+        )
+    elif mainnet_meta:
         contracts_state = (
             f"Mainnet deployed ({mainnet_meta['txCount']} txs); "
             f"Testnet {active_version} still served until app cutover"
