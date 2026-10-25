@@ -43,9 +43,9 @@ Component diagram and certification / sale flows: [docs/architecture.md](docs/ar
 <!-- GENERATED:status -->
 | Area | State | Document |
 | --- | --- | --- |
-| QA | PENDING — 4th QA pass in progress | [QA.md](QA.md) |
-| Latest release | api 0.16.20, web 0.4.19, cosign verified | [RELEASES.md](RELEASES.md) |
-| Active contracts | Registry v3 on Testnet, contracts tag v0.2.0 | [CONTRACTS.md](CONTRACTS.md) |
+| QA | PENDING — Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | [QA.md](QA.md) |
+| Latest release | api 0.16.23, web 0.4.21, cosign verified | [RELEASES.md](RELEASES.md) |
+| Active contracts | Registry v4 on Testnet, contracts tag v0.2.1-living-author | [CONTRACTS.md](CONTRACTS.md) |
 | Roadmap | HackMeridian in progress | [ROADMAP.md](ROADMAP.md) |
 
 <!-- /GENERATED:status -->
@@ -76,9 +76,14 @@ Details: [CONTRACTS.md](CONTRACTS.md), [RELEASES.md](RELEASES.md), [PIECES.md](P
 
 From Sunday 25 October 2026 09:00 Lisbon, the Scale track prioritizes production readiness and mainnet launch.
 
-**Landed today (api 0.16.20 / web 0.4.19):** whole-work sale on contract **v3**, USDC purchase fix, locked-unit recovery, offer/listing indexing, automatic distribution, role permissions, verification improvements, and public `llms.txt` / `robots.txt` / `sitemap.xml`. Testnet reinstalled with **15 demo artworks**. Active registry: **v3**.
+**Landed today:**
 
-**In progress:** fourth external QA pass. **Next:** Stellar **mainnet** launch.
+- api **0.16.20** / web **0.4.19** / registry **v3** — whole-work sale, USDC fix, locked-unit recovery, indexing, automatic distribution, roles, verification, `llms.txt` / `robots.txt` / `sitemap.xml`; 15 demo artworks reseeded.
+- Fourth external QA: **28** validated (9 → 20 → 22 → 28). Certification (one and two signatures), QR verify, primary/secondary participations, USDC buy, and automatic distribute work. Three blockers remain under re-test.
+- api **0.16.23** / web **0.4.21** / registry **v4** — living-author one-signature `cert_registry`, whole-work buy/cancel/resale by active token sale with accumulated owner history, proportional distribution.
+- Mainnet platform account funded; Circle USDC trustline open (public address in [WALLETS.md](WALLETS.md)).
+
+**In progress:** re-test of the three blockers on v4. **Next:** Stellar **mainnet** contract deploy.
 
 Dated evidence: [HACKMERIDIAN.md](HACKMERIDIAN.md). Roadmap: [ROADMAP.md](ROADMAP.md).
 
@@ -86,11 +91,11 @@ The original application named OpenZeppelin contracts, Trustless Work escrow, an
 
 ## Known limitations
 
-- Deployment today is Stellar **Testnet**. Mainnet sections are **PENDING** (`mainnet launch at HackMeridian`) in [CONTRACTS.md](CONTRACTS.md), [WALLETS.md](WALLETS.md), [PIECES.md](PIECES.md), and [QA.md](QA.md).
+- Application deployment today is Stellar **Testnet**. Mainnet contracts are not deployed yet; the mainnet platform wallet is funded (see [WALLETS.md](WALLETS.md)). Contract and piece Mainnet sections stay **PENDING** until deploy.
 - Platform and validator are the same Testnet address today. Splitting them behind multisig is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
 - Participations are not a legal opinion on title. Counsel review is [phase 3](ROADMAP.md).
 - Signing is Freighter. Passkey smart wallet is [phase 1](ROADMAP.md); iOS / Android are [phase 2](ROADMAP.md).
-- Fourth external QA pass is running against the v3 Testnet reinstall. Cases still open are **PENDING** in [QA.md](QA.md). See [HACKMERIDIAN.md](HACKMERIDIAN.md).
+- Three whole-work blockers from the 4th QA pass are under re-test on api **0.16.23** / web **0.4.21** / registry **v4**. Open cases are **PENDING** in [QA.md](QA.md). See [HACKMERIDIAN.md](HACKMERIDIAN.md).
 
 ## Team
 

@@ -30,9 +30,9 @@
     {
       "date": "2026-10-25",
       "pass": "4th",
-      "validated": 22,
-      "blockers": 4,
-      "note": "4th QA pass started after api 0.16.20 / web 0.4.19 / registry v3"
+      "validated": 28,
+      "blockers": 3,
+      "note": "api 0.16.20 → 0.16.22; 7 open, 1 untested; blockers under re-test on 0.16.23 / 0.4.21 / v4"
     }
   ],
   "cases": [
@@ -55,8 +55,7 @@
       "group": "V",
       "title": "Valid certificate lists its signers",
       "description": "Public verification of a finalized certificate lists the signers: one for a living author, two for a deceased author.",
-      "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "status": "PASS"
     },
     {
       "id": "V-04",
@@ -70,7 +69,8 @@
       "group": "V",
       "title": "Catalog filters",
       "description": "Filters for certification, sale modality, and participation type narrow the list and can be cleared.",
-      "status": "PASS"
+      "status": "PENDING",
+      "reason": "Future sale filter still includes whole-work listings"
     },
     {
       "id": "V-06",
@@ -91,7 +91,8 @@
       "group": "C",
       "title": "Register a fiche with photographs",
       "description": "An artist creates a piece fiche and attaches photographs.",
-      "status": "PASS"
+      "status": "PENDING",
+      "reason": "register form still omits dimensions, weight, description, and documents"
     },
     {
       "id": "C-02",
@@ -99,7 +100,7 @@
       "title": "Living author, fee in XLM",
       "description": "The living author signs once and pays the certification fee in XLM (5 XLM). The certificate finalizes.",
       "status": "PASS",
-      "txHash": "42b39bfe96f3aa1148b444e5897cb1e05273309e3b813e7494dfef69aa2cecca"
+      "txHash": "26cfdc9fcc33318ae18d2390c2bf5f4ba9b9e63eb7cc37a1cd0fc9b72b879444"
     },
     {
       "id": "C-03",
@@ -107,29 +108,31 @@
       "title": "Museum authorizes a connoisseur",
       "description": "For a deceased author, a museum authorizes the connoisseur who will sign.",
       "status": "PASS",
-      "txHash": "e37daab6acaa079e36fb9bef0838eb9a943ed906b025945dbbccf94b0b7113ad"
+      "txHash": "bdc471c45a7a4c137280612b01cd511f2f67b82dba640da972a2b149d03b03b9"
     },
     {
       "id": "C-04",
       "group": "C",
       "title": "Connoisseur signs, second signature pending",
       "description": "The connoisseur signs. The certificate stays pending until the second signature.",
-      "status": "PASS"
+      "status": "PASS",
+      "txHash": "74aedeb5b839421f9ad2ef85c8b0ab9287bfff3bec94f3a138e0744fcd73589e"
     },
     {
       "id": "C-05",
       "group": "C",
       "title": "Museum second signature finalizes",
       "description": "The museum adds the second signature. The certificate becomes valid.",
-      "status": "PASS"
+      "status": "PASS",
+      "txHash": "fa565f9a3c5a28e270212da3eebe626bfd5af48244a3cb67fe68dce7a2c49621"
     },
     {
       "id": "C-06",
       "group": "C",
       "title": "Second signature on a pending demo piece",
       "description": "A demo piece left pending receives its second signature and becomes valid.",
-      "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "status": "PASS",
+      "txHash": "c73c7c5d7a58c725e8cf3afa6fd4edb0991365a2a602c8f7cced5651aad25e50"
     },
     {
       "id": "C-07",
@@ -137,23 +140,22 @@
       "title": "Digitize a prior certificate",
       "description": "An existing certificate is digitized. The fiche stores the document hash and the certification flow records it.",
       "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "reason": "prior digitization rejects PDF and leaves an orphan fiche"
     },
     {
       "id": "C-08",
       "group": "C",
       "title": "Verify C-02, C-05, and C-07",
       "description": "The public verify page, including the QR link, shows the certificates from C-02, C-05, and C-07 as valid.",
-      "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "status": "PASS"
     },
     {
       "id": "S-01",
       "group": "S",
       "title": "List a whole digital work in XLM",
       "description": "The owner lists the whole work as a digital sale priced in XLM.",
-      "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "status": "PASS",
+      "txHash": "fd66cf0ac61805029bfea7f3e06d9740b1aed711c94cc080f40b6a4211192568"
     },
     {
       "id": "S-02",
@@ -161,7 +163,7 @@
       "title": "Buy the whole work",
       "description": "A second account buys the whole work. Ownership moves to the buyer.",
       "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "reason": "Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4"
     },
     {
       "id": "S-03",
@@ -169,7 +171,7 @@
       "title": "Resale with three owners",
       "description": "The work is sold again. The ownership history shows three owners.",
       "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "reason": "not tested on 4th pass; waiting on whole-work buy re-test"
     },
     {
       "id": "S-04",
@@ -177,7 +179,7 @@
       "title": "List with physical delivery",
       "description": "The owner lists a whole work with a physical-delivery clause.",
       "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "reason": "Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4"
     },
     {
       "id": "S-05",
@@ -185,7 +187,7 @@
       "title": "Buy in USDC and send the delivery form",
       "description": "A buyer pays in USDC and submits the physical-delivery form. Delivery itself stays off-chain.",
       "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "reason": "Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4"
     },
     {
       "id": "S-06",
@@ -193,7 +195,7 @@
       "title": "Museum offers each participation type",
       "description": "A museum publishes one offer of each type — future sale, guaranteed repurchase, financing with return, and exploitation rights — each with a terms document.",
       "status": "PASS",
-      "txHash": "bd9195a3934c3881b79c85842c6b34729c31622a4301151c8d7481fc4e5831cd"
+      "txHash": "2f4c622d24c621ff0519babd258f2c1e9cce0e830da87de1714c1b83ddc81c95"
     },
     {
       "id": "S-07",
@@ -201,7 +203,7 @@
       "title": "Buy an entire primary offer",
       "description": "A buyer takes every unit of a primary offer in one payment.",
       "status": "PASS",
-      "txHash": "e43e55ac21e9bb8eb2bf7c25473fa1c9684baef5dc4aff94e52a0c3370466654"
+      "txHash": "0e41fba4ffd09fc8312fb09bca2943519e838bcf10cc5e4010208f2ba96cb5b6"
     },
     {
       "id": "S-08",
@@ -209,7 +211,7 @@
       "title": "Buy part of a primary offer",
       "description": "A buyer takes some of the units. The remainder stays available.",
       "status": "PASS",
-      "txHash": "881c5f3917aa4e829ec7e8aa456fbf987ff7faaa403e9e7cef7c8061b1f3034a"
+      "txHash": "0c1abebd0bfbbc6893a22e131d0e973a3520b2cfbcd045b04275f7bbfd72d832"
     },
     {
       "id": "S-09",
@@ -217,23 +219,23 @@
       "title": "List on the secondary market",
       "description": "A holder lists units they already hold.",
       "status": "PASS",
-      "txHash": "a6c643dffc200080bcd90a89ec8b1c942cfcb108231618b49efcb19e374365dd"
+      "txHash": "30271ae6d306d16ec6d390b4df89040eeb0a8da1b83f04f5404d93f5e97ec69a"
     },
     {
       "id": "S-10",
       "group": "S",
       "title": "Partial secondary purchase",
       "description": "Another buyer takes part of that secondary listing.",
-      "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "status": "PASS",
+      "txHash": "4bfb943a1b1b7852c20325eb2deb905da9b89623516da8da21e0dcefd741455f"
     },
     {
       "id": "S-11",
       "group": "S",
       "title": "Cancel the remainder",
       "description": "The seller cancels what is left of the listing. The remaining units return to the seller.",
-      "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "status": "PASS",
+      "txHash": "e75a370b9e9852bd62c54319e96c3d9583ce673971c091a2e6d01d97267ebba4"
     },
     {
       "id": "S-12",
@@ -241,15 +243,16 @@
       "title": "Run distribution",
       "description": "Distribution runs for an offer under its published terms.",
       "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "reason": "Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4",
+      "txHash": "4a6380f6555ae2f1e224308ba276bf62ae6d21a0aac2b6ca93d40f1e283e9ca9"
     },
     {
       "id": "S-13",
       "group": "S",
       "title": "Buy the cheap demo offer",
       "description": "A buyer purchases the low-priced public demo offer used as the Try it path (Estudio en azul).",
-      "status": "PENDING",
-      "reason": "4th QA pass in progress"
+      "status": "PASS",
+      "txHash": "dae51abf3ad34a818a2a58d4f56db5c4c9dc49e51cc371df8e90a3361244d683"
     },
     {
       "id": "N-01",

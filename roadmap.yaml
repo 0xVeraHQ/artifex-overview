@@ -8,10 +8,10 @@ phases:
       OpenZeppelin, Trustless Work, and path payments; after mentor and
       judge conversations the event priority is production readiness.
     items:
-      - Contract v3 live on Testnet (whole-work sale, USDC fix, locked-unit recovery)
-      - Offer and listing indexing; automatic distribution; role permissions; verification improvements
-      - Fourth external QA pass
-      - Stellar mainnet launch
+      - Contract v3 then v4 live on Testnet (whole-work sale, living-author cert, proportional distribute)
+      - Fourth external QA pass (28 validated); blockers under re-test on api 0.16.23 / web 0.4.21
+      - Mainnet platform funded with Circle USDC trustline
+      - Stellar mainnet contract deploy
   - id: phase-1
     name: Phase 1
     status: PLANNED

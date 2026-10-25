@@ -20,10 +20,11 @@ That account is Circle's, not an Artifex account. See [TRY-IT.md](TRY-IT.md).
 
 ## Mainnet
 
-**PENDING** — mainnet launch at HackMeridian.
-Platform, validator, organization, and demo signer addresses will be filled after launch.
+**PREP** — platform funded; Artifex contracts not yet deployed.
 
 | Role | Address | Purpose | Explorer |
 | --- | --- | --- | --- |
-| — | — | mainnet launch at HackMeridian | — |
+| Platform | `GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V` | Mainnet platform account, created and funded. Circle USDC trustline opened ([tx](https://stellar.expert/explorer/public/tx/a9df809b9748f309b720ff3aad0e86bc8c82c591af9dc085830326436b807118)). | [Explorer](https://stellar.expert/explorer/public/account/GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V) |
 
+
+Circle mainnet USDC issuer: `GA5ZSE54V4KSTRTMB2OGVL94Q7CPXNHPMNYXEGPRZQSIWJTIPUJYZSDC`.

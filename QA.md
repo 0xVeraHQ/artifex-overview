@@ -20,7 +20,7 @@ Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 | 2026-10-21 | 1st | 9 | 11 | First external black-box pass |
 | 2026-10-22 | 2nd | 20 | 4 | Remediation from pass 1 |
 | 2026-10-23 | 3rd | 22 | 4 | 15 demo artworks and marketplace hardening |
-| 2026-10-25 | 4th | 22 | 4 | 4th QA pass started after api 0.16.20 / web 0.4.19 / registry v3 |
+| 2026-10-25 | 4th | 28 | 3 | api 0.16.20 → 0.16.22; 7 open, 1 untested; blockers under re-test on 0.16.23 / 0.4.21 / v4 |
 
 
 ## Mainnet
@@ -36,9 +36,9 @@ Mainnet cases will be filled with real transaction links after launch.
 | --- | --- | --- | --- | --- |
 | V-01 | **Photographs in the catalog.** A visitor opens the catalog and sees a photograph on each piece that has one. | PASS | — | — |
 | V-02 | **Complete piece fiche.** A piece page shows title, artist, certificate state, and the attached photographs or documents. | PASS | — | — |
-| V-03 | **Valid certificate lists its signers.** Public verification of a finalized certificate lists the signers: one for a living author, two for a deceased author. | PENDING | 4th QA pass in progress | — |
+| V-03 | **Valid certificate lists its signers.** Public verification of a finalized certificate lists the signers: one for a living author, two for a deceased author. | PASS | — | — |
 | V-04 | **Uncertified piece is marked.** A piece that has not been finalized is marked as not certified. | PASS | — | — |
-| V-05 | **Catalog filters.** Filters for certification, sale modality, and participation type narrow the list and can be cleared. | PASS | — | — |
+| V-05 | **Catalog filters.** Filters for certification, sale modality, and participation type narrow the list and can be cleared. | PENDING | Future sale filter still includes whole-work listings | — |
 | V-06 | **Visitor has no action buttons.** Without a connected wallet, a visitor can browse and verify, and does not see certify, list, or buy actions. | PASS | — | — |
 | V-07 | **Terms document downloads.** The participation terms document linked from an offer can be downloaded. | PASS | — | — |
 
@@ -47,33 +47,33 @@ Mainnet cases will be filled with real transaction links after launch.
 
 | Case | Check | Status | Reason | Testnet transaction |
 | --- | --- | --- | --- | --- |
-| C-01 | **Register a fiche with photographs.** An artist creates a piece fiche and attaches photographs. | PASS | — | — |
-| C-02 | **Living author, fee in XLM.** The living author signs once and pays the certification fee in XLM (5 XLM). The certificate finalizes. | PASS | — | [42b39bfe96…](https://stellar.expert/explorer/testnet/tx/42b39bfe96f3aa1148b444e5897cb1e05273309e3b813e7494dfef69aa2cecca) |
-| C-03 | **Museum authorizes a connoisseur.** For a deceased author, a museum authorizes the connoisseur who will sign. | PASS | — | [e37daab6ac…](https://stellar.expert/explorer/testnet/tx/e37daab6acaa079e36fb9bef0838eb9a943ed906b025945dbbccf94b0b7113ad) |
-| C-04 | **Connoisseur signs, second signature pending.** The connoisseur signs. The certificate stays pending until the second signature. | PASS | — | — |
-| C-05 | **Museum second signature finalizes.** The museum adds the second signature. The certificate becomes valid. | PASS | — | — |
-| C-06 | **Second signature on a pending demo piece.** A demo piece left pending receives its second signature and becomes valid. | PENDING | 4th QA pass in progress | — |
-| C-07 | **Digitize a prior certificate.** An existing certificate is digitized. The fiche stores the document hash and the certification flow records it. | PENDING | 4th QA pass in progress | — |
-| C-08 | **Verify C-02, C-05, and C-07.** The public verify page, including the QR link, shows the certificates from C-02, C-05, and C-07 as valid. | PENDING | 4th QA pass in progress | — |
+| C-01 | **Register a fiche with photographs.** An artist creates a piece fiche and attaches photographs. | PENDING | register form still omits dimensions, weight, description, and documents | — |
+| C-02 | **Living author, fee in XLM.** The living author signs once and pays the certification fee in XLM (5 XLM). The certificate finalizes. | PASS | — | [26cfdc9fcc…](https://stellar.expert/explorer/testnet/tx/26cfdc9fcc33318ae18d2390c2bf5f4ba9b9e63eb7cc37a1cd0fc9b72b879444) |
+| C-03 | **Museum authorizes a connoisseur.** For a deceased author, a museum authorizes the connoisseur who will sign. | PASS | — | [bdc471c45a…](https://stellar.expert/explorer/testnet/tx/bdc471c45a7a4c137280612b01cd511f2f67b82dba640da972a2b149d03b03b9) |
+| C-04 | **Connoisseur signs, second signature pending.** The connoisseur signs. The certificate stays pending until the second signature. | PASS | — | [74aedeb5b8…](https://stellar.expert/explorer/testnet/tx/74aedeb5b839421f9ad2ef85c8b0ab9287bfff3bec94f3a138e0744fcd73589e) |
+| C-05 | **Museum second signature finalizes.** The museum adds the second signature. The certificate becomes valid. | PASS | — | [fa565f9a3c…](https://stellar.expert/explorer/testnet/tx/fa565f9a3c5a28e270212da3eebe626bfd5af48244a3cb67fe68dce7a2c49621) |
+| C-06 | **Second signature on a pending demo piece.** A demo piece left pending receives its second signature and becomes valid. | PASS | — | [c73c7c5d7a…](https://stellar.expert/explorer/testnet/tx/c73c7c5d7a58c725e8cf3afa6fd4edb0991365a2a602c8f7cced5651aad25e50) |
+| C-07 | **Digitize a prior certificate.** An existing certificate is digitized. The fiche stores the document hash and the certification flow records it. | PENDING | prior digitization rejects PDF and leaves an orphan fiche | — |
+| C-08 | **Verify C-02, C-05, and C-07.** The public verify page, including the QR link, shows the certificates from C-02, C-05, and C-07 as valid. | PASS | — | — |
 
 
 ### S — Sales
 
 | Case | Check | Status | Reason | Testnet transaction |
 | --- | --- | --- | --- | --- |
-| S-01 | **List a whole digital work in XLM.** The owner lists the whole work as a digital sale priced in XLM. | PENDING | 4th QA pass in progress | — |
-| S-02 | **Buy the whole work.** A second account buys the whole work. Ownership moves to the buyer. | PENDING | 4th QA pass in progress | — |
-| S-03 | **Resale with three owners.** The work is sold again. The ownership history shows three owners. | PENDING | 4th QA pass in progress | — |
-| S-04 | **List with physical delivery.** The owner lists a whole work with a physical-delivery clause. | PENDING | 4th QA pass in progress | — |
-| S-05 | **Buy in USDC and send the delivery form.** A buyer pays in USDC and submits the physical-delivery form. Delivery itself stays off-chain. | PENDING | 4th QA pass in progress | — |
-| S-06 | **Museum offers each participation type.** A museum publishes one offer of each type — future sale, guaranteed repurchase, financing with return, and exploitation rights — each with a terms document. | PASS | — | [bd9195a393…](https://stellar.expert/explorer/testnet/tx/bd9195a3934c3881b79c85842c6b34729c31622a4301151c8d7481fc4e5831cd) |
-| S-07 | **Buy an entire primary offer.** A buyer takes every unit of a primary offer in one payment. | PASS | — | [e43e55ac21…](https://stellar.expert/explorer/testnet/tx/e43e55ac21e9bb8eb2bf7c25473fa1c9684baef5dc4aff94e52a0c3370466654) |
-| S-08 | **Buy part of a primary offer.** A buyer takes some of the units. The remainder stays available. | PASS | — | [881c5f3917…](https://stellar.expert/explorer/testnet/tx/881c5f3917aa4e829ec7e8aa456fbf987ff7faaa403e9e7cef7c8061b1f3034a) |
-| S-09 | **List on the secondary market.** A holder lists units they already hold. | PASS | — | [a6c643dffc…](https://stellar.expert/explorer/testnet/tx/a6c643dffc200080bcd90a89ec8b1c942cfcb108231618b49efcb19e374365dd) |
-| S-10 | **Partial secondary purchase.** Another buyer takes part of that secondary listing. | PENDING | 4th QA pass in progress | — |
-| S-11 | **Cancel the remainder.** The seller cancels what is left of the listing. The remaining units return to the seller. | PENDING | 4th QA pass in progress | — |
-| S-12 | **Run distribution.** Distribution runs for an offer under its published terms. | PENDING | 4th QA pass in progress | — |
-| S-13 | **Buy the cheap demo offer.** A buyer purchases the low-priced public demo offer used as the Try it path (Estudio en azul). | PENDING | 4th QA pass in progress | — |
+| S-01 | **List a whole digital work in XLM.** The owner lists the whole work as a digital sale priced in XLM. | PASS | — | [fd66cf0ac6…](https://stellar.expert/explorer/testnet/tx/fd66cf0ac61805029bfea7f3e06d9740b1aed711c94cc080f40b6a4211192568) |
+| S-02 | **Buy the whole work.** A second account buys the whole work. Ownership moves to the buyer. | PENDING | Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | — |
+| S-03 | **Resale with three owners.** The work is sold again. The ownership history shows three owners. | PENDING | not tested on 4th pass; waiting on whole-work buy re-test | — |
+| S-04 | **List with physical delivery.** The owner lists a whole work with a physical-delivery clause. | PENDING | Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | — |
+| S-05 | **Buy in USDC and send the delivery form.** A buyer pays in USDC and submits the physical-delivery form. Delivery itself stays off-chain. | PENDING | Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | — |
+| S-06 | **Museum offers each participation type.** A museum publishes one offer of each type — future sale, guaranteed repurchase, financing with return, and exploitation rights — each with a terms document. | PASS | — | [2f4c622d24…](https://stellar.expert/explorer/testnet/tx/2f4c622d24c621ff0519babd258f2c1e9cce0e830da87de1714c1b83ddc81c95) |
+| S-07 | **Buy an entire primary offer.** A buyer takes every unit of a primary offer in one payment. | PASS | — | [0e41fba4ff…](https://stellar.expert/explorer/testnet/tx/0e41fba4ffd09fc8312fb09bca2943519e838bcf10cc5e4010208f2ba96cb5b6) |
+| S-08 | **Buy part of a primary offer.** A buyer takes some of the units. The remainder stays available. | PASS | — | [0c1abebd0b…](https://stellar.expert/explorer/testnet/tx/0c1abebd0bfbbc6893a22e131d0e973a3520b2cfbcd045b04275f7bbfd72d832) |
+| S-09 | **List on the secondary market.** A holder lists units they already hold. | PASS | — | [30271ae6d3…](https://stellar.expert/explorer/testnet/tx/30271ae6d306d16ec6d390b4df89040eeb0a8da1b83f04f5404d93f5e97ec69a) |
+| S-10 | **Partial secondary purchase.** Another buyer takes part of that secondary listing. | PASS | — | [4bfb943a1b…](https://stellar.expert/explorer/testnet/tx/4bfb943a1b1b7852c20325eb2deb905da9b89623516da8da21e0dcefd741455f) |
+| S-11 | **Cancel the remainder.** The seller cancels what is left of the listing. The remaining units return to the seller. | PASS | — | [e75a370b9e…](https://stellar.expert/explorer/testnet/tx/e75a370b9e9852bd62c54319e96c3d9583ce673971c091a2e6d01d97267ebba4) |
+| S-12 | **Run distribution.** Distribution runs for an offer under its published terms. | PENDING | Blockers under re-test after api 0.16.23 / web 0.4.21 / registry v4 | [4a6380f655…](https://stellar.expert/explorer/testnet/tx/4a6380f6555ae2f1e224308ba276bf62ae6d21a0aac2b6ca93d40f1e283e9ca9) |
+| S-13 | **Buy the cheap demo offer.** A buyer purchases the low-priced public demo offer used as the Try it path (Estudio en azul). | PASS | — | [dae51abf3a…](https://stellar.expert/explorer/testnet/tx/dae51abf3ad34a818a2a58d4f56db5c4c9dc49e51cc371df8e90a3361244d683) |
 
 
 ### N — Negative cases
@@ -89,4 +89,4 @@ Mainnet cases will be filled with real transaction links after launch.
 | N-07 | **Ops routes are closed.** Operational endpoints do not respond to an anonymous caller. | PASS | — | — |
 
 
-35 cases: 22 PASS, 13 PENDING.
+35 cases: 27 PASS, 8 PENDING.

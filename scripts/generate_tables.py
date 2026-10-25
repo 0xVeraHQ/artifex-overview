@@ -456,7 +456,7 @@ def render_contracts(registry: dict) -> tuple[str, dict]:
         f"Active contract version: **{active_id}**. Contracts repository tag: **{active['contractsRepoTag']}**.",
         "USDC and XLM rows are Stellar asset contracts used for payment, not Artifex business contracts.",
         "Inactive versions stay listed so a judge can see what they replaced.",
-        "Version **v3** is listed when present; activating it on the public API during HackMeridian is recorded in [HACKMERIDIAN.md](HACKMERIDIAN.md).",
+        "Versions **v3** and **v4** are listed when present; activating each on the public API during HackMeridian is recorded in [HACKMERIDIAN.md](HACKMERIDIAN.md).",
         "",
         table(
             ["Contract", "Registry version", "Contracts tag", "Network", "ID", "Active", "Explorer"],
@@ -520,6 +520,25 @@ def render_wallets(doc: dict, active: dict) -> str:
     mainnet = networks.get("mainnet") or {}
     mainnet_status = str(mainnet.get("status") or "PENDING")
     mainnet_reason = str(mainnet.get("reason") or "mainnet launch at HackMeridian")
+    mainnet_accounts = mainnet.get("accounts") or []
+    mainnet_rows: list[list[str]] = []
+    explorer_pub = explorer_for("mainnet")
+    for account in mainnet_accounts:
+        role = str(account.get("role") or "").strip()
+        address = str(account.get("address") or "").strip()
+        purpose = " ".join(str(account.get("purpose") or "").split())
+        if not role or not purpose or not G_RE.fullmatch(address):
+            raise Reject("each mainnet wallet needs role, purpose, and a public account")
+        mainnet_rows.append(
+            [
+                role,
+                f"`{address}`",
+                purpose,
+                f"[Explorer]({explorer_pub}/account/{address})",
+            ]
+        )
+    if not mainnet_rows:
+        mainnet_rows = [["—", "—", mainnet_reason, "—"]]
     lines = [
         GENERATED,
         "# Wallets",
@@ -537,12 +556,10 @@ def render_wallets(doc: dict, active: dict) -> str:
         "## Mainnet",
         "",
         f"**{mainnet_status}** — {mainnet_reason}.",
-        "Platform, validator, organization, and demo signer addresses will be filled after launch.",
         "",
-        table(
-            ["Role", "Address", "Purpose", "Explorer"],
-            [["—", "—", mainnet_reason, "—"]],
-        ),
+        table(["Role", "Address", "Purpose", "Explorer"], mainnet_rows),
+        "",
+        "Circle mainnet USDC issuer: `GA5ZSE54V4KSTRTMB2OGVL94Q7CPXNHPMNYXEGPRZQSIWJTIPUJYZSDC`.",
         "",
     ]
     return "\n".join(lines)
