@@ -51,10 +51,12 @@ Version **v3** is listed when present; activating it on the public API during Ha
 
 ## Mainnet
 
-**PENDING** — mainnet launch at HackMeridian.
-Contract IDs, the active registry version, and explorer links will be filled with real mainnet values after launch.
+**PREP** — registry shape `mainnet-v3` drafted in API (SACs filled; Artifex C… IDs `PENDING_AFTER_DEPLOY`).
+Deploy only with `ARTIFEX_CONFIRM_MAINNET=JOEL_CONFIRMED` via `scripts/deploy-mainnet.*`.
 
 | Contract | Registry version | Contracts tag | Network | ID | Active | Explorer |
 | --- | --- | --- | --- | --- | --- | --- |
-| — | — | — | mainnet | — | PENDING | — |
+| USDC asset contract (Circle) | mainnet-v3 | — | mainnet | `CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75` | prep | [Explorer](https://stellar.expert/explorer/public/contract/CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75) |
+| XLM asset contract | mainnet-v3 | — | mainnet | `CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA` | prep | [Explorer](https://stellar.expert/explorer/public/contract/CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA) |
+| Artifex suite (8) + whole sale v3 | mainnet-v3 | PENDING | mainnet | PENDING_AFTER_DEPLOY | no | — |
 

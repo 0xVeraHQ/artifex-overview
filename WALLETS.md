@@ -20,10 +20,17 @@ That account is Circle's, not an Artifex account. See [TRY-IT.md](TRY-IT.md).
 
 ## Mainnet
 
-**PENDING** — mainnet launch at HackMeridian.
-Platform, validator, organization, and demo signer addresses will be filled after launch.
+**PREP ONLY — do not fund-execute cutover until Joel confirms.**  
+Addresses generated for cutover prep (public G… only). Contract deploy + seed still gated.
 
 | Role | Address | Purpose | Explorer |
 | --- | --- | --- | --- |
-| — | — | mainnet launch at HackMeridian | — |
+| Platform / validator / deployer | `GCGIFRH3TK6UZTVIZH77VWT5FMEX7K7BVKCSX4ORDRMQNM2LY4IC5GDA` | Deploy + init + roles; cert fee recipient (5 XLM / 1 USDC). | [Explorer](https://stellar.expert/explorer/public/account/GCGIFRH3TK6UZTVIZH77VWT5FMEX7K7BVKCSX4ORDRMQNM2LY4IC5GDA) |
+| Demo museum | `GCLGZBVI6SGJ2BK5ZS3QYAU5KPIY5EX4ZYYNYRX2T5RARL6OU5RXHQLR` | Museum role + Freighter QA. | [Explorer](https://stellar.expert/explorer/public/account/GCLGZBVI6SGJ2BK5ZS3QYAU5KPIY5EX4ZYYNYRX2T5RARL6OU5RXHQLR) |
+| Demo organization | `GANKO2RICNVDKFZVRUMVVV2RPP7SKHPVXQQFBLEFZCIAFHYFT3XWZM4T` | Optional org Freighter wallet. | [Explorer](https://stellar.expert/explorer/public/account/GANKO2RICNVDKFZVRUMVVV2RPP7SKHPVXQQFBLEFZCIAFHYFT3XWZM4T) |
+| Demo artist (seed) | `GCZIDJBMLG34Y3EW4FQ43NOHBCPX7L7ZMFTNKFNKCX2API2MA7HUW2JB` | Stable seed signer (mainnet). | [Explorer](https://stellar.expert/explorer/public/account/GCZIDJBMLG34Y3EW4FQ43NOHBCPX7L7ZMFTNKFNKCX2API2MA7HUW2JB) |
+| Demo buyer (test buys) | `GCAGZF6LFFRBVXW3UVYHOVSSWEHNLRSSA5Y2JUQUP4N3IGRYW723N4W6` | ~2 Freighter test purchases. | [Explorer](https://stellar.expert/explorer/public/account/GCAGZF6LFFRBVXW3UVYHOVSSWEHNLRSSA5Y2JUQUP4N3IGRYW723N4W6) |
+
+Circle Mainnet USDC issuer: `GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN`  
+USDC SAC: `CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75`.
 
