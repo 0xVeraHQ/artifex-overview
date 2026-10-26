@@ -161,10 +161,20 @@ Harbor images published and cosign-verified; artifex-orch `versions.env` pinned 
 
 Live `/api/meta` still reports **0.17.2** at this tick (VPS pull pending). Mainnet smoke remains **PENDING**.
 
+### 01:35 (26 Oct) — Live api 0.17.3 · web 0.4.24 (Mainnet UI)
+
+VPS serving api **0.17.3**. Orch pin moved to web **0.4.24** (PR #37): runtime network from API + SSR Mainnet footer. Live HTML no longer shows Testnet; Mainnet string present.
+
+| Check | Value |
+| --- | --- |
+| `/api/meta` | **0.17.3**, `stellarNetwork: mainnet`, passphrase / Horizon / explorer public |
+| `/api/health` | same network meta as `/api/meta` |
+| Web | **0.4.24** · `sha256:85bbb9769ca0fb20e8beed1ffac26ba3221ad53d7f102ff770d8ef702f9a3f5a` |
+
+Seed catalog unchanged (15 · 7 certified · Puerto al alba pending second). Mainnet smoke still **PENDING**.
+
 ---
 
 ## Planned during the event (not yet dated)
 
-- **VPS pull** of api **0.17.3** / web **0.4.23**.
-- **Finish web mainnet adaptation** (API-driven network, no Testnet banner); web **0.4.24** build observed in CI.
 - **Mainnet QA product results** — fill [QA.md](QA.md) Mainnet smoke hashes when the pass closes.

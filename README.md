@@ -44,7 +44,7 @@ Component diagram and certification / sale flows: [docs/architecture.md](docs/ar
 | Area | State | Document |
 | --- | --- | --- |
 | QA | PASS — APTO for mainnet (re-test api 0.16.23 / web 0.4.21–0.4.22) | [QA.md](QA.md) |
-| Latest release | api 0.17.3, web 0.4.23, cosign verified | [RELEASES.md](RELEASES.md) |
+| Latest release | api 0.17.3, web 0.4.24, cosign verified | [RELEASES.md](RELEASES.md) |
 | Active contracts | Mainnet live (mainnet-v1, tag vps-deploy); deploy 38 txs | [CONTRACTS.md](CONTRACTS.md) |
 | Roadmap | HackMeridian in progress | [ROADMAP.md](ROADMAP.md) |
 
@@ -78,10 +78,11 @@ From Sunday 25 October 2026 09:00 Lisbon, the Scale track prioritizes production
 
 **Landed:**
 
-- **Mainnet is live** (orch pin api **0.17.3** / web **0.4.23**, registry **mainnet-v1**; live `/api/meta` still **0.17.2** until VPS pull): contracts deployed, VPS wiring verified, five seed wallets USDC-funded, seed **`hackathon-scale-15-v6-mainnet`** (15 pieces · 7 certified · offers 1–6 with 3 XLM + 3 USDC · tokens 1–4 · secondary listing 1).
+- **Mainnet is live** (api **0.17.3** / web **0.4.24**, registry **mainnet-v1**): contracts deployed, VPS wiring verified, five seed wallets USDC-funded, seed **`hackathon-scale-15-v6-mainnet`** (15 pieces · 7 certified · offers 1–6 with 3 XLM + 3 USDC · tokens 1–4 · secondary listing 1).
+- Web takes network from the API (SSR Mainnet footer; no Testnet banner).
 - QA Freighter accounts activated on mainnet (QA-1/3/4/5 from QA-2; QA-2 USDC trustline + 2 USDC top-up). See [WALLETS.md](WALLETS.md) / [QA.md](QA.md).
 
-**In progress:** mainnet product QA (Mainnet smoke **PENDING** in [QA.md](QA.md)); web UI adaptation so the network comes from the API (no Testnet banner); VPS pull of **0.17.3** / **0.4.23**.
+**In progress:** mainnet product QA (Mainnet smoke **PENDING** in [QA.md](QA.md)).
 
 **Testnet (history):** development and external QA — four passes, validated cases **9 → 20 → 22 → 28**, then re-test **APTO for mainnet**. Details in [QA.md](QA.md) Cases (Testnet history).
 

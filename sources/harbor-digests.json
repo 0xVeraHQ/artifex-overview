@@ -7,7 +7,7 @@
       "tag": "0.17.3",
       "digest": "sha256:c879277194e9fcf8146adc86555047585826c66f55bab517b32fbeb85c1d2d0f",
       "publishedAt": "2026-10-26T00:02:37Z",
-      "note": "Seed wallets != Freighter QA pubkey asserts; QA roles by address (orch current)",
+      "note": "Estudio 0.1 XLM copy repair + /health network meta (orch current)",
       "cosign": {
         "verified": true,
         "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.3",
@@ -16,18 +16,30 @@
     },
     {
       "name": "artifex-web-ui",
-      "tag": "0.4.23",
-      "digest": "sha256:1c2bc4e09c897b2be0d63b8e2e28174ee8530b0b21443ef03b4486fa179524f2",
-      "publishedAt": "2026-10-26T00:03:22Z",
-      "note": "Fee consumer error copy (orch current)",
+      "tag": "0.4.24",
+      "digest": "sha256:85bbb9769ca0fb20e8beed1ffac26ba3221ad53d7f102ff770d8ef702f9a3f5a",
+      "publishedAt": "2026-10-26T00:12:02Z",
+      "note": "Runtime mainnet from API + SSR Mainnet footer (orch current)",
       "cosign": {
         "verified": true,
-        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.23",
+        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.24",
         "oidcIssuer": "https://token.actions.githubusercontent.com"
       }
     }
   ],
   "history": [
+    {
+      "name": "artifex-web-ui",
+      "tag": "0.4.23",
+      "digest": "sha256:1c2bc4e09c897b2be0d63b8e2e28174ee8530b0b21443ef03b4486fa179524f2",
+      "publishedAt": "2026-10-26T00:03:22Z",
+      "note": "Fee consumer error copy",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.23",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    },
     {
       "name": "artifex-api",
       "tag": "0.17.2",
