@@ -259,12 +259,46 @@ def render_qa(doc: dict, cases: list[dict]) -> str:
                 "## Mainnet",
                 "",
                 f"**{mainnet.get('status', 'PENDING')}** — {mainnet.get('reason', 'mainnet launch at HackMeridian')}.",
-                "Mainnet case rows will be filled with public transaction links when mainnet QA runs.",
                 "",
             ]
         )
+        smoke = mainnet.get("smoke") or []
+        if isinstance(smoke, list) and smoke:
+            lines.extend(
+                [
+                    "### Mainnet smoke",
+                    "",
+                    "Black-box smoke on the live mainnet app after seed "
+                    "`hackathon-scale-15-v6-mainnet`. Product checks stay **PENDING** until the pass reports.",
+                    "",
+                ]
+            )
+            smoke_rows = []
+            for row in smoke:
+                rid = str(row.get("id") or "").strip() or "—"
+                title = str(row.get("title") or "").strip() or "—"
+                status = str(row.get("status") or "PENDING").strip()
+                reason = str(row.get("reason") or "").strip() or "—"
+                tx = tx_link(row.get("txHash") or row.get("tx_hash"), "mainnet")
+                if status not in ALLOWED_QA:
+                    raise Reject(f"mainnet smoke {rid} status {status!r} is not publishable")
+                if status in {"PENDING", "PLANNED"} and reason == "—":
+                    raise Reject(f"mainnet smoke {rid} needs a reason")
+                smoke_rows.append([rid, title, status, reason, tx])
+            lines.append(
+                table(
+                    ["Check", "What", "Status", "Reason", "Mainnet transaction"],
+                    smoke_rows,
+                )
+            )
+            lines.append("")
+        else:
+            lines.append(
+                "Mainnet case rows will be filled with public transaction links when mainnet QA runs."
+            )
+            lines.append("")
 
-    lines.append("## Cases (Testnet)")
+    lines.append("## Cases (Testnet history)")
     lines.append("")
     current = None
     bucket: list[list[str]] = []

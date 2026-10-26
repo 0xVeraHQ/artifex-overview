@@ -93,51 +93,62 @@ Soroban contracts deployed on **Stellar mainnet** from platform `GCNSEG…Q3V` (
 
 Explorer: [stellar.expert public](https://stellar.expert/explorer/public). Full table: [CONTRACTS.md](CONTRACTS.md). Source IDs: artifex-orch `deployments/mainnet.json`.
 
+### 23:10 — VPS cutover · wiring verified · seed wallets funded
+
+Mainnet cutover executed on the VPS. Contract wiring verified; `finalize_cert` simulation OK. **Five** demo seed wallets funded with Circle USDC trustlines from the platform (public payments on [stellar.expert](https://stellar.expert/explorer/public/account/GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V)). Addresses in [WALLETS.md](WALLETS.md).
+
 ### 23:15 — Application cutover to mainnet in progress
 
 Contracts live on mainnet; app cutover started.
 
 ### 23:40 — Application serving Stellar mainnet
 
-Public app cut over. Evidence:
-
 | Check | Value |
 | --- | --- |
 | `/api/health` | `stellarNetwork: mainnet` |
-| `/api/meta` | api **0.17.1**, `platformWallet` `GCNSEG…Q3V` |
+| `/api/meta` | api **0.17.1** → **0.17.2**, `platformWallet` `GCNSEG…Q3V` |
 | `/api/contracts/registry` | active **mainnet-v1** (tag `vps-deploy`) |
-| `/api/pieces` | empty at cutover — seed follows |
 
-Overview docs list **mainnet first**; Testnet tables remain as HackMeridian history.
+Overview docs list **mainnet first**; Testnet remains HackMeridian history.
 
----
+### 00:25 (26 Oct) — Seed `hackathon-scale-15-v6-mainnet` · api 0.17.2
 
-## 2026-10-26 — Monday
-
-### 00:25 — Mainnet seed `hackathon-scale-15-v6-mainnet` · api 0.17.2
-
-Lisbon time (WEST). Live app on api **0.17.2** / web **0.4.22**. Demo catalog seeded on Stellar **mainnet**.
+Lisbon night of the 25th into the early 26th. Live api **0.17.2** / web **0.4.22**.
 
 | Item | Value |
 | --- | --- |
-| Seed | `hackathon-scale-15-v6-mainnet` |
-| Pieces | **15** demo works |
+| Pieces | **15** demo works on-chain |
 | Certified | **7** |
-| Pending second signature | **1** (Puerto al alba) |
-| Primary offers | **1–6** |
+| Pending second signature | **1** — Puerto al alba |
+| Primary offers | **1–6** (3 XLM · 3 USDC) |
 | Whole-work tokens listed | **1–4** |
 | Secondary listing | **1** (Silencio blanco) |
-| QA roles | QA-1 artist, QA-4 connoisseur, QA-5 museum (Freighter pubkeys) |
+| Roles | QA-1 artist, QA-4 connoisseur, QA-5 museum |
 | Try it | **Estudio en azul** · offer **1** · **0.1 XLM** |
 
-Public evidence: [PIECES.md](PIECES.md), [WALLETS.md](WALLETS.md), [CONTRACTS.md](CONTRACTS.md), [stellar.expert public](https://stellar.expert/explorer/public). Platform account activity around seed: [GCNSEG…Q3V](https://stellar.expert/explorer/public/account/GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V).
+Catalog: [PIECES.md](PIECES.md). Contracts: [CONTRACTS.md](CONTRACTS.md).
 
-### 00:30 — Mainnet QA starts
+### 00:40 (26 Oct) — Mainnet QA wallets activated
 
-Independent QA on mainnet begins now. Case transaction hashes will be added to [QA.md](QA.md) when the pass reports.
+QA Freighter accounts funded on mainnet from **QA-2** (`GAWH75…WBNJ`), then QA-2 opened a Circle USDC trustline.
+
+| Step | Account | Tx (public) |
+| --- | --- | --- |
+| Activate QA-1 | `GCPGMC…H3RL` | [082bdfe1fd…](https://stellar.expert/explorer/public/tx/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852) |
+| Activate QA-3 | `GAJ7W5…XTHQ` | [972eec3986…](https://stellar.expert/explorer/public/tx/972eec3986143f2c19df00c4801cf3b80c6b1484c0e9ba401fcb3fb9b8b8d6ce) |
+| Activate QA-4 | `GAJGJC…YT54` | [08a1cca07f…](https://stellar.expert/explorer/public/tx/08a1cca07f9294452e681a71cfbadc22258d2e9495b97e25e953abb021aaefc7) |
+| Activate QA-5 | `GB7XRD…QXFV` | [863dc2065e…](https://stellar.expert/explorer/public/tx/863dc2065eede0988b6e6bf327c9921651c058ef95b0eb65de72dd43c0a728fb) |
+| QA-2 USDC trustline | `GAWH75…WBNJ` | [a9359cfc98…](https://stellar.expert/explorer/public/tx/a9359cfc983db92cdf2d6ee71afc10f73f2314251b6ab6b53fd23dff6b78c6e0) |
+
+Mainnet smoke section in [QA.md](QA.md) is **PENDING** for product results.
+
+### 00:45 (26 Oct) — Web mainnet adaptation in progress
+
+Web UI being adapted so the network comes from the API (no Testnet banner). Still **in progress**.
 
 ---
 
 ## Planned during the event (not yet dated)
 
-- **Mainnet QA results** — append hashes and statuses to [QA.md](QA.md) / this diary when the pass closes.
+- **Finish web mainnet adaptation** (API-driven network, no Testnet banner).
+- **Mainnet QA product results** — fill [QA.md](QA.md) Mainnet smoke hashes when the pass closes.

@@ -3,7 +3,27 @@
   "pass": "fourth",
   "mainnet": {
     "status": "PENDING",
-    "reason": "mainnet QA in progress after seed hackathon-scale-15-v6-mainnet; hashes will be added when the pass reports"
+    "reason": "Mainnet smoke in progress after seed hackathon-scale-15-v6-mainnet; case results pending",
+    "smoke": [
+      {
+        "id": "MN-SETUP",
+        "title": "QA Freighter accounts activated on mainnet",
+        "status": "PASS",
+        "txHash": "082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852"
+      },
+      {
+        "id": "MN-USDC",
+        "title": "QA-2 Circle USDC trustline on mainnet",
+        "status": "PASS",
+        "txHash": "a9359cfc983db92cdf2d6ee71afc10f73f2314251b6ab6b53fd23dff6b78c6e0"
+      },
+      {
+        "id": "MN-SMOKE",
+        "title": "Mainnet product smoke (certify / buy / distribute)",
+        "status": "PENDING",
+        "reason": "mainnet QA running; hashes will be added when the pass reports"
+      }
+    ]
   },
   "history": [
     {

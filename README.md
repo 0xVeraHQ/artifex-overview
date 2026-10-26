@@ -78,11 +78,12 @@ From Sunday 25 October 2026 09:00 Lisbon, the Scale track prioritizes production
 
 **Landed:**
 
-- External QA **APTO for mainnet** on Testnet (evolution **9 → 20 → 22 → 28 → apto**).
-- **Mainnet contracts** deployed; app on **mainnet** (api **0.17.2** / web **0.4.22**, registry **mainnet-v1**).
-- Seed **`hackathon-scale-15-v6-mainnet`**: 15 demo pieces, 7 certified, offers 1–6, whole tokens 1–4, secondary listing 1; QA-1 / QA-4 / QA-5 roles assigned.
+- **Mainnet is live** (api **0.17.2** / web **0.4.22**, registry **mainnet-v1**): contracts deployed, VPS wiring verified, five seed wallets USDC-funded, seed **`hackathon-scale-15-v6-mainnet`** (15 pieces · 7 certified · offers 1–6 with 3 XLM + 3 USDC · tokens 1–4 · secondary listing 1).
+- QA Freighter accounts activated on mainnet (QA-1/3/4/5 from QA-2; QA-2 USDC trustline). See [WALLETS.md](WALLETS.md) / [QA.md](QA.md).
 
-**In progress:** mainnet external QA (hashes land in [QA.md](QA.md) when the pass reports).
+**In progress:** mainnet product QA (Mainnet smoke **PENDING** in [QA.md](QA.md)); web UI adaptation so the network comes from the API (no Testnet banner).
+
+**Testnet (history):** development and external QA — four passes, validated cases **9 → 20 → 22 → 28**, then re-test **APTO for mainnet**. Details in [QA.md](QA.md) Cases (Testnet history).
 
 Dated evidence: [HACKMERIDIAN.md](HACKMERIDIAN.md). Roadmap: [ROADMAP.md](ROADMAP.md).
 
@@ -90,11 +91,11 @@ The original application named OpenZeppelin contracts, Trustless Work escrow, an
 
 ## Known limitations
 
-- Live network is Stellar **mainnet**. Testnet demo evidence stays in [PIECES.md](PIECES.md) / [QA.md](QA.md) as HackMeridian history.
+- Live network is Stellar **mainnet**. Testnet tables are history only ([PIECES.md](PIECES.md), [QA.md](QA.md)).
 - Platform and validator are the same mainnet address today. Splitting them behind multisig is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
 - Participations are not a legal opinion on title. Counsel review is [phase 3](ROADMAP.md).
 - Signing is Freighter. Passkey smart wallet is [phase 1](ROADMAP.md); iOS / Android are [phase 2](ROADMAP.md).
-- Mainnet QA is running; Testnet gate verdict remains **PASS / APTO**. A few non-blocking Testnet cases stay **PENDING** in [QA.md](QA.md).
+- Mainnet smoke QA is **PENDING**; Testnet gate remains **PASS / APTO**.
 
 ## Team
 

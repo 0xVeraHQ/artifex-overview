@@ -28,10 +28,20 @@ Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 
 ## Mainnet
 
-**PENDING** — mainnet QA in progress after seed hackathon-scale-15-v6-mainnet; hashes will be added when the pass reports.
-Mainnet case rows will be filled with public transaction links when mainnet QA runs.
+**PENDING** — Mainnet smoke in progress after seed hackathon-scale-15-v6-mainnet; case results pending.
 
-## Cases (Testnet)
+### Mainnet smoke
+
+Black-box smoke on the live mainnet app after seed `hackathon-scale-15-v6-mainnet`. Product checks stay **PENDING** until the pass reports.
+
+| Check | What | Status | Reason | Mainnet transaction |
+| --- | --- | --- | --- | --- |
+| MN-SETUP | QA Freighter accounts activated on mainnet | PASS | — | [082bdfe1fd…](https://stellar.expert/explorer/public/tx/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852) |
+| MN-USDC | QA-2 Circle USDC trustline on mainnet | PASS | — | [a9359cfc98…](https://stellar.expert/explorer/public/tx/a9359cfc983db92cdf2d6ee71afc10f73f2314251b6ab6b53fd23dff6b78c6e0) |
+| MN-SMOKE | Mainnet product smoke (certify / buy / distribute) | PENDING | mainnet QA running; hashes will be added when the pass reports | — |
+
+
+## Cases (Testnet history)
 
 ### V — Visitor
 

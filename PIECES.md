@@ -5,7 +5,7 @@
 ## Mainnet
 
 **15 artwork(s)** on Stellar mainnet.
-**LIVE** — seed hackathon-scale-15-v6-mainnet: 15 demo pieces, 7 certified, 1 pending second signature, 6 offers (1, 2, 3, 4, 5, 6), 4 whole tokens listed (1, 2, 3, 4), secondary listing(s) 1.
+**LIVE** — seed hackathon-scale-15-v6-mainnet: 15 demo pieces, 7 certified, 1 pending second signature (Puerto al alba), 6 offers (1–6: 3 XLM · 3 USDC), 4 whole tokens listed (1–4), secondary listing 1.
 Seed run: `hackathon-scale-15-v6-mainnet`.
 Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [https://stellar.expert/explorer/public](https://stellar.expert/explorer/public).
 Certification / offer / listing tx columns fill when indexed or when mainnet QA reports hashes.

@@ -2,8 +2,10 @@ network: testnet
 seed: 15-demo-artworks
 mainnet:
   status: LIVE
-  reason: 'seed hackathon-scale-15-v6-mainnet: 15 demo pieces, 7 certified, 1 pending second signature,
-    6 offers (1, 2, 3, 4, 5, 6), 4 whole tokens listed (1, 2, 3, 4), secondary listing(s) 1'
+  reason: >-
+    seed hackathon-scale-15-v6-mainnet: 15 demo pieces, 7 certified, 1 pending second
+    signature (Puerto al alba), 6 offers (1–6: 3 XLM · 3 USDC), 4 whole tokens listed
+    (1–4), secondary listing 1
   seedRunId: hackathon-scale-15-v6-mainnet
   pieces:
   - n: 1
