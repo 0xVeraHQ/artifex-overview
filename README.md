@@ -1,7 +1,8 @@
 # Artifex
 
 **Live on Stellar Mainnet** — [https://artifex.0xvera.com](https://artifex.0xvera.com) (api **0.17.5** / web **0.4.25**).  
-On-chain evidence: [stellar.expert/explorer/public](https://stellar.expert/explorer/public).
+On-chain evidence: [stellar.expert/explorer/public](https://stellar.expert/explorer/public).  
+**Demo video:** [youtu.be/tRukkX9cRN4](https://youtu.be/tRukkX9cRN4) · **Pitch deck:** [docs/Artifex_HackMeridian_pitch.pdf](docs/Artifex_HackMeridian_pitch.pdf)
 
 Provenance, certification, and funding for art — on Stellar.
 

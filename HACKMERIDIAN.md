@@ -217,9 +217,20 @@ External Freighter black-box on Main Net closed. **19** Horizon-successful trans
 
 Night diary summary (25→26 Lisbon): VPS cutover · seed on-chain · web/login mainnet · fee from contract · QA a–g **PASS**. Seven non-blocking UI findings listed as Known issues → [ROADMAP.md](ROADMAP.md).
 
+### 08:45 (26 Oct) — Demo video, pitch deck, delivery
+
+HackMeridian Scale delivery materials published (Lisbon):
+
+| Item | Link |
+| --- | --- |
+| Demo video | [youtu.be/tRukkX9cRN4](https://youtu.be/tRukkX9cRN4) |
+| Pitch deck | [docs/Artifex_HackMeridian_pitch.pdf](docs/Artifex_HackMeridian_pitch.pdf) |
+| Live app | [artifex.0xvera.com](https://artifex.0xvera.com) (mainnet) |
+
+**Project delivered** for the Monday 26 Oct 12:00 Lisbon window. Overview README points judges to mainnet, QA a–g PASS, video, and deck.
+
 ---
 
-## Planned during the event (not yet dated)
+## After delivery
 
-- Delivery window closes **Monday 26 Oct 12:00 Lisbon**.
 - Non-blocking UI polish after the Mainnet run (see [QA.md](QA.md#known-issues-non-blocking-ui)).
