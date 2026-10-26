@@ -2,8 +2,203 @@
   "network": "testnet",
   "pass": "fourth",
   "mainnet": {
-    "status": "PENDING",
-    "reason": "Mainnet smoke in progress on api 0.17.5 / web 0.4.25; certify/buy/distribute txs observed, official verdict pending",
+    "status": "PASS",
+    "reason": "External Freighter black-box run a–g on Stellar mainnet (26 Oct 2026); 19 successful Horizon txs; 0.448 XLM total fees",
+    "verdictNote": "PASS — Mainnet run a–g (26/10/2026)",
+    "run": {
+      "title": "Mainnet run (26/10/2026)",
+      "summary": "External black-box QA with Freighter on Stellar Main Net. 19 transactions, all successful on Horizon; 0.448 XLM total fees.",
+      "feesXlm": "0.448",
+      "txCount": 19,
+      "verdict": "PASS",
+      "steps": [
+        {
+          "step": "Fondeo",
+          "action": "Crea QA-1",
+          "wallet": "QA-2",
+          "txHash": "082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852",
+          "movement": "2,5 XLM"
+        },
+        {
+          "step": "Fondeo",
+          "action": "Crea QA-3",
+          "wallet": "QA-2",
+          "txHash": "972eec3986143f2c19df00c4801cf3b80c6b1484c0e9ba401fcb3fb9b8b8d6ce",
+          "movement": "2,5 XLM"
+        },
+        {
+          "step": "Fondeo",
+          "action": "Crea QA-4",
+          "wallet": "QA-2",
+          "txHash": "08a1cca07f9294452e681a71cfbadc22258d2e9495b97e25e953abb021aaefc7",
+          "movement": "2,5 XLM"
+        },
+        {
+          "step": "Fondeo",
+          "action": "Crea QA-5",
+          "wallet": "QA-2",
+          "txHash": "863dc2065eede0988b6e6bf327c9921651c058ef95b0eb65de72dd43c0a728fb",
+          "movement": "2,5 XLM"
+        },
+        {
+          "step": "Fondeo",
+          "action": "Trustline USDC",
+          "wallet": "QA-2",
+          "txHash": "a9359cfc983db92cdf2d6ee71afc10f73f2314251b6ab6b53fd23dff6b78c6e0",
+          "movement": "—"
+        },
+        {
+          "step": "a",
+          "action": "Registra y propone \"Luz de Anaga\" (autor vivo)",
+          "wallet": "QA-1",
+          "txHash": "ad9073f3a8b28fb53babd0f191a1c963594cff00164f333cc94632b26fd39b98",
+          "movement": "gas"
+        },
+        {
+          "step": "a",
+          "action": "Deposita la tasa",
+          "wallet": "QA-1",
+          "txHash": "51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735",
+          "movement": "0,5 XLM"
+        },
+        {
+          "step": "a",
+          "action": "Finaliza (1 firma, Certified)",
+          "wallet": "QA-1",
+          "txHash": "a652c8079b09b68deff4b1918f781e50972259c452afee1efc028d0c374421d7",
+          "movement": "—"
+        },
+        {
+          "step": "b",
+          "action": "Acuña NFT (token 5)",
+          "wallet": "QA-1",
+          "txHash": "2369253e1d16fbfcfce9c6def95de2b4d49e3dfb1d63d734b4e43a2b0d3a4ad7",
+          "movement": "gas"
+        },
+        {
+          "step": "b",
+          "action": "Venta entera a 1 XLM",
+          "wallet": "QA-1",
+          "txHash": "5f16c84081b221312b3df93cc3c0d8d0f832b4dc0bfeeec9bf9a30599c4d05fb",
+          "movement": "gas"
+        },
+        {
+          "step": "b",
+          "action": "Compra la obra entera",
+          "wallet": "QA-3",
+          "txHash": "f7d4a18187babeafde8e7365b7d9d20e2b72b0800a491b25b8d565cea39cfe48",
+          "movement": "1 XLM a QA-1"
+        },
+        {
+          "step": "c",
+          "action": "3 u de Torso II",
+          "wallet": "QA-2",
+          "txHash": "8479553c49e110a6daeb4f7e3b0d50124039ff5516796fafda8a9855c1eccac1",
+          "movement": "0,3 XLM"
+        },
+        {
+          "step": "c",
+          "action": "1 u de Estudio en azul (Try it)",
+          "wallet": "QA-2",
+          "txHash": "20119cbee97c15a38c4fe959c0d9ae6394ae1ba3512f800ffc961d1bb3028c3b",
+          "movement": "0,1 XLM"
+        },
+        {
+          "step": "c",
+          "action": "1 u de Torso II",
+          "wallet": "QA-3",
+          "txHash": "b9f151c32fd185310a4f5979e8f6828a0fcf0a9bb7b80f9b16a62cfc734883b6",
+          "movement": "0,1 XLM"
+        },
+        {
+          "step": "c",
+          "action": "1 u de Estudio en azul (Try it)",
+          "wallet": "QA-3",
+          "txHash": "ac35ea3b66b4b0281fae7c0afd90752765a694f897a960c2a52e9b08cc25083a",
+          "movement": "0,1 XLM"
+        },
+        {
+          "step": "d",
+          "action": "Reparto proporcional de 0,5 XLM en Torso II",
+          "wallet": "QA-5",
+          "txHash": "c28c7dce42b8ae00e4004cf9f4acc7449d7645fb5d06266629c49ac2e5d4a411",
+          "movement": "0,375 a QA-2 · 0,125 a QA-3"
+        },
+        {
+          "step": "e",
+          "action": "Compra en USDC de Silencio blanco",
+          "wallet": "QA-2",
+          "txHash": "cbe3924319d0258ce7bc2ffde971d78b04b18e1a4998ecff28937bfdb15d4796",
+          "movement": "0,1 USDC"
+        },
+        {
+          "step": "f",
+          "action": "Segunda firma en \"Puerto al alba\"",
+          "wallet": "QA-5",
+          "txHash": "65a624c454d33e230c43b754e62bbcd991799f39c942ef13dbcbc6c40aba59da",
+          "movement": "gas"
+        },
+        {
+          "step": "f",
+          "action": "Finaliza \"Puerto al alba\" (2 firmas)",
+          "wallet": "QA-5",
+          "txHash": "806a9865511f18616559298361290345644630d5b957c0c69391be1d8d5b9fa6",
+          "movement": "—"
+        },
+        {
+          "step": "g",
+          "action": "Verificación pública por QR sin wallet",
+          "wallet": "—",
+          "txHash": null,
+          "movement": "https://artifex.0xvera.com/verify/8f0326d791c679433f71e3d1b3ba4837d9ff47f51e431ac6918a7c8c6ca282e6",
+          "verifyUrl": "https://artifex.0xvera.com/verify/8f0326d791c679433f71e3d1b3ba4837d9ff47f51e431ac6918a7c8c6ca282e6"
+        }
+      ],
+      "knownIssues": [
+        {
+          "id": "UI-01",
+          "title": "Catalog filters",
+          "detail": "Future-sale filter can still include whole-work listings (V-05).",
+          "roadmap": "ROADMAP.md#hackmeridian"
+        },
+        {
+          "id": "UI-02",
+          "title": "Register form fields",
+          "detail": "Register form still omits dimensions, weight, description, and documents (C-01).",
+          "roadmap": "ROADMAP.md#hackmeridian"
+        },
+        {
+          "id": "UI-03",
+          "title": "Prior digitization PDF",
+          "detail": "Prior-certificate digitization can reject PDF and leave an orphan fiche (C-07).",
+          "roadmap": "ROADMAP.md#hackmeridian"
+        },
+        {
+          "id": "UI-04",
+          "title": "Three-owner resale history",
+          "detail": "Full three-owner resale path not re-exercised on the mainnet run (S-03).",
+          "roadmap": "ROADMAP.md#hackmeridian"
+        },
+        {
+          "id": "UI-05",
+          "title": "Holdings unit display",
+          "detail": "Holdings lists works but often omits unit counts and valuation in the UI.",
+          "roadmap": "ROADMAP.md#phase-1"
+        },
+        {
+          "id": "UI-06",
+          "title": "Fiche technical noise",
+          "detail": "Piece fiche can show raw fee_paid / hash lines outside Technical details.",
+          "roadmap": "ROADMAP.md#phase-1"
+        },
+        {
+          "id": "UI-07",
+          "title": "Signers on fiche copy",
+          "detail": "Signers are reliable on /verify; fiche header copy can omit them or mix ES/EN.",
+          "roadmap": "ROADMAP.md#phase-1"
+        }
+      ]
+    },
     "smoke": [
       {
         "id": "MN-SETUP",
@@ -20,8 +215,8 @@
       {
         "id": "MN-SMOKE",
         "title": "Mainnet product smoke (certify / buy / distribute)",
-        "status": "PENDING",
-        "reason": "Observed Luz de Anaga finalize_cert (a652c807…), mint/list, buy_sale to QA-3 (f7d4a181…); seed buy_primary + QA-5 distribute (c28c7dce…); official pass verdict pending"
+        "status": "PASS",
+        "txHash": "f7d4a18187babeafde8e7365b7d9d20e2b72b0800a491b25b8d565cea39cfe48"
       }
     ]
   },
@@ -52,14 +247,14 @@
       "pass": "4th",
       "validated": 28,
       "blockers": 3,
-      "note": "api 0.16.20 \u2192 0.16.22; 7 open, 1 untested; three whole-work blockers"
+      "note": "api 0.16.20 → 0.16.22; 7 open, 1 untested; three whole-work blockers"
     },
     {
       "date": "2026-10-25",
       "pass": "4th re-test",
       "validated": 31,
       "blockers": 0,
-      "note": "APTO for mainnet on api 0.16.23 / web 0.4.21\u20130.4.22; S-02/S-04/S-05/S-12 PASS; evolution 9 \u2192 20 \u2192 22 \u2192 28 \u2192 apto"
+      "note": "APTO for mainnet on api 0.16.23 / web 0.4.21–0.4.22; S-02/S-04/S-05/S-12 PASS; evolution 9 → 20 → 22 → 28 → apto"
     }
   ],
   "cases": [
@@ -220,7 +415,7 @@
       "id": "S-06",
       "group": "S",
       "title": "Museum offers each participation type",
-      "description": "A museum publishes one offer of each type \u2014 future sale, guaranteed repurchase, financing with return, and exploitation rights \u2014 each with a terms document.",
+      "description": "A museum publishes one offer of each type — future sale, guaranteed repurchase, financing with return, and exploitation rights — each with a terms document.",
       "status": "PASS",
       "txHash": "2f4c622d24c621ff0519babd258f2c1e9cce0e830da87de1714c1b83ddc81c95"
     },
@@ -331,5 +526,5 @@
     }
   ],
   "verdict": "PASS",
-  "verdictNote": "APTO for mainnet (re-test api 0.16.23 / web 0.4.21\u20130.4.22)"
+  "verdictNote": "Mainnet run a–g PASS (26/10/2026); Testnet gate APTO (9 → 20 → 22 → 28 → apto)"
 }

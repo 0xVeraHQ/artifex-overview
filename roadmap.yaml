@@ -7,11 +7,13 @@ phases:
       Scale-track work for HackMeridian 2026. Application scope named
       OpenZeppelin, Trustless Work, and path payments; after mentor and
       judge conversations the event priority is production readiness.
+      Mainnet is live; external Mainnet QA run a–g PASS (26 Oct 2026).
     items:
       - External QA APTO for mainnet on Testnet (9 → 20 → 22 → 28 → apto)
       - Mainnet contracts + app cutover (api 0.17.5 / web 0.4.25, registry mainnet-v1)
       - Seed hackathon-scale-15-v6-mainnet (15 pieces, offers 1–6, tokens 1–4)
-      - Mainnet external QA in progress
+      - Mainnet external QA run a–g PASS (19 txs, Luz de Anaga + Puerto al alba)
+      - Non-blocking UI polish (7 known issues) after the Mainnet run
   - id: phase-1
     name: Phase 1
     status: PLANNED

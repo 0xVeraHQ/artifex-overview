@@ -4,18 +4,75 @@
 
 ## Methodology
 
-Black-box checks of the public site and Stellar Testnet.
+Black-box checks of the public site on **Stellar mainnet** (primary for judges)
+and earlier Testnet passes used as development history.
 An independent agent runs them with no access to the source code,
 the private repositories, or the server.
 
-A case is published as **PASS** (with a Testnet transaction link when the check produces one), **PENDING** (with a reason), or **PLANNED**.
+A case is published as **PASS** (with an explorer transaction link when the check produces one), **PENDING** (with a reason), or **PLANNED**.
 A result outside those three states is rejected by the generator and is not written here.
 
-Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
+Mainnet explorer: [stellar.expert/public](https://stellar.expert/explorer/public).
+Testnet history: [stellar.expert/testnet](https://stellar.expert/explorer/testnet).
 
-**Verdict: PASS** — APTO for mainnet (re-test api 0.16.23 / web 0.4.21–0.4.22).
+**Verdict: PASS** — Mainnet run a–g PASS (26/10/2026); Testnet gate APTO (9 → 20 → 22 → 28 → apto).
 
-## Pass history
+## Mainnet run (26/10/2026)
+
+External black-box QA with Freighter on Stellar Main Net. 19 transactions, all successful on Horizon; 0.448 XLM total fees.
+
+**Verdict: PASS** — 19 Horizon-successful transactions; 0.448 XLM total fees.
+
+| Paso | Acción | Wallet | Tx | Movimiento |
+| --- | --- | --- | --- | --- |
+| Fondeo | Crea QA-1 | QA-2 | [082bdfe1fd…](https://stellar.expert/explorer/public/tx/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852) | 2,5 XLM |
+| Fondeo | Crea QA-3 | QA-2 | [972eec3986…](https://stellar.expert/explorer/public/tx/972eec3986143f2c19df00c4801cf3b80c6b1484c0e9ba401fcb3fb9b8b8d6ce) | 2,5 XLM |
+| Fondeo | Crea QA-4 | QA-2 | [08a1cca07f…](https://stellar.expert/explorer/public/tx/08a1cca07f9294452e681a71cfbadc22258d2e9495b97e25e953abb021aaefc7) | 2,5 XLM |
+| Fondeo | Crea QA-5 | QA-2 | [863dc2065e…](https://stellar.expert/explorer/public/tx/863dc2065eede0988b6e6bf327c9921651c058ef95b0eb65de72dd43c0a728fb) | 2,5 XLM |
+| Fondeo | Trustline USDC | QA-2 | [a9359cfc98…](https://stellar.expert/explorer/public/tx/a9359cfc983db92cdf2d6ee71afc10f73f2314251b6ab6b53fd23dff6b78c6e0) | — |
+| a | Registra y propone "Luz de Anaga" (autor vivo) | QA-1 | [ad9073f3a8…](https://stellar.expert/explorer/public/tx/ad9073f3a8b28fb53babd0f191a1c963594cff00164f333cc94632b26fd39b98) | gas |
+| a | Deposita la tasa | QA-1 | [51f36e2440…](https://stellar.expert/explorer/public/tx/51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735) | 0,5 XLM |
+| a | Finaliza (1 firma, Certified) | QA-1 | [a652c8079b…](https://stellar.expert/explorer/public/tx/a652c8079b09b68deff4b1918f781e50972259c452afee1efc028d0c374421d7) | — |
+| b | Acuña NFT (token 5) | QA-1 | [2369253e1d…](https://stellar.expert/explorer/public/tx/2369253e1d16fbfcfce9c6def95de2b4d49e3dfb1d63d734b4e43a2b0d3a4ad7) | gas |
+| b | Venta entera a 1 XLM | QA-1 | [5f16c84081…](https://stellar.expert/explorer/public/tx/5f16c84081b221312b3df93cc3c0d8d0f832b4dc0bfeeec9bf9a30599c4d05fb) | gas |
+| b | Compra la obra entera | QA-3 | [f7d4a18187…](https://stellar.expert/explorer/public/tx/f7d4a18187babeafde8e7365b7d9d20e2b72b0800a491b25b8d565cea39cfe48) | 1 XLM a QA-1 |
+| c | 3 u de Torso II | QA-2 | [8479553c49…](https://stellar.expert/explorer/public/tx/8479553c49e110a6daeb4f7e3b0d50124039ff5516796fafda8a9855c1eccac1) | 0,3 XLM |
+| c | 1 u de Estudio en azul (Try it) | QA-2 | [20119cbee9…](https://stellar.expert/explorer/public/tx/20119cbee97c15a38c4fe959c0d9ae6394ae1ba3512f800ffc961d1bb3028c3b) | 0,1 XLM |
+| c | 1 u de Torso II | QA-3 | [b9f151c32f…](https://stellar.expert/explorer/public/tx/b9f151c32fd185310a4f5979e8f6828a0fcf0a9bb7b80f9b16a62cfc734883b6) | 0,1 XLM |
+| c | 1 u de Estudio en azul (Try it) | QA-3 | [ac35ea3b66…](https://stellar.expert/explorer/public/tx/ac35ea3b66b4b0281fae7c0afd90752765a694f897a960c2a52e9b08cc25083a) | 0,1 XLM |
+| d | Reparto proporcional de 0,5 XLM en Torso II | QA-5 | [c28c7dce42…](https://stellar.expert/explorer/public/tx/c28c7dce42b8ae00e4004cf9f4acc7449d7645fb5d06266629c49ac2e5d4a411) | 0,375 a QA-2 · 0,125 a QA-3 |
+| e | Compra en USDC de Silencio blanco | QA-2 | [cbe3924319…](https://stellar.expert/explorer/public/tx/cbe3924319d0258ce7bc2ffde971d78b04b18e1a4998ecff28937bfdb15d4796) | 0,1 USDC |
+| f | Segunda firma en "Puerto al alba" | QA-5 | [65a624c454…](https://stellar.expert/explorer/public/tx/65a624c454d33e230c43b754e62bbcd991799f39c942ef13dbcbc6c40aba59da) | gas |
+| f | Finaliza "Puerto al alba" (2 firmas) | QA-5 | [806a986551…](https://stellar.expert/explorer/public/tx/806a9865511f18616559298361290345644630d5b957c0c69391be1d8d5b9fa6) | — |
+| g | Verificación pública por QR sin wallet | — | [Verify](https://artifex.0xvera.com/verify/8f0326d791c679433f71e3d1b3ba4837d9ff47f51e431ac6918a7c8c6ca282e6) | https://artifex.0xvera.com/verify/8f0326d791c679433f71e3d1b3ba4837d9ff47f51e431ac6918a7c8c6ca282e6 |
+
+
+### Known issues (non-blocking UI)
+
+Seven interface findings that did not block the Mainnet run verdict.
+Tracked on the [roadmap](ROADMAP.md).
+
+| Id | Issue | Detail | Roadmap |
+| --- | --- | --- | --- |
+| UI-01 | Catalog filters | Future-sale filter can still include whole-work listings (V-05). | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-02 | Register form fields | Register form still omits dimensions, weight, description, and documents (C-01). | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-03 | Prior digitization PDF | Prior-certificate digitization can reject PDF and leave an orphan fiche (C-07). | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-04 | Three-owner resale history | Full three-owner resale path not re-exercised on the mainnet run (S-03). | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-05 | Holdings unit display | Holdings lists works but often omits unit counts and valuation in the UI. | [Roadmap](ROADMAP.md#phase-1) |
+| UI-06 | Fiche technical noise | Piece fiche can show raw fee_paid / hash lines outside Technical details. | [Roadmap](ROADMAP.md#phase-1) |
+| UI-07 | Signers on fiche copy | Signers are reliable on /verify; fiche header copy can omit them or mix ES/EN. | [Roadmap](ROADMAP.md#phase-1) |
+
+
+### Mainnet smoke checklist
+
+| Check | What | Status | Reason | Mainnet transaction |
+| --- | --- | --- | --- | --- |
+| MN-SETUP | QA Freighter accounts activated on mainnet | PASS | — | [082bdfe1fd…](https://stellar.expert/explorer/public/tx/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852) |
+| MN-USDC | QA-2 Circle USDC trustline on mainnet | PASS | — | [a9359cfc98…](https://stellar.expert/explorer/public/tx/a9359cfc983db92cdf2d6ee71afc10f73f2314251b6ab6b53fd23dff6b78c6e0) |
+| MN-SMOKE | Mainnet product smoke (certify / buy / distribute) | PASS | — | [f7d4a18187…](https://stellar.expert/explorer/public/tx/f7d4a18187babeafde8e7365b7d9d20e2b72b0800a491b25b8d565cea39cfe48) |
+
+
+## Pass history (Testnet)
 
 | Date | Pass | Validated | Blockers | Note |
 | --- | --- | --- | --- | --- |
@@ -24,21 +81,6 @@ Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 | 2026-10-23 | 3rd | 22 | 4 | 15 demo artworks and marketplace hardening |
 | 2026-10-25 | 4th | 28 | 3 | api 0.16.20 → 0.16.22; 7 open, 1 untested; three whole-work blockers |
 | 2026-10-25 | 4th re-test | 31 | 0 | APTO for mainnet on api 0.16.23 / web 0.4.21–0.4.22; S-02/S-04/S-05/S-12 PASS; evolution 9 → 20 → 22 → 28 → apto |
-
-
-## Mainnet
-
-**PENDING** — Mainnet smoke in progress on api 0.17.5 / web 0.4.25; certify/buy/distribute txs observed, official verdict pending.
-
-### Mainnet smoke
-
-Black-box smoke on the live mainnet app after seed `hackathon-scale-15-v6-mainnet`. Product checks stay **PENDING** until the pass reports.
-
-| Check | What | Status | Reason | Mainnet transaction |
-| --- | --- | --- | --- | --- |
-| MN-SETUP | QA Freighter accounts activated on mainnet | PASS | — | [082bdfe1fd…](https://stellar.expert/explorer/public/tx/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852) |
-| MN-USDC | QA-2 Circle USDC trustline on mainnet | PASS | — | [a9359cfc98…](https://stellar.expert/explorer/public/tx/a9359cfc983db92cdf2d6ee71afc10f73f2314251b6ab6b53fd23dff6b78c6e0) |
-| MN-SMOKE | Mainnet product smoke (certify / buy / distribute) | PENDING | Observed Luz de Anaga finalize_cert (a652c807…), mint/list, buy_sale to QA-3 (f7d4a181…); seed buy_primary + QA-5 distribute (c28c7dce…); official pass verdict pending | — |
 
 
 ## Cases (Testnet history)

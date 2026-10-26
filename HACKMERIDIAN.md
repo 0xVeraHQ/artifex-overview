@@ -201,8 +201,25 @@ Mainnet smoke chain (public Horizon), still awaiting official QA verdict:
 
 **Luz de Anaga** certified · whole token **5** · sold to QA-3. Catalog: **16** works · **9** certified (API). Mainnet smoke **PENDING** for official close-out.
 
+### 07:45 (26 Oct) — Mainnet QA run a–g **PASS**
+
+External Freighter black-box on Main Net closed. **19** Horizon-successful transactions · **0.448 XLM** total fees. Full table: [QA.md — Mainnet run (26/10/2026)](QA.md#mainnet-run-26102026).
+
+| Step | Result |
+| --- | --- |
+| a | Living author **Luz de Anaga**: propose → deposit 0,5 XLM → finalize |
+| b | Mint token **5**, list 1 XLM, QA-3 buys whole |
+| c | Participations: Torso II + Estudio en azul (Try it) for QA-2 / QA-3 |
+| d | QA-5 proportional distribute 0,5 XLM on Torso II |
+| e | QA-2 buys Silencio blanco in **USDC** |
+| f | QA-5 second signature + finalize **Puerto al alba** (2 signatures) |
+| g | Public QR verify without wallet |
+
+Night diary summary (25→26 Lisbon): VPS cutover · seed on-chain · web/login mainnet · fee from contract · QA a–g **PASS**. Seven non-blocking UI findings listed as Known issues → [ROADMAP.md](ROADMAP.md).
+
 ---
 
 ## Planned during the event (not yet dated)
 
-- **Mainnet QA product results** — mark [QA.md](QA.md) Mainnet smoke PASS when the external pass closes.
+- Delivery window closes **Monday 26 Oct 12:00 Lisbon**.
+- Non-blocking UI polish after the Mainnet run (see [QA.md](QA.md#known-issues-non-blocking-ui)).

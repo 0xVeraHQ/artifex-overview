@@ -1,0 +1,55 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/transactions/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852"
+    },
+    "account": {
+      "href": "https://horizon.stellar.org/accounts/GAWH75XHCV5CE375EPEVKXG63SIKDLID5ULHDIY7WIPS2U2ZJLAYWBNJ"
+    },
+    "ledger": {
+      "href": "https://horizon.stellar.org/ledgers/65137136"
+    },
+    "operations": {
+      "href": "https://horizon.stellar.org/transactions/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852/operations{?cursor,limit,order}",
+      "templated": true
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/transactions/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852/effects{?cursor,limit,order}",
+      "templated": true
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/transactions?order=asc\u0026cursor=279761868876173312"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/transactions?order=desc\u0026cursor=279761868876173312"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852"
+    }
+  },
+  "id": "082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852",
+  "paging_token": "279761868876173312",
+  "successful": true,
+  "hash": "082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852",
+  "ledger": 65137136,
+  "created_at": "2026-10-25T23:37:43Z",
+  "source_account": "GAWH75XHCV5CE375EPEVKXG63SIKDLID5ULHDIY7WIPS2U2ZJLAYWBNJ",
+  "source_account_sequence": "279761460853211137",
+  "fee_account": "GAWH75XHCV5CE375EPEVKXG63SIKDLID5ULHDIY7WIPS2U2ZJLAYWBNJ",
+  "fee_charged": "100",
+  "max_fee": "75495",
+  "operation_count": 1,
+  "envelope_xdr": "AAAAAgAAAAAsf/bnFXoib/0jyVVc3tyQoa0D7RZxox+yHy1TWUrBiwABJucD4emRAAAAAQAAAAEAAAAAAAAAAAAAAABq3pNoAAAAAAAAAAEAAAAAAAAAAAAAAACeZgu9GUKQufG+fsz7KadMsCVh6O7UQluLVIUq+W7wIwAAAAABfXhAAAAAAAAAAAFZSsGLAAAAQPmuZiopfgfg0vMiDu3DDYdiufL4EiRR3y0w+MqoZ2dVFQzEjLWhK7/3PjrH3yjrLFfnzqyhX+Z7SlaXIUnpFwU=",
+  "result_xdr": "AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=",
+  "fee_meta_xdr": "AAAAAgAAAAMD4em3AAAAAAAAAAAsf/bnFXoib/0jyVVc3tyQoa0D7RZxox+yHy1TWUrBiwAAAAAR4aboA+HpkQAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAED4enwAAAAAAAAAAAsf/bnFXoib/0jyVVc3tyQoa0D7RZxox+yHy1TWUrBiwAAAAAR4aaEA+HpkQAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA==",
+  "memo_type": "none",
+  "signatures": [
+    "+a5mKil+B+DS8yIO7cMNh2K58vgSJFHfLTD4yqhnZ1UVDMSMtaErv/c+OsffKOssV+fOrKFf5ntKVpchSekXBQ=="
+  ],
+  "preconditions": {
+    "timebounds": {
+      "min_time": "0",
+      "max_time": "1792971624"
+    }
+  }
+}

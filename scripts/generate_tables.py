@@ -206,14 +206,16 @@ def render_qa(doc: dict, cases: list[dict]) -> str:
         "",
         "## Methodology",
         "",
-        "Black-box checks of the public site and Stellar Testnet.",
+        "Black-box checks of the public site on **Stellar mainnet** (primary for judges)",
+        "and earlier Testnet passes used as development history.",
         "An independent agent runs them with no access to the source code,",
         "the private repositories, or the server.",
         "",
-        "A case is published as **PASS** (with a Testnet transaction link when the check produces one), **PENDING** (with a reason), or **PLANNED**.",
+        "A case is published as **PASS** (with an explorer transaction link when the check produces one), **PENDING** (with a reason), or **PLANNED**.",
         "A result outside those three states is rejected by the generator and is not written here.",
         "",
-        f"Network: [Stellar Testnet]({explorer_for('testnet')}).",
+        f"Mainnet explorer: [stellar.expert/public]({explorer_for('mainnet')}).",
+        f"Testnet history: [stellar.expert/testnet]({explorer_for('testnet')}).",
         "",
     ]
     if verdict == "PASS":
@@ -223,10 +225,112 @@ def render_qa(doc: dict, cases: list[dict]) -> str:
                 "",
             ]
         )
+
+    mainnet = doc.get("mainnet") or {}
+    run = mainnet.get("run") if isinstance(mainnet, dict) else None
+    if isinstance(run, dict) and run.get("steps"):
+        title = str(run.get("title") or "Mainnet run").strip()
+        lines.extend(
+            [
+                f"## {title}",
+                "",
+                str(run.get("summary") or "").strip(),
+                "",
+                f"**Verdict: {run.get('verdict', mainnet.get('status', 'PASS'))}**"
+                + (
+                    f" — {run.get('txCount')} Horizon-successful transactions;"
+                    f" {run.get('feesXlm')} XLM total fees."
+                    if run.get("txCount") or run.get("feesXlm")
+                    else "."
+                ),
+                "",
+            ]
+        )
+        run_rows = []
+        for row in run["steps"]:
+            step = str(row.get("step") or "—")
+            action = str(row.get("action") or "—")
+            wallet = str(row.get("wallet") or "—")
+            movement = str(row.get("movement") or "—")
+            txh = row.get("txHash") or row.get("tx_hash")
+            if txh:
+                cell = tx_link(txh, "mainnet")
+            elif row.get("verifyUrl"):
+                cell = f"[Verify]({row['verifyUrl']})"
+            else:
+                cell = "—"
+            run_rows.append([step, action, wallet, cell, movement])
+        lines.append(
+            table(
+                ["Paso", "Acción", "Wallet", "Tx", "Movimiento"],
+                run_rows,
+            )
+        )
+        lines.append("")
+        issues = run.get("knownIssues") or []
+        if issues:
+            lines.extend(
+                [
+                    "### Known issues (non-blocking UI)",
+                    "",
+                    "Seven interface findings that did not block the Mainnet run verdict.",
+                    "Tracked on the [roadmap](ROADMAP.md).",
+                    "",
+                ]
+            )
+            issue_rows = []
+            for issue in issues:
+                rid = str(issue.get("id") or "—")
+                ititle = str(issue.get("title") or "—")
+                detail = str(issue.get("detail") or "—")
+                road = str(issue.get("roadmap") or "ROADMAP.md")
+                issue_rows.append([rid, ititle, detail, f"[Roadmap]({road})"])
+            lines.append(
+                table(["Id", "Issue", "Detail", "Roadmap"], issue_rows)
+            )
+            lines.append("")
+    elif mainnet:
+        lines.extend(
+            [
+                "## Mainnet",
+                "",
+                f"**{mainnet.get('status', 'PENDING')}** — {mainnet.get('reason', 'mainnet launch at HackMeridian')}.",
+                "",
+            ]
+        )
+
+    smoke = (mainnet.get("smoke") or []) if isinstance(mainnet, dict) else []
+    if isinstance(smoke, list) and smoke:
+        lines.extend(
+            [
+                "### Mainnet smoke checklist",
+                "",
+            ]
+        )
+        smoke_rows = []
+        for row in smoke:
+            rid = str(row.get("id") or "").strip() or "—"
+            title = str(row.get("title") or "").strip() or "—"
+            status = str(row.get("status") or "PENDING").strip()
+            reason = str(row.get("reason") or "").strip() or "—"
+            tx = tx_link(row.get("txHash") or row.get("tx_hash"), "mainnet")
+            if status not in ALLOWED_QA:
+                raise Reject(f"mainnet smoke {rid} status {status!r} is not publishable")
+            if status in {"PENDING", "PLANNED"} and reason == "—":
+                raise Reject(f"mainnet smoke {rid} needs a reason")
+            smoke_rows.append([rid, title, status, reason, tx])
+        lines.append(
+            table(
+                ["Check", "What", "Status", "Reason", "Mainnet transaction"],
+                smoke_rows,
+            )
+        )
+        lines.append("")
+
     lines.extend(
         [
-        "## Pass history",
-        "",
+            "## Pass history (Testnet)",
+            "",
         ]
     )
     if history:
@@ -251,52 +355,6 @@ def render_qa(doc: dict, cases: list[dict]) -> str:
     else:
         lines.append("No pass history recorded yet.")
         lines.append("")
-
-    mainnet = doc.get("mainnet") or {}
-    if mainnet:
-        lines.extend(
-            [
-                "## Mainnet",
-                "",
-                f"**{mainnet.get('status', 'PENDING')}** — {mainnet.get('reason', 'mainnet launch at HackMeridian')}.",
-                "",
-            ]
-        )
-        smoke = mainnet.get("smoke") or []
-        if isinstance(smoke, list) and smoke:
-            lines.extend(
-                [
-                    "### Mainnet smoke",
-                    "",
-                    "Black-box smoke on the live mainnet app after seed "
-                    "`hackathon-scale-15-v6-mainnet`. Product checks stay **PENDING** until the pass reports.",
-                    "",
-                ]
-            )
-            smoke_rows = []
-            for row in smoke:
-                rid = str(row.get("id") or "").strip() or "—"
-                title = str(row.get("title") or "").strip() or "—"
-                status = str(row.get("status") or "PENDING").strip()
-                reason = str(row.get("reason") or "").strip() or "—"
-                tx = tx_link(row.get("txHash") or row.get("tx_hash"), "mainnet")
-                if status not in ALLOWED_QA:
-                    raise Reject(f"mainnet smoke {rid} status {status!r} is not publishable")
-                if status in {"PENDING", "PLANNED"} and reason == "—":
-                    raise Reject(f"mainnet smoke {rid} needs a reason")
-                smoke_rows.append([rid, title, status, reason, tx])
-            lines.append(
-                table(
-                    ["Check", "What", "Status", "Reason", "Mainnet transaction"],
-                    smoke_rows,
-                )
-            )
-            lines.append("")
-        else:
-            lines.append(
-                "Mainnet case rows will be filled with public transaction links when mainnet QA runs."
-            )
-            lines.append("")
 
     lines.append("## Cases (Testnet history)")
     lines.append("")
@@ -925,6 +983,10 @@ def render_roadmap(doc: dict) -> tuple[str, str]:
 
 
 def qa_headline(doc: dict, cases: list[dict]) -> str:
+    mainnet = doc.get("mainnet") or {}
+    mn_status = str(mainnet.get("status") or "").strip().upper()
+    if mn_status == "PASS":
+        return "PASS — Mainnet run a–g (26/10/2026)"
     verdict = str(doc.get("verdict") or "").strip().upper()
     note = str(doc.get("verdictNote") or "").strip()
     if verdict == "PASS":
@@ -953,7 +1015,7 @@ def render_status(
         mainnet_meta and str(active_version) not in {"v1", "v2", "v3", "v4"}
     ):
         contracts_state = (
-            f"Mainnet live ({active_version}, tag {contracts_tag})"
+            f"Mainnet LIVE ({active_version}, tag {contracts_tag})"
             + (f"; deploy {mainnet_meta['txCount']} txs" if mainnet_meta and mainnet_meta.get("txCount") else "")
         )
     elif mainnet_meta:
@@ -965,9 +1027,19 @@ def render_status(
         contracts_state = f"Registry {active_version} on Testnet, contracts tag {contracts_tag}"
     rows = [
         [
-            "QA",
+            "Network",
+            "Mainnet LIVE — artifex.0xvera.com",
+            "[stellar.expert/public](https://stellar.expert/explorer/public)",
+        ],
+        [
+            "QA mainnet",
             qa_headline(qa_doc, cases),
-            "[QA.md](QA.md)",
+            "[QA.md](QA.md#mainnet-run-26102026)",
+        ],
+        [
+            "QA Testnet (history)",
+            "4 passes · 9 → 20 → 22 → 28 validated · APTO",
+            "[QA.md](QA.md#pass-history-testnet)",
         ],
         [
             "Latest release",

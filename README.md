@@ -1,8 +1,9 @@
 # Artifex
 
-Provenance, certification, and funding for art — on Stellar.
+**Live on Stellar Mainnet** — [https://artifex.0xvera.com](https://artifex.0xvera.com) (api **0.17.5** / web **0.4.25**).  
+On-chain evidence: [stellar.expert/explorer/public](https://stellar.expert/explorer/public).
 
-Live app (**Stellar mainnet**): [https://artifex.0xvera.com](https://artifex.0xvera.com)
+Provenance, certification, and funding for art — on Stellar.
 
 Artifex is built for **HackMeridian 2026**, track **Scale**. This repository (`0xVeraHQ/artifex-overview`) is the public presentation for judges. It has the product story, public mainnet identifiers (with Testnet history from the event), and the status of QA, releases, contracts, wallets, pieces, and the roadmap. Tables are generated from the real sources. Do not edit them by hand.
 
@@ -22,7 +23,7 @@ Artifex puts certification and settlement on Stellar so anyone can open the tran
 
 ## How it works
 
-**Living artists.** The author certifies the work with one signature and a fee (5 XLM or 1 USDC), then lists a whole-work sale (digital or with a physical-delivery clause) or a participation offer on the marketplace. Payment and delivery of the NFT or of participation units happen in the same contract call.
+**Living artists.** The author certifies the work with one signature and a fee (read live from the fee collector on mainnet), then lists a whole-work sale (digital or with a physical-delivery clause) or a participation offer on the marketplace. Payment and delivery of the NFT or of participation units happen in the same contract call.
 
 **Museums and foundations.** An institution offers participation units in a work it holds, with a terms document, without transferring the physical object. Buyers can take the whole offer or part of it. Secondary listings can be filled in part or cancelled. Organizations operate with several member wallets and on-chain roles.
 
@@ -43,9 +44,11 @@ Component diagram and certification / sale flows: [docs/architecture.md](docs/ar
 <!-- GENERATED:status -->
 | Area | State | Document |
 | --- | --- | --- |
-| QA | PASS — APTO for mainnet (re-test api 0.16.23 / web 0.4.21–0.4.22) | [QA.md](QA.md) |
+| Network | Mainnet LIVE — artifex.0xvera.com | [stellar.expert/public](https://stellar.expert/explorer/public) |
+| QA mainnet | PASS — Mainnet run a–g (26/10/2026) | [QA.md](QA.md#mainnet-run-26102026) |
+| QA Testnet (history) | 4 passes · 9 → 20 → 22 → 28 validated · APTO | [QA.md](QA.md#pass-history-testnet) |
 | Latest release | api 0.17.5, web 0.4.25, cosign verified | [RELEASES.md](RELEASES.md) |
-| Active contracts | Mainnet live (mainnet-v1, tag vps-deploy); deploy 38 txs | [CONTRACTS.md](CONTRACTS.md) |
+| Active contracts | Mainnet LIVE (mainnet-v1, tag vps-deploy); deploy 38 txs | [CONTRACTS.md](CONTRACTS.md) |
 | Roadmap | HackMeridian in progress | [ROADMAP.md](ROADMAP.md) |
 
 <!-- /GENERATED:status -->
@@ -58,7 +61,7 @@ Generated together with [QA.md](QA.md), [RELEASES.md](RELEASES.md), [CONTRACTS.m
 2. Open [the app](https://artifex.0xvera.com), find **Estudio en azul** (offer titled **Try it**, **0.1 XLM**), and buy one unit.
 3. Open the transaction on the [public explorer](https://stellar.expert/explorer/public) and confirm that the units arrived.
 
-Full steps: [TRY-IT.md](TRY-IT.md). Catalog: [PIECES.md](PIECES.md).
+Full steps: [TRY-IT.md](TRY-IT.md). Catalog: [PIECES.md](PIECES.md). Public verify example (Luz de Anaga): [verify link](https://artifex.0xvera.com/verify/8f0326d791c679433f71e3d1b3ba4837d9ff47f51e431ac6918a7c8c6ca282e6).
 
 ## Before HackMeridian
 
@@ -78,13 +81,11 @@ From Sunday 25 October 2026 09:00 Lisbon, the Scale track prioritizes production
 
 **Landed:**
 
-- **Mainnet is live** (api **0.17.5** / web **0.4.25**, registry **mainnet-v1**): contracts deployed, VPS wiring verified, five seed wallets USDC-funded, seed **`hackathon-scale-15-v6-mainnet`** plus Mainnet-smoke fiche **Luz de Anaga** (certified · token **5** · sold to QA-3).
-- Web takes network from the API (SSR Mainnet footer; no Testnet banner); deposit fees from `/fees/cert`.
-- QA Freighter accounts activated on mainnet (QA-1/3/4/5 from QA-2; QA-2 USDC trustline + 2 USDC top-up). See [WALLETS.md](WALLETS.md) / [QA.md](QA.md).
+- **Mainnet LIVE** (api **0.17.5** / web **0.4.25**, registry **mainnet-v1**): contracts deployed, VPS wiring verified, seed **`hackathon-scale-15-v6-mainnet`**, web network from the API (Mainnet footer, no Testnet banner), certification fee from `/fees/cert`.
+- **Mainnet QA PASS** — Freighter black-box run **a–g** (26 Oct): living-author cert + whole sale (Luz de Anaga), participations + Try it, proportional distribute, USDC buy, deceased two-signature finalize (Puerto al alba), public QR verify. **19** successful txs · **0.448 XLM** fees. See [QA.md](QA.md#mainnet-run-26102026).
+- Testnet gate for the launch: four passes **9 → 20 → 22 → 28** validated, then re-test **APTO**.
 
-**In progress:** mainnet product QA (Mainnet smoke **PENDING** in [QA.md](QA.md); certify / buy / distribute txs observed on-chain).
-
-**Testnet (history):** development and external QA — four passes, validated cases **9 → 20 → 22 → 28**, then re-test **APTO for mainnet**. Details in [QA.md](QA.md) Cases (Testnet history).
+**Testnet** remains development and QA history only.
 
 Dated evidence: [HACKMERIDIAN.md](HACKMERIDIAN.md). Roadmap: [ROADMAP.md](ROADMAP.md).
 
@@ -93,31 +94,23 @@ The original application named OpenZeppelin contracts, Trustless Work escrow, an
 ## Known limitations
 
 - Live network is Stellar **mainnet**. Testnet tables are history only ([PIECES.md](PIECES.md), [QA.md](QA.md)).
+- Seven non-blocking UI findings from the Mainnet run are listed under [QA.md Known issues](QA.md#known-issues-non-blocking-ui) and tracked on the [roadmap](ROADMAP.md).
 - Platform and validator are the same mainnet address today. Splitting them behind multisig is [phase 3](ROADMAP.md). See [WALLETS.md](WALLETS.md).
 - Participations are not a legal opinion on title. Counsel review is [phase 3](ROADMAP.md).
 - Signing is Freighter. Passkey smart wallet is [phase 1](ROADMAP.md); iOS / Android are [phase 2](ROADMAP.md).
-- Mainnet smoke QA is **PENDING**; Testnet gate remains **PASS / APTO**.
 
-## Team
+## Public contracts
 
-- **Joel** — captain, technical.
-- **Luis** — art expert, from a family of gallerists.
+The Soroban contracts used by Artifex are public: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts). Deployed mainnet IDs: [CONTRACTS.md](CONTRACTS.md).
 
-## Source code: smart contracts
-
-The Soroban contracts are public:
-
-- **[0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts)** — Rust / Soroban SDK sources, tags, and Wasm artifacts referenced from [CONTRACTS.md](CONTRACTS.md).
-
-## Private implementation
+## Private repositories
 
 These repositories stay private (application, UI, orchestration, internal docs):
 
-- `artifex-api`
-- `artifex-web-ui`
-- `artifex-orch`
-- `artifex-docs`
+- artifex-api, artifex-web-ui, artifex-orch, and related ops repos.
 
-All of them are under the GitHub organization [0xVeraHQ](https://github.com/0xVeraHQ). This presentation repository does not contain their source, secrets, or host configuration.
+Judges only need this overview repo and the public contracts repo.
 
-A HackMeridian judge who needs read-only access to the private repos can open an issue on this repository titled **Read access for evaluation**, and include the GitHub usernames. Access is for the evaluation. The license is in [LICENSE](LICENSE): all rights reserved.
+## License
+
+See [LICENSE](LICENSE).

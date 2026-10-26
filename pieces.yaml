@@ -3,9 +3,9 @@ seed: 15-demo-artworks
 mainnet:
   status: LIVE
   reason: >-
-    seed hackathon-scale-15-v6-mainnet (15 demos) + 1 Mainnet-smoke fiche (Luz de Anaga);
-    9 certified (API), Puerto al alba still pending second signature, 6 offers (1–6),
-    whole tokens 1–5 (Anaga token 5 sold to QA-3), secondary listing 1
+    seed hackathon-scale-15-v6-mainnet (15 demos) + Luz de Anaga (Mainnet QA);
+    9+ certified incl. Puerto al alba (2 signatures) and Luz de Anaga (sold, token 5);
+    6 offers (1–6), whole tokens 1–5, secondary listing 1
   seedRunId: hackathon-scale-15-v6-mainnet
   pieces:
   - n: 1
@@ -47,7 +47,7 @@ mainnet:
     artist: Mireille Duclos
     pieceId: 051fd8e2b40c781a2e04bb418a03b4b43e6a91aeb22279108f3a0f16b63ec2d7
     certification: Deceased author (connoisseur + institution)
-    status: Pending second signature
+    status: Certified
     modality: Not for sale
     forSale: false
     price: —
@@ -55,7 +55,7 @@ mainnet:
     offerId: null
     listingId: null
     wholeTokenId: null
-    certTx: null
+    certTx: 806a9865511f18616559298361290345644630d5b957c0c69391be1d8d5b9fa6
     offerTx: null
     listingTx: null
     distribTx: null

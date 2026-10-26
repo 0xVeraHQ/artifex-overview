@@ -1,0 +1,60 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/transactions/51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735/effects?cursor=\u0026limit=50\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/transactions/51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735/effects?cursor=279767649901797377-2\u0026limit=50\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/transactions/51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735/effects?cursor=279767649901797377-1\u0026limit=50\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/279767649901797377"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=279767649901797377-1"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=279767649901797377-1"
+          }
+        },
+        "id": "0279767649901797377-0000000001",
+        "paging_token": "279767649901797377-1",
+        "account": "GCPGMC55DFBJBOPRXZ7MZ6ZJU5GLAJLB5DXNIQS3RNKIKKXZN3YCH3RL",
+        "type": "account_debited",
+        "type_i": 3,
+        "created_at": "2026-10-26T01:29:53Z",
+        "asset_type": "native",
+        "amount": "0.5000000"
+      },
+      {
+        "_links": {
+          "operation": {
+            "href": "https://horizon.stellar.org/operations/279767649901797377"
+          },
+          "succeeds": {
+            "href": "https://horizon.stellar.org/effects?order=desc\u0026cursor=279767649901797377-2"
+          },
+          "precedes": {
+            "href": "https://horizon.stellar.org/effects?order=asc\u0026cursor=279767649901797377-2"
+          }
+        },
+        "id": "0279767649901797377-0000000002",
+        "paging_token": "279767649901797377-2",
+        "account": "GCPGMC55DFBJBOPRXZ7MZ6ZJU5GLAJLB5DXNIQS3RNKIKKXZN3YCH3RL",
+        "type": "contract_credited",
+        "type_i": 96,
+        "created_at": "2026-10-26T01:29:53Z",
+        "asset_type": "native",
+        "contract": "CBWJBOE3CESO5T2OZKLDASOFXAFQ4NAKWXZ26ZNYYWYI4E2VJCZJJ7Q2",
+        "amount": "0.5000000"
+      }
+    ]
+  }
+}

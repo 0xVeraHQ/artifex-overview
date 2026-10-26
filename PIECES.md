@@ -5,7 +5,7 @@
 ## Mainnet
 
 **16 artwork(s)** on Stellar mainnet.
-**LIVE** — seed hackathon-scale-15-v6-mainnet (15 demos) + 1 Mainnet-smoke fiche (Luz de Anaga); 9 certified (API), Puerto al alba still pending second signature, 6 offers (1–6), whole tokens 1–5 (Anaga token 5 sold to QA-3), secondary listing 1.
+**LIVE** — seed hackathon-scale-15-v6-mainnet (15 demos) + Luz de Anaga (Mainnet QA); 9+ certified incl. Puerto al alba (2 signatures) and Luz de Anaga (sold, token 5); 6 offers (1–6), whole tokens 1–5, secondary listing 1.
 Seed run: `hackathon-scale-15-v6-mainnet`.
 Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [https://stellar.expert/explorer/public](https://stellar.expert/explorer/public).
 Certification / offer / listing tx columns fill when indexed or when mainnet QA reports hashes.
@@ -14,7 +14,7 @@ Certification / offer / listing tx columns fill when indexed or when mainnet QA 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | **Mar de invierno** · Elena Varga | Living author (1 signature) | Certified | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/87458dade39f63f1806bd6e64ccc0c56fdf370d31edba7d2a6c645fcfbdafcc4) | — | — | — | — | — |
 | 2 | **Figura en reposo** · Tomás Arriaga | Deceased author (connoisseur + institution) | Certified | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/f3c7e94f3c327d158c6b533f723e13da05827355403ab055b6efe2512df48a41) | — | — | — | — | — |
-| 3 | **Puerto al alba** · Mireille Duclos | Deceased author (connoisseur + institution) | Pending second signature | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/051fd8e2b40c781a2e04bb418a03b4b43e6a91aeb22279108f3a0f16b63ec2d7) | — | — | — | — | — |
+| 3 | **Puerto al alba** · Mireille Duclos | Deceased author (connoisseur + institution) | Certified | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/051fd8e2b40c781a2e04bb418a03b4b43e6a91aeb22279108f3a0f16b63ec2d7) | — | [806a986551…](https://stellar.expert/explorer/public/tx/806a9865511f18616559298361290345644630d5b957c0c69391be1d8d5b9fa6) | — | — | — |
 | 4 | **Serie Kyoto nº 3** · Kenji Morita | Living author (1 signature) | Not certified | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/406a080366dac0bedb4238eb0cad663ed4d9006a011dd5be135d4e9eafef8789) | — | — | — | — | — |
 | 5 | **Cuenco ceniza** · Sofía Lindqvist | Living author (1 signature) | Not certified | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/357122b6b2f6483c6aed84c58d619e5e29b2e2319273c7daa96750734aeaa84d) | — | — | — | — | — |
 | 6 | **Estudio en azul** · Elena Varga | Living author (1 signature) | Certified | Participation — Future sale | 0.1 XLM | Yes | [Verify](https://artifex.0xvera.com/verify/67b36becdd2b12df0918a9e68cd02b964595b970e0063f53f01066f5fb70fbbe) | offer 1 | — | — | — | — |

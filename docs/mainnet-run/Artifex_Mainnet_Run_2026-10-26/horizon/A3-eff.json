@@ -1,0 +1,16 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/transactions/a652c8079b09b68deff4b1918f781e50972259c452afee1efc028d0c374421d7/effects?cursor=\u0026limit=50\u0026order=asc"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/transactions/a652c8079b09b68deff4b1918f781e50972259c452afee1efc028d0c374421d7/effects?cursor=\u0026limit=50\u0026order=asc"
+    },
+    "prev": {
+      "href": "https://horizon.stellar.org/transactions/a652c8079b09b68deff4b1918f781e50972259c452afee1efc028d0c374421d7/effects?cursor=\u0026limit=50\u0026order=desc"
+    }
+  },
+  "_embedded": {
+    "records": []
+  }
+}

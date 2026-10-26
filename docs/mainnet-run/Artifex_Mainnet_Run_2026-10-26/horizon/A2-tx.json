@@ -1,0 +1,55 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/transactions/51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735"
+    },
+    "account": {
+      "href": "https://horizon.stellar.org/accounts/GCPGMC55DFBJBOPRXZ7MZ6ZJU5GLAJLB5DXNIQS3RNKIKKXZN3YCH3RL"
+    },
+    "ledger": {
+      "href": "https://horizon.stellar.org/ledgers/65138482"
+    },
+    "operations": {
+      "href": "https://horizon.stellar.org/transactions/51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735/operations{?cursor,limit,order}",
+      "templated": true
+    },
+    "effects": {
+      "href": "https://horizon.stellar.org/transactions/51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735/effects{?cursor,limit,order}",
+      "templated": true
+    },
+    "precedes": {
+      "href": "https://horizon.stellar.org/transactions?order=asc\u0026cursor=279767649901797376"
+    },
+    "succeeds": {
+      "href": "https://horizon.stellar.org/transactions?order=desc\u0026cursor=279767649901797376"
+    },
+    "transaction": {
+      "href": "https://horizon.stellar.org/transactions/51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735"
+    }
+  },
+  "id": "51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735",
+  "paging_token": "279767649901797376",
+  "successful": true,
+  "hash": "51f36e2440d43c56bfcca37861ea3acfe5e0f447d695ef27b029ed51b2b99735",
+  "ledger": 65138482,
+  "created_at": "2026-10-26T01:29:53Z",
+  "source_account": "GCPGMC55DFBJBOPRXZ7MZ6ZJU5GLAJLB5DXNIQS3RNKIKKXZN3YCH3RL",
+  "source_account_sequence": "279761868875104258",
+  "fee_account": "GCPGMC55DFBJBOPRXZ7MZ6ZJU5GLAJLB5DXNIQS3RNKIKKXZN3YCH3RL",
+  "fee_charged": "438536",
+  "max_fee": "607556",
+  "operation_count": 1,
+  "envelope_xdr": "AAAAAgAAAACeZgu9GUKQufG+fsz7KadMsCVh6O7UQluLVIUq+W7wIwAJRUQD4enwAAAAAgAAAAEAAAAAAAAAAAAAAABq3q21AAAAAAAAAAEAAAAAAAAAGAAAAAAAAAABbJC4mxEk7s9OypYwScW4Cw40CrXzr2W4xbCOE1VIspQAAAALZGVwb3NpdF94bG0AAAAAAwAAABIAAAAAAAAAAJ5mC70ZQpC58b5+zPspp0ywJWHo7tRCW4tUhSr5bvAjAAAAEgAAAAEltPzYWa7C+mNIQ4xImzw8EMmLbSG+T9PLMMtolT75dwAAAA0AAAAgjwMm15HGeUM/cePRs7pIN9n/R/UeQxrGkYp8jGyiguYAAAABAAAAAAAAAAAAAAABbJC4mxEk7s9OypYwScW4Cw40CrXzr2W4xbCOE1VIspQAAAALZGVwb3NpdF94bG0AAAAAAwAAABIAAAAAAAAAAJ5mC70ZQpC58b5+zPspp0ywJWHo7tRCW4tUhSr5bvAjAAAAEgAAAAEltPzYWa7C+mNIQ4xImzw8EMmLbSG+T9PLMMtolT75dwAAAA0AAAAgjwMm15HGeUM/cePRs7pIN9n/R/UeQxrGkYp8jGyiguYAAAABAAAAAAAAAAEltPzYWa7C+mNIQ4xImzw8EMmLbSG+T9PLMMtolT75dwAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAACeZgu9GUKQufG+fsz7KadMsCVh6O7UQluLVIUq+W7wIwAAABIAAAABbJC4mxEk7s9OypYwScW4Cw40CrXzr2W4xbCOE1VIspQAAAAKAAAAAAAAAAAAAAAAAExLQAAAAAAAAAABAAAAAAAAAAIAAAAGAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAAFAAAAAEAAAAH6xcrvKbMWeWVM9lCKc3Ks6B9r75E5wJSqv7+cPXgrUYAAAAEAAAAAAAAAACeZgu9GUKQufG+fsz7KadMsCVh6O7UQluLVIUq+W7wIwAAAAYAAAABJbT82FmuwvpjSEOMSJs8PBDJi20hvk/TyzDLaJU++XcAAAAQAAAAAQAAAAIAAAAPAAAAB0JhbGFuY2UAAAAAEgAAAAFskLibESTuz07KljBJxbgLDjQKtfOvZbjFsI4TVUiylAAAAAEAAAAGAAAAAWyQuJsRJO7PTsqWMEnFuAsONAq1869luMWwjhNVSLKUAAAAEAAAAAEAAAACAAAADwAAAAdEZXBvc2l0AAAAAA0AAAAgjwMm15HGeUM/cePRs7pIN9n/R/UeQxrGkYp8jGyiguYAAAABAAAABgAAAAFskLibESTuz07KljBJxbgLDjQKtfOvZbjFsI4TVUiylAAAABQAAAABAA2dnQAAAJAAAASMAAAAAAAHvqQAAAAB+W7wIwAAAEBIiH0dxTSUgg3//e7Ypm9o8pHwCgZLtoutT+TFOWppf3rPyUBzEGqG2ufDXsEZvclFXhODHOPYHQnEn2Ht44EK",
+  "result_xdr": "AAAAAAAGsQgAAAAAAAAAAQAAAAAAAAAYAAAAAN0r8z8Hy9xV9VmBOWty4muSfguPzt5OTjpGdlZZwPCkAAAAAA==",
+  "fee_meta_xdr": "AAAAAgAAAAMD4e39AAAAAAAAAACeZgu9GUKQufG+fsz7KadMsCVh6O7UQluLVIUq+W7wIwAAAAABb91JA+Hp8AAAAAEAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAADAAAAAAPh7f0AAAAAat6nCAAAAAAAAAABA+HvMgAAAAAAAAAAnmYLvRlCkLnxvn7M+ymnTLAlYeju1EJbi1SFKvlu8CMAAAAAAWgeQQPh6fAAAAABAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAwAAAAAD4e39AAAAAGrepwgAAAAA",
+  "memo_type": "none",
+  "signatures": [
+    "SIh9HcU0lIIN//3u2KZvaPKR8AoGS7aLrU/kxTlqaX96z8lAcxBqhtrnw17BGb3JRV4Tgxzj2B0JxJ9h7eOBCg=="
+  ],
+  "preconditions": {
+    "timebounds": {
+      "min_time": "0",
+      "max_time": "1792978357"
+    }
+  }
+}
