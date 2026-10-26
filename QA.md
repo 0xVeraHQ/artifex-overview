@@ -47,6 +47,19 @@ External black-box QA with Freighter on Stellar Main Net. 19 transactions, all s
 | g | Verificación pública por QR sin wallet | — | [Verify](https://artifex.0xvera.com/verify/8f0326d791c679433f71e3d1b3ba4837d9ff47f51e431ac6918a7c8c6ca282e6) | https://artifex.0xvera.com/verify/8f0326d791c679433f71e3d1b3ba4837d9ff47f51e431ac6918a7c8c6ca282e6 |
 
 
+### Evidence
+
+Full run report: [docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/Artifex_Mainnet_Run_2026-10-26.md](docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/Artifex_Mainnet_Run_2026-10-26.md).
+Stills (no videos in this repo — clips go to YouTube):
+
+- [Cert fee dialog on 0.4.24](docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/stills/a-0424-cert-fee-5xlm-dialog-cancelled.png)
+- [Luz de Anaga verify](docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/stills/m2a-verify.png)
+- [Owner history QA-1 → QA-3](docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/stills/m2b-owner.png)
+- [Distribution preview](docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/stills/d-preview.webp)
+- [QA-2 USDC holdings](docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/stills/m2e-usdc-holdings.webp)
+- [Puerto al alba verify](docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/stills/m2f-verify.png)
+- [QR zoom](docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/stills/m2g-qr-zoom.png)
+
 ### Known issues (non-blocking UI)
 
 Seven interface findings that did not block the Mainnet run verdict.
@@ -54,13 +67,13 @@ Tracked on the [roadmap](ROADMAP.md).
 
 | Id | Issue | Detail | Roadmap |
 | --- | --- | --- | --- |
-| UI-01 | Catalog filters | Future-sale filter can still include whole-work listings (V-05). | [Roadmap](ROADMAP.md#hackmeridian) |
-| UI-02 | Register form fields | Register form still omits dimensions, weight, description, and documents (C-01). | [Roadmap](ROADMAP.md#hackmeridian) |
-| UI-03 | Prior digitization PDF | Prior-certificate digitization can reject PDF and leave an orphan fiche (C-07). | [Roadmap](ROADMAP.md#hackmeridian) |
-| UI-04 | Three-owner resale history | Full three-owner resale path not re-exercised on the mainnet run (S-03). | [Roadmap](ROADMAP.md#hackmeridian) |
-| UI-05 | Holdings unit display | Holdings lists works but often omits unit counts and valuation in the UI. | [Roadmap](ROADMAP.md#phase-1) |
-| UI-06 | Fiche technical noise | Piece fiche can show raw fee_paid / hash lines outside Technical details. | [Roadmap](ROADMAP.md#phase-1) |
-| UI-07 | Signers on fiche copy | Signers are reliable on /verify; fiche header copy can omit them or mix ES/EN. | [Roadmap](ROADMAP.md#phase-1) |
+| UI-01 | Wrong cert fee on web 0.4.24 | Deposit dialog asked for 5 XLM (Testnet); mainnet fees() is 0.5 XLM. Fixed in web 0.4.25. Still: stills/a-0424-cert-fee-5xlm-dialog-cancelled.png. | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-02 | Finalize dialog misleading amount | Finalize dialog shows Amount 0.5 XLM though the tx only consumes the existing deposit (no payment). | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-03 | Layout shift after deposit | After deposit confirms, Refund lands under the cursor where Finalize was; easy mis-click. | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-04 | Whole-NFT listing shows unit text | While Luz de Anaga whole sale was active, page showed Secondary listing with units available. | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-05 | Owner history pre-populated | Silencio blanco owner history already listed QA-2 before the USDC purchase in step e. | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-06 | Confirm dialogs show raw base units | Dialogs show Amount 10000000 for 1 XLM; values are correct on-chain but misread as millions of XLM. | [Roadmap](ROADMAP.md#hackmeridian) |
+| UI-07 | Holdings omit unit counts | /holdings shows Certified · price · owners but not how many units the wallet holds. | [Roadmap](ROADMAP.md#phase-1) |
 
 
 ### Mainnet smoke checklist

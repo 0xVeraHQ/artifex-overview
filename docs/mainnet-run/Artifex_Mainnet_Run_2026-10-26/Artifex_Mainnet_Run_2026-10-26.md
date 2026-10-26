@@ -78,24 +78,7 @@ Primary-sale payee for Torso II, Estudio en azul and Silencio blanco: `GAHZC…C
 
 ## Clips
 
-All clips are 1280×720 H.264, with no audio, re-encoded from 1920×1080 screen recordings. Only idle time at the start and end was removed, plus one idle gap in clip 02. Nothing else was edited.
-
-| File | Step | Duration | Source / notes |
-|---|---|---|---|
-| clips/01-funding.mp4 | Funding (4 create-account + USDC trustline) | 8:38 | m01-fondeo_233528 |
-| clips/02-a-register-propose.mp4 | a – register "Luz de Anaga" + propose (web 0.4.24) | 4:46 | m02a-certifica_005304. A ~6 min idle gap (waiting for the api 0.17.4 fix) was cut. The tail with the cancelled 5 XLM deposit dialog was trimmed off (kept as a still). |
-| clips/03-a-deposit-finalize.mp4 | a – deposit 0.5 XLM + finalize + /verify (web 0.4.25) | 2:25 | m02a-certifica_012807 |
-| clips/04-b-whole-sale.mp4 | b – mint, list at 1 XLM, QA-3 buys | 3:42 | m02b-venta-entera_013119 |
-| clips/05-c-units.mp4 | c – QA-2 and QA-3 unit purchases | 8:22 | m02c-unidades_010710 |
-| clips/06-d-distribution.mp4 | d – QA-5 distributes 0.5 XLM on Torso II | 2:38 | m02d-reparto_011634 |
-| clips/07-e-usdc.mp4 | e – QA-2 buys in USDC | 2:06 | m02e-usdc_012005 |
-| clips/08-f-second-signature.mp4 | f – QA-5 cosign + finalize "Puerto al alba" | 1:36 | m02f-segunda-firma_012547 |
-| clips/09-g-qr-verify.mp4 | g – walletless /verify with QR | 0:38 | m02g-qr_013634. The QR decode itself was done offline on `m2g-qr-zoom.png`. |
-
-Discarded recordings:
-- m02a-certifica_234521: the site was still on Testnet.
-- m02a-certifica_002704: "Mainnet is disabled".
-- m02f-segunda-firma_012259: cancelled before the 0.4.25 deploy; nothing signed.
+Screen recordings for steps a–g are published on YouTube (not stored in this repository). Local filenames used during the run: `clips/01-funding.mp4` … `clips/09-g-qr-verify.mp4`.
 
 ## Stills
 

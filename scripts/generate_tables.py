@@ -267,6 +267,26 @@ def render_qa(doc: dict, cases: list[dict]) -> str:
             )
         )
         lines.append("")
+        evidence = str(run.get("evidence") or "").strip()
+        if evidence:
+            base = evidence.rstrip("/")
+            lines.extend(
+                [
+                    "### Evidence",
+                    "",
+                    f"Full run report: [{base}/Artifex_Mainnet_Run_2026-10-26.md]({base}/Artifex_Mainnet_Run_2026-10-26.md).",
+                    "Stills (no videos in this repo — clips go to YouTube):",
+                    "",
+                    f"- [Cert fee dialog on 0.4.24]({base}/stills/a-0424-cert-fee-5xlm-dialog-cancelled.png)",
+                    f"- [Luz de Anaga verify]({base}/stills/m2a-verify.png)",
+                    f"- [Owner history QA-1 → QA-3]({base}/stills/m2b-owner.png)",
+                    f"- [Distribution preview]({base}/stills/d-preview.webp)",
+                    f"- [QA-2 USDC holdings]({base}/stills/m2e-usdc-holdings.webp)",
+                    f"- [Puerto al alba verify]({base}/stills/m2f-verify.png)",
+                    f"- [QR zoom]({base}/stills/m2g-qr-zoom.png)",
+                    "",
+                ]
+            )
         issues = run.get("knownIssues") or []
         if issues:
             lines.extend(

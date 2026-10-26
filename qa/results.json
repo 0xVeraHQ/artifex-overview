@@ -157,47 +157,48 @@
       "knownIssues": [
         {
           "id": "UI-01",
-          "title": "Catalog filters",
-          "detail": "Future-sale filter can still include whole-work listings (V-05).",
+          "title": "Wrong cert fee on web 0.4.24",
+          "detail": "Deposit dialog asked for 5 XLM (Testnet); mainnet fees() is 0.5 XLM. Fixed in web 0.4.25. Still: stills/a-0424-cert-fee-5xlm-dialog-cancelled.png.",
           "roadmap": "ROADMAP.md#hackmeridian"
         },
         {
           "id": "UI-02",
-          "title": "Register form fields",
-          "detail": "Register form still omits dimensions, weight, description, and documents (C-01).",
+          "title": "Finalize dialog misleading amount",
+          "detail": "Finalize dialog shows Amount 0.5 XLM though the tx only consumes the existing deposit (no payment).",
           "roadmap": "ROADMAP.md#hackmeridian"
         },
         {
           "id": "UI-03",
-          "title": "Prior digitization PDF",
-          "detail": "Prior-certificate digitization can reject PDF and leave an orphan fiche (C-07).",
+          "title": "Layout shift after deposit",
+          "detail": "After deposit confirms, Refund lands under the cursor where Finalize was; easy mis-click.",
           "roadmap": "ROADMAP.md#hackmeridian"
         },
         {
           "id": "UI-04",
-          "title": "Three-owner resale history",
-          "detail": "Full three-owner resale path not re-exercised on the mainnet run (S-03).",
+          "title": "Whole-NFT listing shows unit text",
+          "detail": "While Luz de Anaga whole sale was active, page showed Secondary listing with units available.",
           "roadmap": "ROADMAP.md#hackmeridian"
         },
         {
           "id": "UI-05",
-          "title": "Holdings unit display",
-          "detail": "Holdings lists works but often omits unit counts and valuation in the UI.",
-          "roadmap": "ROADMAP.md#phase-1"
+          "title": "Owner history pre-populated",
+          "detail": "Silencio blanco owner history already listed QA-2 before the USDC purchase in step e.",
+          "roadmap": "ROADMAP.md#hackmeridian"
         },
         {
           "id": "UI-06",
-          "title": "Fiche technical noise",
-          "detail": "Piece fiche can show raw fee_paid / hash lines outside Technical details.",
-          "roadmap": "ROADMAP.md#phase-1"
+          "title": "Confirm dialogs show raw base units",
+          "detail": "Dialogs show Amount 10000000 for 1 XLM; values are correct on-chain but misread as millions of XLM.",
+          "roadmap": "ROADMAP.md#hackmeridian"
         },
         {
           "id": "UI-07",
-          "title": "Signers on fiche copy",
-          "detail": "Signers are reliable on /verify; fiche header copy can omit them or mix ES/EN.",
+          "title": "Holdings omit unit counts",
+          "detail": "/holdings shows Certified · price · owners but not how many units the wallet holds.",
           "roadmap": "ROADMAP.md#phase-1"
         }
-      ]
+      ],
+      "evidence": "docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/"
     },
     "smoke": [
       {

@@ -1,3 +1,8 @@
 .local/
 __pycache__/
 *.pyc
+
+# Mainnet-run video clips stay off-repo (YouTube).
+docs/mainnet-run/**/clips/
+*.mp4
+

@@ -83,6 +83,7 @@ From Sunday 25 October 2026 09:00 Lisbon, the Scale track prioritizes production
 
 - **Mainnet LIVE** (api **0.17.5** / web **0.4.25**, registry **mainnet-v1**): contracts deployed, VPS wiring verified, seed **`hackathon-scale-15-v6-mainnet`**, web network from the API (Mainnet footer, no Testnet banner), certification fee from `/fees/cert`.
 - **Mainnet QA PASS** — Freighter black-box run **a–g** (26 Oct): living-author cert + whole sale (Luz de Anaga), participations + Try it, proportional distribute, USDC buy, deceased two-signature finalize (Puerto al alba), public QR verify. **19** successful txs · **0.448 XLM** fees. See [QA.md](QA.md#mainnet-run-26102026).
+- Stills from the run: [docs/mainnet-run/…](docs/mainnet-run/Artifex_Mainnet_Run_2026-10-26/Artifex_Mainnet_Run_2026-10-26.md) (videos on YouTube, not in this repo).
 - Testnet gate for the launch: four passes **9 → 20 → 22 → 28** validated, then re-test **APTO**.
 
 **Testnet** remains development and QA history only.
