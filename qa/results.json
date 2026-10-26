@@ -3,7 +3,7 @@
   "pass": "fourth",
   "mainnet": {
     "status": "PENDING",
-    "reason": "Mainnet smoke in progress (Luz de Anaga fiche + propose_cert); full case results pending",
+    "reason": "Mainnet smoke in progress on api 0.17.5 / web 0.4.25; certify/buy/distribute txs observed, official verdict pending",
     "smoke": [
       {
         "id": "MN-SETUP",
@@ -21,7 +21,7 @@
         "id": "MN-SMOKE",
         "title": "Mainnet product smoke (certify / buy / distribute)",
         "status": "PENDING",
-        "reason": "QA-1 registered Luz de Anaga and propose_cert (ad9073f3…); buy/distribute and full verdict pending"
+        "reason": "Observed Luz de Anaga finalize_cert (a652c807…), mint/list, buy_sale to QA-3 (f7d4a181…); seed buy_primary + QA-5 distribute (c28c7dce…); official pass verdict pending"
       }
     ]
   },

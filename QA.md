@@ -28,7 +28,7 @@ Network: [Stellar Testnet](https://stellar.expert/explorer/testnet).
 
 ## Mainnet
 
-**PENDING** — Mainnet smoke in progress (Luz de Anaga fiche + propose_cert); full case results pending.
+**PENDING** — Mainnet smoke in progress on api 0.17.5 / web 0.4.25; certify/buy/distribute txs observed, official verdict pending.
 
 ### Mainnet smoke
 
@@ -38,7 +38,7 @@ Black-box smoke on the live mainnet app after seed `hackathon-scale-15-v6-mainne
 | --- | --- | --- | --- | --- |
 | MN-SETUP | QA Freighter accounts activated on mainnet | PASS | — | [082bdfe1fd…](https://stellar.expert/explorer/public/tx/082bdfe1fd2a2f4e64ef307db2b1bc262b9f51f297a112b899a11fc73a122852) |
 | MN-USDC | QA-2 Circle USDC trustline on mainnet | PASS | — | [a9359cfc98…](https://stellar.expert/explorer/public/tx/a9359cfc983db92cdf2d6ee71afc10f73f2314251b6ab6b53fd23dff6b78c6e0) |
-| MN-SMOKE | Mainnet product smoke (certify / buy / distribute) | PENDING | QA-1 registered Luz de Anaga and propose_cert (ad9073f3…); buy/distribute and full verdict pending | — |
+| MN-SMOKE | Mainnet product smoke (certify / buy / distribute) | PENDING | Observed Luz de Anaga finalize_cert (a652c807…), mint/list, buy_sale to QA-3 (f7d4a181…); seed buy_primary + QA-5 distribute (c28c7dce…); official pass verdict pending | — |
 
 
 ## Cases (Testnet history)

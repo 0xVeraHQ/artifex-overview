@@ -4,10 +4,36 @@
   "images": [
     {
       "name": "artifex-api",
+      "tag": "0.17.5",
+      "digest": "sha256:bf16ae966a552c272ea9a38c76a915a4cf96a4aee606b267515198bd3673a7c2",
+      "publishedAt": "2026-10-26T01:18:49Z",
+      "note": "/fees/cert from fee_collector.fees() at runtime (orch current)",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.5",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    },
+    {
+      "name": "artifex-web-ui",
+      "tag": "0.4.25",
+      "digest": "sha256:e7809d39c286e54c401999d4839910ce095c3e28fc33168bf6303c6565372a68",
+      "publishedAt": "2026-10-26T01:19:41Z",
+      "note": "deposit dialog uses /fees/cert (orch current)",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.25",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    }
+  ],
+  "history": [
+    {
+      "name": "artifex-api",
       "tag": "0.17.4",
       "digest": "sha256:810d8b4ba0ad41ed31e0ecc52559764c0cb82181a18edab12deddf89680b15a6",
       "publishedAt": "2026-10-26T00:45:39Z",
-      "note": "web3 mainnet login from runtime STELLAR_NETWORK (orch current)",
+      "note": "web3 mainnet login from runtime STELLAR_NETWORK",
       "cosign": {
         "verified": true,
         "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.4",
@@ -19,15 +45,13 @@
       "tag": "0.4.24",
       "digest": "sha256:85bbb9769ca0fb20e8beed1ffac26ba3221ad53d7f102ff770d8ef702f9a3f5a",
       "publishedAt": "2026-10-26T00:12:02Z",
-      "note": "Runtime mainnet from API + SSR Mainnet footer (orch current)",
+      "note": "Runtime mainnet from API + SSR Mainnet footer",
       "cosign": {
         "verified": true,
         "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.24",
         "oidcIssuer": "https://token.actions.githubusercontent.com"
       }
-    }
-  ],
-  "history": [
+    },
     {
       "name": "artifex-api",
       "tag": "0.17.3",

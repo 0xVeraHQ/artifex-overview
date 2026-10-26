@@ -4,8 +4,8 @@ mainnet:
   status: LIVE
   reason: >-
     seed hackathon-scale-15-v6-mainnet (15 demos) + 1 Mainnet-smoke fiche (Luz de Anaga);
-    7 certified, 1 pending second signature (Puerto al alba), 6 offers (1–6: 3 XLM · 3 USDC),
-    4 whole tokens listed (1–4), secondary listing 1
+    9 certified (API), Puerto al alba still pending second signature, 6 offers (1–6),
+    whole tokens 1–5 (Anaga token 5 sold to QA-3), secondary listing 1
   seedRunId: hackathon-scale-15-v6-mainnet
   pieces:
   - n: 1
@@ -268,17 +268,17 @@ mainnet:
     artist: Joel QA Artista
     pieceId: 8f0326d791c679433f71e3d1b3ba4837d9ff47f51e431ac6918a7c8c6ca282e6
     certification: Living author (1 signature)
-    status: Certification proposed
-    modality: Not for sale
+    status: Certified
+    modality: Whole work (digital) — sold
     forSale: false
-    price: —
+    price: 1 XLM
     tryIt: false
     offerId: null
     listingId: null
-    wholeTokenId: null
-    certTx: ad9073f3a8b28fb53babd0f191a1c963594cff00164f333cc94632b26fd39b98
+    wholeTokenId: '5'
+    certTx: a652c8079b09b68deff4b1918f781e50972259c452afee1efc028d0c374421d7
     offerTx: null
-    listingTx: null
+    listingTx: 5f16c84081b221312b3df93cc3c0d8d0f832b4dc0bfeeec9bf9a30599c4d05fb
     distribTx: null
 pieces:
 - n: 1

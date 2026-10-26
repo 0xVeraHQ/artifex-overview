@@ -179,8 +179,30 @@ Orch pin **api 0.17.4** (PR #39: web3 mainnet login from runtime `STELLAR_NETWOR
 
 QA-1 (`GCPGMC…H3RL`) registered **Luz de Anaga** (catalog now **16** works) and invoked `propose_cert`: [ad9073f3a8…](https://stellar.expert/explorer/public/tx/ad9073f3a8b28fb53babd0f191a1c963594cff00164f333cc94632b26fd39b98). Finalize / buy / distribute still open — Mainnet smoke **PENDING**.
 
+### 02:35 (26 Oct) — api 0.17.5 / web 0.4.25 · smoke certify / buy / distribute
+
+Orch PR #40 pins api **0.17.5** (`/fees/cert` from `fee_collector.fees()`) and web **0.4.25** (deposit dialog uses `/fees/cert`). Live `/api/meta` **0.17.5**.
+
+| Image | Tag | Digest |
+| --- | --- | --- |
+| artifex-api | **0.17.5** | `sha256:bf16ae966a552c272ea9a38c76a915a4cf96a4aee606b267515198bd3673a7c2` |
+| artifex-web-ui | **0.4.25** | `sha256:e7809d39c286e54c401999d4839910ce095c3e28fc33168bf6303c6565372a68` |
+
+Mainnet smoke chain (public Horizon), still awaiting official QA verdict:
+
+| Step | Who | Fn | Tx |
+| --- | --- | --- | --- |
+| Finalize cert | QA-1 | `finalize_cert` | [a652c8079b…](https://stellar.expert/explorer/public/tx/a652c8079b09b68deff4b1918f781e50972259c452afee1efc028d0c374421d7) |
+| Mint whole | QA-1 | `mint` | [2369253e1d…](https://stellar.expert/explorer/public/tx/2369253e1d16fbfcfce9c6def95de2b4d49e3dfb1d63d734b4e43a2b0d3a4ad7) |
+| List | QA-1 | `list_for_sale` | [5f16c84081…](https://stellar.expert/explorer/public/tx/5f16c84081b221312b3df93cc3c0d8d0f832b4dc0bfeeec9bf9a30599c4d05fb) |
+| Buy sale | QA-3 | `buy_sale` | [f7d4a18187…](https://stellar.expert/explorer/public/tx/f7d4a18187babeafde8e7365b7d9d20e2b72b0800a491b25b8d565cea39cfe48) |
+| Buy primary (seed) | QA-2 / QA-3 | `buy_primary` | e.g. [20119cbee9…](https://stellar.expert/explorer/public/tx/20119cbee97c15a38c4fe959c0d9ae6394ae1ba3512f800ffc961d1bb3028c3b) |
+| Distribute | QA-5 | `distribute` | [c28c7dce42…](https://stellar.expert/explorer/public/tx/c28c7dce42b8ae00e4004cf9f4acc7449d7645fb5d06266629c49ac2e5d4a411) |
+
+**Luz de Anaga** certified · whole token **5** · sold to QA-3. Catalog: **16** works · **9** certified (API). Mainnet smoke **PENDING** for official close-out.
+
 ---
 
 ## Planned during the event (not yet dated)
 
-- **Mainnet QA product results** — fill [QA.md](QA.md) Mainnet smoke hashes when the pass closes.
+- **Mainnet QA product results** — mark [QA.md](QA.md) Mainnet smoke PASS when the external pass closes.
