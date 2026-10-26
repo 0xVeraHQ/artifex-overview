@@ -4,7 +4,7 @@
 
 ## Mainnet
 
-**LIVE** — public app on Stellar mainnet (api 0.17.2 / web 0.4.22, registry mainnet-v1); seed hackathon-scale-15-v6-mainnet live; mainnet QA in progress
+**LIVE** — public app on Stellar mainnet (api 0.17.3 / web 0.4.23 orch pin; live still 0.17.2 until VPS pull, registry mainnet-v1); seed hackathon-scale-15-v6-mainnet live; mainnet QA in progress
 .
 
 | Role | Address | Purpose | Explorer |

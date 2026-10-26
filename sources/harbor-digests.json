@@ -4,10 +4,36 @@
   "images": [
     {
       "name": "artifex-api",
+      "tag": "0.17.3",
+      "digest": "sha256:c879277194e9fcf8146adc86555047585826c66f55bab517b32fbeb85c1d2d0f",
+      "publishedAt": "2026-10-26T00:02:37Z",
+      "note": "Seed wallets != Freighter QA pubkey asserts; QA roles by address (orch current)",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.3",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    },
+    {
+      "name": "artifex-web-ui",
+      "tag": "0.4.23",
+      "digest": "sha256:1c2bc4e09c897b2be0d63b8e2e28174ee8530b0b21443ef03b4486fa179524f2",
+      "publishedAt": "2026-10-26T00:03:22Z",
+      "note": "Fee consumer error copy (orch current)",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.23",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    }
+  ],
+  "history": [
+    {
+      "name": "artifex-api",
       "tag": "0.17.2",
       "digest": "sha256:56692ae19f933e0cca9084c692dec9fe0b8e88a0934b3d0b5fab2368b0a4a638",
       "publishedAt": "2026-10-25T23:18:00Z",
-      "note": "Mainnet seed wallets / QA role asserts (orch current)",
+      "note": "Mainnet seed wallets / QA role asserts (live at cutover)",
       "cosign": {
         "verified": true,
         "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.2",
@@ -19,15 +45,13 @@
       "tag": "0.4.22",
       "digest": "sha256:3463ddcbb6fdf620a0f7c9b78121fc593a5e99a9b7fde63802c298e0dc5c5ec5",
       "publishedAt": "2026-10-25T18:56:20Z",
-      "note": "Orch current",
+      "note": "Fee consumer error copy (pre-0.4.23)",
       "cosign": {
         "verified": true,
         "identity": "https://github.com/0xVeraHQ/artifex-web-ui/.github/workflows/docker-release.yml@refs/tags/v0.4.22",
         "oidcIssuer": "https://token.actions.githubusercontent.com"
       }
-    }
-  ],
-  "history": [
+    },
     {
       "name": "artifex-api",
       "tag": "0.17.1",

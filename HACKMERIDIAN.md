@@ -144,11 +144,27 @@ Mainnet smoke section in [QA.md](QA.md) is **PENDING** for product results.
 
 ### 00:45 (26 Oct) — Web mainnet adaptation in progress
 
-Web UI being adapted so the network comes from the API (no Testnet banner). Still **in progress**.
+Web UI being adapted so the network comes from the API (no Testnet banner). Still **in progress** (Testnet string still present on the live HTML at this tick).
+
+### 00:46 (26 Oct) — Platform → QA-2 USDC top-up
+
+Platform wallet sent **2 USDC** to QA-2 for smoke funding: [773640b8b5…](https://stellar.expert/explorer/public/tx/773640b8b5ce1cce6301a3855c321010fbdd3c8376eac2591e818e67aa1d23ba).
+
+### 01:05 (26 Oct) — Orch pin api 0.17.3 / web 0.4.23
+
+Harbor images published and cosign-verified; artifex-orch `versions.env` pinned (PR #36).
+
+| Image | Tag | Digest |
+| --- | --- | --- |
+| artifex-api | **0.17.3** | `sha256:c879277194e9fcf8146adc86555047585826c66f55bab517b32fbeb85c1d2d0f` |
+| artifex-web-ui | **0.4.23** | `sha256:1c2bc4e09c897b2be0d63b8e2e28174ee8530b0b21443ef03b4486fa179524f2` |
+
+Live `/api/meta` still reports **0.17.2** at this tick (VPS pull pending). Mainnet smoke remains **PENDING**.
 
 ---
 
 ## Planned during the event (not yet dated)
 
-- **Finish web mainnet adaptation** (API-driven network, no Testnet banner).
+- **VPS pull** of api **0.17.3** / web **0.4.23**.
+- **Finish web mainnet adaptation** (API-driven network, no Testnet banner); web **0.4.24** build observed in CI.
 - **Mainnet QA product results** — fill [QA.md](QA.md) Mainnet smoke hashes when the pass closes.
