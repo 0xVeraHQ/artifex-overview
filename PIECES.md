@@ -4,8 +4,8 @@
 
 ## Mainnet
 
-**15 artwork(s)** on Stellar mainnet.
-**LIVE** — seed hackathon-scale-15-v6-mainnet: 15 demo pieces, 7 certified, 1 pending second signature (Puerto al alba), 6 offers (1–6: 3 XLM · 3 USDC), 4 whole tokens listed (1–4), secondary listing 1.
+**16 artwork(s)** on Stellar mainnet.
+**LIVE** — seed hackathon-scale-15-v6-mainnet (15 demos) + 1 Mainnet-smoke fiche (Luz de Anaga); 7 certified, 1 pending second signature (Puerto al alba), 6 offers (1–6: 3 XLM · 3 USDC), 4 whole tokens listed (1–4), secondary listing 1.
 Seed run: `hackathon-scale-15-v6-mainnet`.
 Public catalog: [artifex.0xvera.com](https://artifex.0xvera.com). Explorer: [https://stellar.expert/explorer/public](https://stellar.expert/explorer/public).
 Certification / offer / listing tx columns fill when indexed or when mainnet QA reports hashes.
@@ -27,6 +27,7 @@ Certification / offer / listing tx columns fill when indexed or when mainnet QA 
 | 13 | **Autorretrato con sombrero** · Elena Varga | Living author (1 signature) | Not certified | Whole work (digital) | 0.5 USDC | — | [Verify](https://artifex.0xvera.com/verify/9f302fec833514fbfc74503cb1c047fa2c1e5bbcf24234cf19c24c475a5c2270) | token 3 | — | — | — | — |
 | 14 | **Cerámica nº 7** · Sofía Lindqvist | Living author (1 signature) | Not certified | Whole work (physical delivery) | 0.5 USDC | — | [Verify](https://artifex.0xvera.com/verify/a6ce76cd7d6a3cbe7127faf2877ccc2d97edc22564b9a650d73d639a1733bd64) | token 4 | — | — | — | — |
 | 15 | **Mercado de flores** · Aurelio Benedetti | Deceased author (connoisseur + heir) | Not certified | Participation — Future sale | 0.1 USDC | — | [Verify](https://artifex.0xvera.com/verify/59fc37c4a606f1b0bd58cac85ca897c41346a7262b6835466f2b1a4558064fc8) | offer 6 | — | — | — | — |
+| 16 | **Luz de Anaga** · Joel QA Artista | Living author (1 signature) | Certification proposed | Not for sale | — | — | [Verify](https://artifex.0xvera.com/verify/8f0326d791c679433f71e3d1b3ba4837d9ff47f51e431ac6918a7c8c6ca282e6) | — | [ad9073f3a8…](https://stellar.expert/explorer/public/tx/ad9073f3a8b28fb53babd0f191a1c963594cff00164f333cc94632b26fd39b98) | — | — | — |
 
 
 ## Testnet (history)

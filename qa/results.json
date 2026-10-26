@@ -3,7 +3,7 @@
   "pass": "fourth",
   "mainnet": {
     "status": "PENDING",
-    "reason": "Mainnet smoke in progress after seed hackathon-scale-15-v6-mainnet; case results pending",
+    "reason": "Mainnet smoke in progress (Luz de Anaga fiche + propose_cert); full case results pending",
     "smoke": [
       {
         "id": "MN-SETUP",
@@ -21,7 +21,7 @@
         "id": "MN-SMOKE",
         "title": "Mainnet product smoke (certify / buy / distribute)",
         "status": "PENDING",
-        "reason": "mainnet QA running; hashes will be added when the pass reports"
+        "reason": "QA-1 registered Luz de Anaga and propose_cert (ad9073f3…); buy/distribute and full verdict pending"
       }
     ]
   },

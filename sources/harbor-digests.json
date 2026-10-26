@@ -4,13 +4,13 @@
   "images": [
     {
       "name": "artifex-api",
-      "tag": "0.17.3",
-      "digest": "sha256:c879277194e9fcf8146adc86555047585826c66f55bab517b32fbeb85c1d2d0f",
-      "publishedAt": "2026-10-26T00:02:37Z",
-      "note": "Estudio 0.1 XLM copy repair + /health network meta (orch current)",
+      "tag": "0.17.4",
+      "digest": "sha256:810d8b4ba0ad41ed31e0ecc52559764c0cb82181a18edab12deddf89680b15a6",
+      "publishedAt": "2026-10-26T00:45:39Z",
+      "note": "web3 mainnet login from runtime STELLAR_NETWORK (orch current)",
       "cosign": {
         "verified": true,
-        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.3",
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.4",
         "oidcIssuer": "https://token.actions.githubusercontent.com"
       }
     },
@@ -28,6 +28,18 @@
     }
   ],
   "history": [
+    {
+      "name": "artifex-api",
+      "tag": "0.17.3",
+      "digest": "sha256:c879277194e9fcf8146adc86555047585826c66f55bab517b32fbeb85c1d2d0f",
+      "publishedAt": "2026-10-26T00:02:37Z",
+      "note": "Estudio 0.1 XLM copy repair + /health network meta",
+      "cosign": {
+        "verified": true,
+        "identity": "https://github.com/0xVeraHQ/artifex-api/.github/workflows/docker-release.yml@refs/tags/v0.17.3",
+        "oidcIssuer": "https://token.actions.githubusercontent.com"
+      }
+    },
     {
       "name": "artifex-web-ui",
       "tag": "0.4.23",

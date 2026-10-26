@@ -173,6 +173,12 @@ VPS serving api **0.17.3**. Orch pin moved to web **0.4.24** (PR #37): runtime n
 
 Seed catalog unchanged (15 · 7 certified · Puerto al alba pending second). Mainnet smoke still **PENDING**.
 
+### 02:05 (26 Oct) — api 0.17.4 live · Mainnet smoke starts (Luz de Anaga)
+
+Orch pin **api 0.17.4** (PR #39: web3 mainnet login from runtime `STELLAR_NETWORK`). Live `/api/meta` **0.17.4**. Digest `sha256:810d8b4ba0ad41ed31e0ecc52559764c0cb82181a18edab12deddf89680b15a6`.
+
+QA-1 (`GCPGMC…H3RL`) registered **Luz de Anaga** (catalog now **16** works) and invoked `propose_cert`: [ad9073f3a8…](https://stellar.expert/explorer/public/tx/ad9073f3a8b28fb53babd0f191a1c963594cff00164f333cc94632b26fd39b98). Finalize / buy / distribute still open — Mainnet smoke **PENDING**.
+
 ---
 
 ## Planned during the event (not yet dated)
