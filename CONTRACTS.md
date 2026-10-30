@@ -7,7 +7,7 @@
 **LIVE** — public API serves registry **mainnet-v1** (contracts tag **vps-deploy**) on Stellar mainnet.
 https://artifex.0xvera.com/api/contracts/registry
 https://artifex.0xvera.com/api/health (`stellarNetwork: mainnet`)
-Source: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts).
+Source: [Artshio/artshio-contracts](https://github.com/Artshio/artshio-contracts).
 Deploy record: 38 transactions from `GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPRKQRCJ2QC32Q3V` (2026-10-25T22:10:25Z). See artifex-orch `deployments/mainnet.json`.
 
 
@@ -30,7 +30,7 @@ Deploy record: 38 transactions from `GCNSEGPV3MS36RO7TT4OE7UEVWLLVSOGDRHURZRUHPR
 Soroban contracts used on Stellar Testnet before and during HackMeridian.
 Inactive after the application cut over to mainnet.
 
-Source code: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts).
+Source code: [Artshio/artshio-contracts](https://github.com/Artshio/artshio-contracts).
 
 USDC and XLM rows are Stellar asset contracts used for payment, not Artifex business contracts.
 

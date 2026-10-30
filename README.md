@@ -1,12 +1,14 @@
 # Artifex
 
+> **This project continues as Artshio — https://artshio.com. This repository is the HackMeridian 2026 archive.**
+
 **Live on Stellar Mainnet** — [https://artifex.0xvera.com](https://artifex.0xvera.com) (api **0.17.5** / web **0.4.25**).  
 On-chain evidence: [stellar.expert/explorer/public](https://stellar.expert/explorer/public).  
 **Demo video:** [youtu.be/tRukkX9cRN4](https://youtu.be/tRukkX9cRN4) · **Pitch deck:** [docs/Artifex_HackMeridian_pitch.pdf](docs/Artifex_HackMeridian_pitch.pdf)
 
 Provenance, certification, and funding for art — on Stellar.
 
-Artifex is built for **HackMeridian 2026**, track **Scale**. This repository (`0xVeraHQ/artifex-overview`) is the public presentation for judges. It has the product story, public mainnet identifiers (with Testnet history from the event), and the status of QA, releases, contracts, wallets, pieces, and the roadmap. Tables are generated from the real sources. Do not edit them by hand.
+Artifex was built for **HackMeridian 2026**, track **Scale**. This repository (`Artshio/artshio-hackmeridian-2026`, formerly `0xVeraHQ/artifex-overview`) is the public presentation archive for judges. It has the product story, public mainnet identifiers (with Testnet history from the event), and the status of QA, releases, contracts, wallets, pieces, and the roadmap. Tables are generated from the real sources. Do not edit them by hand.
 
 Judges do not need the private application repositories. Everything to understand and verify Artifex is here, with explorer links for on-chain evidence. The Soroban contracts are public (see below).
 
@@ -103,15 +105,15 @@ The original application named OpenZeppelin contracts, Trustless Work escrow, an
 
 ## Public contracts
 
-The Soroban contracts used by Artifex are public: [0xVeraHQ/artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts). Deployed mainnet IDs: [CONTRACTS.md](CONTRACTS.md).
+The Soroban contracts used by Artifex are public: [Artshio/artshio-contracts](https://github.com/Artshio/artshio-contracts) (formerly `0xVeraHQ/artifex-contracts`). Deployed mainnet IDs: [CONTRACTS.md](CONTRACTS.md).
 
 ## Private repositories
 
-These repositories stay private (application, UI, orchestration, internal docs):
+Active product repositories continue under the Artshio org (application, UI, orchestration, internal docs):
 
-- artifex-api, artifex-web-ui, artifex-orch, and related ops repos.
+- [artshio-api](https://github.com/Artshio/artshio-api), [artshio-web-ui](https://github.com/Artshio/artshio-web-ui), [artshio-orch](https://github.com/Artshio/artshio-orch), [artshio-docs](https://github.com/Artshio/artshio-docs).
 
-Judges only need this overview repo and the public contracts repo.
+Judges only need this overview archive and the public contracts repo.
 
 ## License
 

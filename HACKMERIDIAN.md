@@ -19,7 +19,7 @@ Baseline already public before this entry (Testnet):
 - Active contracts: version **v2**, contracts tag **v0.1.0**
 - **15 demo artworks**
 - External QA through pass 3: **22** validated, **4** blockers
-- Contracts source: [artifex-contracts](https://github.com/0xVeraHQ/artifex-contracts)
+- Contracts source: [artshio-contracts](https://github.com/Artshio/artshio-contracts)
 
 ### 14:45 — Release api 0.16.20 / web 0.4.19 · contract v3 live on Testnet
 
